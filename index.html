@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Rusumba Bukanga">
+<meta name="theme-color" content="#0C1B33">
+<title>Rusumba Bukanga — Full Stack Developer & AI Engineer, Johannesburg</title>
+<meta name="description" content="Rusumba Bukanga is a full stack developer and CTO based in Johannesburg, building AI products, authentication infrastructure, and InsurTech systems for Cleverly AI, 123tutors, and Alpha Group.">
+<meta name="keywords" content="full stack developer Johannesburg, AI engineer South Africa, InsurTech developer, AWS developer, CTO for hire, SSO authentication engineer, Claude Bedrock developer">
+<link rel="canonical" href="https://www.rusumbabukanga.com/">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rusumba Bukanga">
+<meta property="og:title" content="Rusumba Bukanga — Full Stack Developer & AI Engineer">
+<meta property="og:description" content="Building AI products, authentication infrastructure, and InsurTech systems. Cofounder & CTO, Cleverly AI. CTO, 123tutors.">
+<meta property="og:url" content="https://www.rusumbabukanga.com/">
+<meta property="og:image" content="https://www.rusumbabukanga.com/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Rusumba Bukanga — Full Stack Developer, AI Engineer, CTO">
+<meta property="og:locale" content="en_ZA">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Rusumba Bukanga — Full Stack Developer & AI Engineer">
+<meta name="twitter:description" content="Building AI products, authentication infrastructure, and InsurTech systems in Johannesburg, South Africa.">
+<meta name="twitter:image" content="https://www.rusumbabukanga.com/og-image.jpg">
+
+<!-- JSON-LD structured data: Person + ProfessionalService -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Rusumba Bukanga",
+  "jobTitle": "Cofounder & Chief Technology Officer",
+  "description": "Full stack developer and CTO building AI products, authentication infrastructure, and InsurTech systems in Johannesburg, South Africa.",
+  "url": "https://www.rusumbabukanga.com/",
+  "image": "https://www.rusumbabukanga.com/og-image.jpg",
+  "sameAs": [
+    "https://www.linkedin.com/in/rusumba/",
+    "https://github.com/cicology"
+  ],
+  "worksFor": [
+    { "@type": "Organization", "name": "Cleverly AI", "url": "https://cleverly.co.za" },
+    { "@type": "Organization", "name": "123tutors", "url": "https://123tutors.co.za" },
+    { "@type": "Organization", "name": "Alpha Group" }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Johannesburg",
+    "addressCountry": "ZA"
+  },
+  "knowsAbout": ["Full Stack Development", "AI Engineering", "AWS", "Authentication Systems", "InsurTech", "Application Security"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Rusumba Bukanga — Portfolio",
+  "url": "https://www.rusumbabukanga.com/"
+}
+</script>
+
+<!-- ============================================= -->
+<!-- GOOGLE TAG MANAGER — replace GTM-XXXXXXX with your container ID -->
+<!-- Create one free at tagmanager.google.com -->
+<!-- ============================================= -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+
+<!-- ============================================= -->
+<!-- META (FACEBOOK) PIXEL — replace YOUR_PIXEL_ID -->
+<!-- Create one free at business.facebook.com/events_manager -->
+<!-- ============================================= -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'YOUR_PIXEL_ID');
+fbq('track', 'PageView');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="preconnect" href="https://connect.facebook.net">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --ink:#0C1B33;
+    --ink-panel:#0F2140;
+    --grid-line:rgba(120,160,220,0.09);
+    --line-blue:#5B8DEF;
+    --line-blue-soft:rgba(91,141,239,0.35);
+    --paper:#EDEFF4;
+    --paper-dim:#B7C2D9;
+    --amber:#F2A93B;
+    --amber-soft:rgba(242,169,59,0.15);
+    --teal:#5EEAD4;
+    --font-display:'Space Grotesk',sans-serif;
+    --font-body:'IBM Plex Sans',sans-serif;
+    --font-mono:'IBM Plex Mono',monospace;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;}
+  }
+  body{
+    background:var(--ink);
+    background-image:
+      linear-gradient(var(--grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size:44px 44px;
+    color:var(--paper);
+    font-family:var(--font-body);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  ::selection{background:var(--amber);color:var(--ink);}
+  :focus-visible{outline:2px solid var(--amber);outline-offset:3px;}
+
+  /* corner brackets — blueprint registration marks (frame case studies, hero, stats, contact) */
+  .bracketed{position:relative;padding:28px 30px;}
+  .bracketed::before,.bracketed::after,
+  .bracketed .bl,.bracketed .br{
+    content:"";position:absolute;width:16px;height:16px;
+    border-color:var(--amber);
+    border-style:solid;border-width:0;
+    opacity:0.55;
+  }
+  .bracketed::before{top:0;left:0;border-top-width:2px;border-left-width:2px;}
+  .bracketed::after{top:0;right:0;border-top-width:2px;border-right-width:2px;}
+  .bracketed .bl{position:absolute;bottom:0;left:0;width:16px;height:16px;border-bottom:2px solid var(--amber);border-left:2px solid var(--amber);opacity:0.55;}
+  .bracketed .br{position:absolute;bottom:0;right:0;width:16px;height:16px;border-bottom:2px solid var(--amber);border-right:2px solid var(--amber);opacity:0.55;}
+
+  /* section depth — subtle alternating glow zones so sections aren't visually flat/identical */
+  #work{background:radial-gradient(ellipse 900px 500px at 15% 0%, rgba(91,141,239,0.07), transparent 60%);}
+  #projects{background:radial-gradient(ellipse 1000px 600px at 85% 20%, rgba(242,169,59,0.05), transparent 55%);}
+  #live{background:radial-gradient(ellipse 900px 500px at 10% 80%, rgba(94,234,212,0.05), transparent 55%);}
+  #contact{background:radial-gradient(ellipse 800px 500px at 50% 50%, rgba(91,141,239,0.09), transparent 60%), var(--ink-panel);}
+
+  /* circuit-trace section marker — ties every section header to the same visual language */
+  .section-tag{position:relative;padding-left:22px;}
+  .section-tag::before{
+    content:"";position:absolute;left:0;top:50%;transform:translateY(-50%);
+    width:10px;height:10px;border:2px solid var(--amber);border-radius:50%;
+    background:var(--ink);
+  }
+  .section-tag::after{
+    content:"";position:absolute;left:4px;top:calc(50% + 7px);
+    width:2px;height:22px;background:linear-gradient(var(--amber), transparent);
+    opacity:0.5;
+  }
+
+  /* case study running index */
+  .case-index{
+    font-family:var(--font-mono);font-size:11px;color:var(--amber);
+    letter-spacing:0.08em;margin-bottom:10px;opacity:0.8;
+  }
+
+  /* elevate flat elements with resting depth, not just on hover */
+  .card, .proj-card{ box-shadow:0 1px 0 rgba(255,255,255,0.02) inset, 0 8px 20px rgba(0,0,0,0.18); }
+  .case.bracketed{ background:linear-gradient(180deg, rgba(91,141,239,0.025), transparent 40%); border-radius:2px; padding:36px 32px; }
+  .stats.bracketed{ background:linear-gradient(180deg, rgba(242,169,59,0.03), transparent 50%); padding:34px 12px; }
+  .contact-inner.bracketed{ padding:48px 40px; }
+  @media (max-width:760px){ .case.bracketed, .contact-inner.bracketed{ padding:26px 20px; } }
+
+  /* header gains depth once page has scrolled */
+  header.scrolled{ box-shadow:0 8px 24px rgba(0,0,0,0.28); background:rgba(12,27,51,0.92); }
+
+  /* hero vignette for depth behind headline */
+  #hero::before{
+    content:"";position:absolute;top:-10%;left:-10%;width:60%;height:80%;
+    background:radial-gradient(circle, rgba(91,141,239,0.10), transparent 65%);
+    pointer-events:none;z-index:0;
+  }
+  #hero .hero-grid{position:relative;z-index:1;}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    backdrop-filter:blur(10px);
+    background:rgba(12,27,51,0.72);
+    border-bottom:1px solid rgba(120,160,220,0.14);
+    transition:box-shadow .3s ease, background .3s ease;
+  }
+  nav.wrap{display:flex;align-items:center;justify-content:space-between;height:68px;}
+  .logo{font-family:var(--font-mono);font-size:15px;letter-spacing:0.02em;color:var(--paper);text-decoration:none;}
+  .logo span{color:var(--amber);}
+  nav ul{list-style:none;display:flex;gap:32px;font-family:var(--font-mono);font-size:13px;letter-spacing:0.03em;}
+  nav ul a{text-decoration:none;color:var(--paper-dim);transition:color .2s;}
+  nav ul a:hover{color:var(--paper);}
+  .nav-cta{
+    font-family:var(--font-mono);font-size:13px;
+    border:1px solid var(--amber);color:var(--amber);
+    padding:8px 16px;text-decoration:none;letter-spacing:0.03em;
+    transition:background .2s,color .2s;
+  }
+  .nav-cta:hover{background:var(--amber);color:var(--ink);}
+  .nav-links{display:flex;align-items:center;gap:32px;}
+  @media (max-width:760px){ nav ul{display:none;} }
+
+  /* ---------- HERO (ATTENTION) ---------- */
+  #hero{
+    min-height:100svh;display:flex;align-items:center;
+    padding-top:110px;padding-bottom:60px;position:relative;overflow:hidden;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:center;}
+  @media (max-width:900px){ .hero-grid{grid-template-columns:1fr;} }
+  .eyebrow{
+    font-family:var(--font-mono);font-size:13px;letter-spacing:0.08em;
+    color:var(--teal);text-transform:uppercase;margin-bottom:20px;
+    display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:8px;height:8px;background:var(--teal);border-radius:50%;
+    box-shadow:0 0 0 0 rgba(94,234,212,0.5);animation:pulse-dot 2s infinite;}
+  @keyframes pulse-dot{
+    0%{box-shadow:0 0 0 0 rgba(94,234,212,0.5);}
+    70%{box-shadow:0 0 0 8px rgba(94,234,212,0);}
+    100%{box-shadow:0 0 0 0 rgba(94,234,212,0);}
+  }
+  h1{
+    font-family:var(--font-display);font-weight:700;
+    font-size:clamp(34px,5vw,58px);line-height:1.08;letter-spacing:-0.01em;
+    margin-bottom:22px;
+  }
+  h1 .accent{color:var(--amber);}
+  .hero-sub{font-size:18px;color:var(--paper-dim);max-width:46ch;margin-bottom:34px;}
+  .cta-row{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn{
+    font-family:var(--font-mono);font-size:14px;letter-spacing:0.02em;
+    padding:14px 26px;text-decoration:none;display:inline-block;
+    transition:transform .18s ease, background .2s, color .2s, border-color .2s;
+  }
+  .btn-primary{background:var(--amber);color:var(--ink);font-weight:500;}
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-ghost{border:1px solid var(--line-blue-soft);color:var(--paper);}
+  .btn-ghost:hover{border-color:var(--paper);transform:translateY(-2px);}
+
+  /* schematic diagram */
+  .schematic{position:relative;height:420px;}
+  .schematic svg{width:100%;height:100%;}
+  .node-label{
+    font-family:var(--font-mono);font-size:11px;fill:var(--paper-dim);letter-spacing:0.04em;
+  }
+  .node-circle{fill:var(--ink-panel);stroke:var(--line-blue);stroke-width:1.5;}
+  .node-circle.active{stroke:var(--amber);}
+  .schem-path{
+    fill:none;stroke:var(--line-blue);stroke-width:1.5;
+    stroke-dasharray:400;stroke-dashoffset:400;
+    animation:draw 2.2s ease forwards;
+  }
+  .schem-path.delay1{animation-delay:.3s;}
+  .schem-path.delay2{animation-delay:.6s;}
+  .schem-path.delay3{animation-delay:.9s;}
+  @keyframes draw{to{stroke-dashoffset:0;}}
+  .packet{fill:var(--amber);}
+  .packet-path{offset-rotate:0deg;}
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:110px 0;position:relative;}
+  .section-head{margin-bottom:56px;max-width:640px;}
+  .section-tag{
+    font-family:var(--font-mono);font-size:13px;color:var(--amber);
+    letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;display:block;
+  }
+  h2{font-family:var(--font-display);font-size:clamp(26px,3.4vw,38px);font-weight:600;margin-bottom:16px;}
+  .section-desc{color:var(--paper-dim);font-size:16px;max-width:56ch;}
+
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  /* ---------- INTEREST: capability cards ---------- */
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(120,160,220,0.14);border:1px solid rgba(120,160,220,0.14);}
+  .cards.cards-3{grid-template-columns:repeat(3,1fr);}
+  @media (max-width:900px){ .cards{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:560px){ .cards{grid-template-columns:1fr;} }
+  .card{background:var(--ink);padding:32px 26px;transition:background .25s;}
+  .card:hover{background:var(--ink-panel);}
+  .card-num{font-family:var(--font-mono);font-size:12px;color:var(--line-blue);margin-bottom:18px;letter-spacing:0.05em;}
+  .card h3{font-family:var(--font-display);font-size:19px;font-weight:600;margin-bottom:10px;}
+  .card p{font-size:14.5px;color:var(--paper-dim);}
+
+  /* ---------- DESIRE: case studies ---------- */
+  .case{
+    display:grid;grid-template-columns:280px 1fr;gap:44px;
+    padding:44px 0;border-top:1px solid rgba(120,160,220,0.14);
+  }
+  .case:last-child{border-bottom:1px solid rgba(120,160,220,0.14);}
+  @media (max-width:760px){ .case{grid-template-columns:1fr;gap:18px;} }
+  .case-meta{font-family:var(--font-mono);}
+  .case-meta .co{font-size:13px;color:var(--amber);letter-spacing:0.04em;text-transform:uppercase;margin-bottom:8px;}
+  .case-meta h3{font-family:var(--font-display);font-size:22px;font-weight:600;color:var(--paper);margin-bottom:14px;}
+  .stack-tags{display:flex;flex-wrap:wrap;gap:6px;}
+  .tag{font-family:var(--font-mono);font-size:11px;color:var(--paper-dim);border:1px solid rgba(120,160,220,0.25);padding:3px 8px;}
+  .case-body p{color:var(--paper-dim);margin-bottom:14px;font-size:15px;}
+  .case-body strong{color:var(--paper);font-weight:600;}
+  .case-body .label{font-family:var(--font-mono);font-size:11px;color:var(--teal);text-transform:uppercase;letter-spacing:0.06em;display:block;margin-bottom:5px;}
+  .case-link{
+    font-family:var(--font-mono);font-size:13px;color:var(--amber);text-decoration:none;
+    display:inline-flex;align-items:center;gap:6px;margin-top:4px;
+    border-bottom:1px solid transparent;transition:border-color .2s;
+  }
+  .case-link:hover{border-bottom-color:var(--amber);}
+  .case-link::after{content:"→";transition:transform .2s;display:inline-block;}
+  .case-link:hover::after{transform:translateX(4px);}
+
+  /* ---------- interactive schematic nodes ---------- */
+  .node-group{cursor:pointer;}
+  .node-group .node-circle{transition:stroke .2s, filter .2s;}
+  .node-group:hover .node-circle{stroke:var(--amber);filter:drop-shadow(0 0 6px rgba(242,169,59,0.5));}
+  .schem-tip{
+    position:absolute;pointer-events:none;z-index:5;
+    background:var(--ink-panel);border:1px solid var(--line-blue-soft);
+    font-family:var(--font-mono);font-size:12px;color:var(--paper);
+    padding:10px 14px;max-width:230px;line-height:1.5;
+    opacity:0;transform:translateY(6px);transition:opacity .2s, transform .2s;
+  }
+  .schem-tip.show{opacity:1;transform:translateY(0);}
+  .schem-tip .tip-title{color:var(--amber);display:block;margin-bottom:3px;}
+
+  /* ---------- lane filter ---------- */
+  .lane-filter{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:14px;}
+  .lane-chip{
+    font-family:var(--font-mono);font-size:13px;letter-spacing:0.02em;
+    background:none;border:1px solid rgba(120,160,220,0.25);color:var(--paper-dim);
+    padding:9px 18px;cursor:pointer;transition:all .2s ease;border-radius:2px;
+  }
+  .lane-chip:hover{border-color:var(--paper-dim);color:var(--paper);}
+  .lane-chip.active{background:var(--amber);border-color:var(--amber);color:var(--ink);font-weight:500;}
+  .lane-count{opacity:0.7;font-size:11px;}
+  .lane-status{font-family:var(--font-mono);font-size:12px;color:var(--paper-dim);margin-bottom:8px;}
+  .case{transition:opacity .35s ease, max-height .35s ease, transform .35s ease;}
+  .case.lane-hidden{
+    display:none;
+  }
+  .case.lane-match{
+    border-left:2px solid var(--amber);
+  }
+
+  /* ---------- full-screen contact overlay ---------- */
+  .contact-overlay{
+    position:fixed;inset:0;z-index:150;
+    visibility:hidden;opacity:0;transition:opacity .35s ease, visibility 0s linear .35s;
+  }
+  .contact-overlay.open{ visibility:visible;opacity:1;transition:opacity .35s ease; }
+  .overlay-backdrop{
+    position:absolute;inset:0;background:rgba(6,13,26,0.88);backdrop-filter:blur(6px);
+  }
+  .overlay-panel{
+    position:relative;max-width:640px;margin:0 auto;height:100%;
+    display:flex;flex-direction:column;justify-content:center;
+    padding:40px 28px;
+    transform:translateY(24px);transition:transform .4s ease;
+  }
+  .contact-overlay.open .overlay-panel{ transform:translateY(0); }
+  .overlay-panel h2{
+    font-family:var(--font-display);font-size:clamp(36px,6vw,64px);font-weight:700;
+    line-height:1.05;margin:18px 0 40px;color:var(--paper);
+  }
+  .overlay-close{
+    position:absolute;top:28px;right:28px;background:none;border:1px solid rgba(120,160,220,0.3);
+    color:var(--paper);width:40px;height:40px;font-size:16px;cursor:pointer;
+    transition:border-color .2s, transform .2s;
+  }
+  .overlay-close:hover{ border-color:var(--amber);transform:rotate(90deg); }
+  .overlay-links{display:flex;flex-direction:column;border-top:1px solid rgba(120,160,220,0.18);}
+  .overlay-link{
+    display:flex;justify-content:space-between;align-items:baseline;
+    padding:20px 4px;border-bottom:1px solid rgba(120,160,220,0.18);
+    text-decoration:none;color:var(--paper-dim);transition:padding-left .2s ease, color .2s ease;
+  }
+  .overlay-link:hover{ padding-left:14px;color:var(--paper); }
+  .overlay-link span{ font-family:var(--font-mono);font-size:13px;text-transform:uppercase;letter-spacing:0.06em; }
+  .overlay-link strong{ font-family:var(--font-display);font-size:18px;font-weight:500;color:inherit; }
+  .overlay-note{ margin-top:28px;color:var(--paper-dim);font-size:14px;max-width:48ch; }
+
+  .talk-fab{
+    position:fixed;bottom:26px;right:26px;z-index:60;
+    font-family:var(--font-mono);font-size:13px;letter-spacing:0.03em;
+    background:var(--amber);color:var(--ink);border:none;
+    padding:14px 22px;display:flex;align-items:center;gap:9px;
+    cursor:pointer;box-shadow:0 8px 24px rgba(242,169,59,0.25);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .talk-fab:hover{ transform:translateY(-3px);box-shadow:0 12px 30px rgba(242,169,59,0.35); }
+  .talk-fab-dot{ width:7px;height:7px;border-radius:50%;background:var(--ink); }
+  @media (max-width:600px){ .talk-fab span{ display:none; } .talk-fab{ padding:14px; } }
+  .marquee-band{
+    overflow:hidden;border-top:1px solid rgba(120,160,220,0.14);border-bottom:1px solid rgba(120,160,220,0.14);
+    background:var(--ink-panel);padding:16px 0;
+  }
+  .marquee-track{
+    display:flex;align-items:center;gap:18px;white-space:nowrap;width:max-content;
+    font-family:var(--font-mono);font-size:14px;letter-spacing:0.06em;color:var(--paper-dim);
+    animation:marquee-scroll 32s linear infinite;
+  }
+  .marquee-track .dot{color:var(--amber);font-size:8px;}
+  .marquee-band:hover .marquee-track{ animation-play-state:paused; }
+  @keyframes marquee-scroll{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .marquee-track{ animation:none; }
+  }
+  @media (hover: hover) and (pointer: fine){
+    body.custom-cursor-on, body.custom-cursor-on *{ cursor:none !important; }
+  }
+  #cursorDot, #cursorRing{
+    position:fixed;top:0;left:0;pointer-events:none;z-index:200;
+    border-radius:50%;transform:translate(-50%,-50%);
+  }
+  #cursorDot{
+    width:5px;height:5px;background:var(--amber);
+    transition:opacity .2s ease;
+  }
+  #cursorRing{
+    width:34px;height:34px;border:1px solid var(--line-blue);
+    transition:width .18s ease, height .18s ease, border-color .18s ease, opacity .2s ease, background .18s ease;
+    opacity:0.8;
+  }
+  #cursorRing.grow{ width:56px;height:56px;border-color:var(--amber);background:rgba(242,169,59,0.08); }
+  #cursorRing.hide, #cursorDot.hide{ opacity:0; }
+
+  .trust-bar{padding:34px 0 54px;border-top:1px solid rgba(120,160,220,0.12);}
+  .trust-label{
+    font-family:var(--font-mono);font-size:12px;color:var(--paper-dim);
+    text-align:center;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:22px;
+  }
+  .trust-row{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;}
+  .wordmark{
+    font-family:var(--font-mono);font-size:14px;letter-spacing:0.03em;
+    color:var(--paper-dim);text-decoration:none;
+    border:1px solid rgba(120,160,220,0.22);padding:12px 20px;
+    display:inline-flex;align-items:center;gap:8px;
+    transition:all .2s ease;
+  }
+  .wordmark:hover{border-color:var(--amber);color:var(--paper);transform:translateY(-2px);}
+  .wordmark .ext{font-size:11px;opacity:0.6;transition:transform .2s ease;}
+  .wordmark:hover .ext{transform:translate(2px,-2px);opacity:1;}
+  .wordmark.muted{opacity:0.55;cursor:default;}
+  .wordmark.muted:hover{border-color:rgba(120,160,220,0.22);transform:none;color:var(--paper-dim);}
+
+  /* flash highlight when a case study is jumped to via wordmark/anchor */
+  .case.flash-target{ animation:flash-highlight 1.6s ease; }
+  @keyframes flash-highlight{
+    0%{ box-shadow:0 0 0 2px var(--amber), 0 0 30px rgba(242,169,59,0.25); }
+    100%{ box-shadow:0 0 0 0 rgba(242,169,59,0); }
+  }
+  .stack-explorer{border:1px solid rgba(120,160,220,0.14);margin-top:60px;}
+  .stack-tabs{display:flex;border-bottom:1px solid rgba(120,160,220,0.14);flex-wrap:wrap;}
+  .stack-tab{
+    font-family:var(--font-mono);font-size:13px;letter-spacing:0.03em;
+    background:none;border:none;color:var(--paper-dim);cursor:pointer;
+    padding:16px 24px;border-right:1px solid rgba(120,160,220,0.14);
+    transition:color .2s, background .2s;
+  }
+  .stack-tab:hover{color:var(--paper);}
+  .stack-tab.active{color:var(--amber);background:var(--ink-panel);}
+  .stack-panel{display:none;padding:28px;background:var(--ink-panel);}
+  .stack-panel.active{display:block;animation:panelIn .35s ease;}
+  @keyframes panelIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+  .stack-panel .terminal-line{font-family:var(--font-mono);font-size:14px;color:var(--paper-dim);margin-bottom:10px;}
+  .stack-panel .terminal-line .prompt{color:var(--teal);}
+  .stack-panel .terminal-line .cmd{color:var(--paper);}
+  .stack-panel .terminal-line .out{color:var(--paper-dim);}
+
+  /* ---------- project showcase grid ---------- */
+  .proj-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:20px;margin-top:20px;}
+  @media (max-width:900px){ .proj-grid{grid-template-columns:1fr;} }
+  .proj-card{
+    border:1px solid rgba(120,160,220,0.2);background:var(--ink-panel);
+    padding:28px;text-decoration:none;display:flex;flex-direction:column;gap:14px;
+    position:relative;overflow:hidden;
+    transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+  }
+  .proj-card:hover{transform:translateY(-6px);border-color:var(--amber);box-shadow:0 12px 32px rgba(0,0,0,0.35);}
+  .proj-card .proj-status{
+    font-family:var(--font-mono);font-size:11px;letter-spacing:0.06em;
+    display:flex;align-items:center;gap:7px;color:var(--teal);text-transform:uppercase;
+  }
+  .proj-card .proj-status::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--teal);
+    box-shadow:0 0 0 0 rgba(94,234,212,0.5);animation:pulse-dot 2s infinite;}
+  .proj-card h3{font-family:var(--font-display);font-size:20px;color:var(--paper);font-weight:600;}
+  .proj-card p{font-size:14px;color:var(--paper-dim);flex-grow:1;}
+  .proj-card .proj-url{font-family:var(--font-mono);font-size:13px;color:var(--amber);display:flex;align-items:center;gap:6px;}
+  .proj-card .proj-url::after{content:"↗";transition:transform .2s;}
+  .proj-card:hover .proj-url::after{transform:translate(3px,-3px);}
+  .proj-card .scan{
+    position:absolute;top:0;left:-100%;width:60%;height:1.5px;
+    background:linear-gradient(90deg,transparent,var(--amber),transparent);
+    transition:left .6s ease;
+  }
+  .proj-card:hover .scan{left:120%;}
+
+  /* stat strip */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(120,160,220,0.14);border:1px solid rgba(120,160,220,0.14);margin-top:60px;}
+  @media (max-width:700px){ .stats{grid-template-columns:repeat(2,1fr);} }
+  .stat{background:var(--ink);padding:30px 20px;text-align:center;}
+  .stat .num{font-family:var(--font-display);font-size:clamp(28px,4vw,40px);font-weight:700;color:var(--amber);}
+  .stat .lbl{font-family:var(--font-mono);font-size:12px;color:var(--paper-dim);margin-top:6px;letter-spacing:0.02em;}
+
+  /* ---------- ACTION: contact ---------- */
+  #contact{background:var(--ink-panel);border-top:1px solid rgba(120,160,220,0.14);border-bottom:1px solid rgba(120,160,220,0.14);}
+  .contact-inner{text-align:center;max-width:640px;margin:0 auto;}
+  .contact-inner h2{margin-bottom:18px;}
+  .contact-inner p{color:var(--paper-dim);font-size:16px;margin-bottom:36px;}
+  .contact-row{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:40px;}
+  .badge-row{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;font-family:var(--font-mono);font-size:12px;color:var(--paper-dim);}
+  .badge-row span{border:1px solid rgba(120,160,220,0.2);padding:5px 12px;}
+
+  /* ---------- scroll progress bar ---------- */
+  #scrollProgress{
+    position:fixed;top:0;left:0;height:2.5px;width:0%;
+    background:linear-gradient(90deg, var(--line-blue), var(--amber));
+    z-index:100;transition:width .1s linear;
+    box-shadow:0 0 8px rgba(242,169,59,0.6);
+  }
+
+  /* ---------- cursor spotlight ---------- */
+  #spotlight{
+    position:fixed;inset:0;pointer-events:none;z-index:1;
+    background:radial-gradient(600px circle at var(--sx,50%) var(--sy,50%), rgba(91,141,239,0.08), transparent 70%);
+    transition:background .15s ease;
+  }
+  body > *:not(#spotlight):not(#scrollProgress):not(header):not(#cursorDot):not(#cursorRing):not(#contactOverlay):not(#talkFab){ position:relative; z-index:2; }
+  header{ z-index:50; }
+
+  /* ---------- shimmer accent ---------- */
+  h1 .accent{
+    background:linear-gradient(100deg, var(--amber) 30%, #ffd591 42%, var(--amber) 54%);
+    background-size:250% 100%;
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    animation:shimmer 5s ease-in-out infinite;
+  }
+  @keyframes shimmer{
+    0%,100%{ background-position:200% 0; }
+    50%{ background-position:0% 0; }
+  }
+
+  /* ---------- magnetic tilt cards ---------- */
+  .proj-card, .card{ transform-style:preserve-3d; will-change:transform; }
+
+  /* ---------- staggered reveal ---------- */
+  .cards.reveal .card, .cards-3.reveal .card, .proj-grid.reveal .proj-card{
+    transition-delay:calc(var(--i, 0) * 90ms);
+  }
+
+  /* ---------- nav underline ---------- */
+  nav ul a{ position:relative; }
+  nav ul a::after{
+    content:"";position:absolute;left:0;bottom:-4px;width:0;height:1px;
+    background:var(--amber);transition:width .25s ease;
+  }
+  nav ul a:hover::after{ width:100%; }
+
+  /* ---------- button glow pulse ---------- */
+  .btn-primary{ position:relative; }
+  .btn-primary::after{
+    content:"";position:absolute;inset:0;border-radius:inherit;
+    box-shadow:0 0 0 0 rgba(242,169,59,0.45);
+    animation:btn-pulse 2.8s ease-out infinite;
+    pointer-events:none;
+  }
+  @keyframes btn-pulse{
+    0%{ box-shadow:0 0 0 0 rgba(242,169,59,0.35); }
+    70%{ box-shadow:0 0 0 14px rgba(242,169,59,0); }
+    100%{ box-shadow:0 0 0 0 rgba(242,169,59,0); }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    h1 .accent{ animation:none; background:none; -webkit-text-fill-color:var(--amber); color:var(--amber); }
+    .btn-primary::after{ animation:none; }
+    #spotlight{ display:none; }
+  }
+
+  footer{padding:36px 0;text-align:center;font-family:var(--font-mono);font-size:12px;color:var(--paper-dim);}
+  footer a{color:var(--teal);text-decoration:none;}
+</style>
+</head>
+<body>
+
+<div id="scrollProgress"></div>
+<div id="spotlight"></div>
+<div id="cursorDot"></div>
+<div id="cursorRing"></div>
+
+<!-- GTM noscript fallback -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<header>
+  <nav class="wrap">
+    <a href="#hero" class="logo">RUSUMBA<span>.</span>BUKANGA</a>
+    <div class="nav-links">
+      <ul>
+        <li><a href="#work">What I Build</a></li>
+        <li><a href="#projects">Case Studies</a></li>
+        <li><a href="#live">Live Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta" onclick="trackCTA('nav_cta')">Get in touch</a>
+    </div>
+  </nav>
+</header>
+
+<!-- ===================== ATTENTION ===================== -->
+<section id="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Johannesburg, South Africa — <span id="liveClock">--:--:--</span> SAST — Available for select engagements</div>
+      <h1>I build the systems companies trust with <span class="accent">money, students, and members.</span></h1>
+      <p class="hero-sub">Full stack developer and CTO working across InsurTech, EdTech, and AI — from centralized authentication infrastructure to production LLM products, for Cleverly AI, 123tutors, and Alpha Group.</p>
+      <div class="cta-row">
+        <a href="#projects" class="btn btn-primary" onclick="trackCTA('view_work')">View my work</a>
+        <a href="/Rusumba_Bukanga_2026_CV_1Page.pdf" class="btn btn-ghost" onclick="trackCTA('download_cv')">Download CV</a>
+      </div>
+    </div>
+    <div class="schematic" role="img" aria-label="System schematic: client apps connect through an SSO gateway to Cognito, an AI engine on Bedrock, a claims database, and a billing ledger">
+      <div class="schem-tip" id="schemTip"><span class="tip-title"></span><span class="tip-body"></span></div>
+      <svg viewBox="0 0 360 420">
+        <path class="schem-path" d="M60,80 L60,170" />
+        <path class="schem-path delay1" d="M60,170 L180,170" />
+        <path class="schem-path delay1" d="M180,170 L300,110" />
+        <path class="schem-path delay2" d="M180,170 L180,280" />
+        <path class="schem-path delay2" d="M180,170 L300,230" />
+        <path class="schem-path delay3" d="M180,280 L60,340" />
+        <path class="schem-path delay3" d="M180,280 L300,340" />
+
+        <g class="node-group" data-title="Client Apps" data-body="Web + mobile frontends across insurance, hospitality, fitness, and education products.">
+          <circle class="node-circle" cx="60" cy="80" r="26"></circle>
+          <text class="node-label" x="60" y="46" text-anchor="middle">CLIENT</text>
+        </g>
+
+        <g class="node-group" data-title="SSO Gateway" data-body="Centralized OAuth2/PKCE auth gateway I built serving every app in the Alpha ecosystem. Click to view the case study.">
+          <circle class="node-circle active" cx="180" cy="170" r="30"></circle>
+          <text class="node-label" x="180" y="212" text-anchor="middle">SSO GATEWAY</text>
+        </g>
+
+        <g class="node-group" data-title="AWS Cognito" data-body="Identity pools + KMS-signed JWTs for secure, verifiable session tokens. Click to view the case study.">
+          <circle class="node-circle" cx="300" cy="110" r="24"></circle>
+          <text class="node-label" x="300" y="80" text-anchor="middle">COGNITO</text>
+        </g>
+
+        <g class="node-group" data-title="AI Engine" data-body="LLM-powered grading and tutoring features — prompt engineering, RAG, OCR pipelines. Click to view the case study.">
+          <circle class="node-circle" cx="180" cy="280" r="26"></circle>
+          <text class="node-label" x="180" y="322" text-anchor="middle">AI ENGINE</text>
+        </g>
+
+        <g class="node-group" data-title="AWS Bedrock" data-body="Cloud-native Claude access powering the 123tutors AI Tutor in production. Click to view the case study.">
+          <circle class="node-circle" cx="300" cy="230" r="22"></circle>
+          <text class="node-label" x="300" y="200" text-anchor="middle">BEDROCK</text>
+        </g>
+
+        <g class="node-group" data-title="Claims DB" data-body="Underwriting + claims data behind Alpha Insure's CRM and policy systems. Click to view the case study.">
+          <circle class="node-circle" cx="60" cy="340" r="22"></circle>
+          <text class="node-label" x="60" y="372" text-anchor="middle">CLAIMS DB</text>
+        </g>
+
+        <g class="node-group" data-title="Ledger" data-body="Automated debit order billing + bank reconciliation on Lambda, EventBridge, S3, SES/SNS. Click to view the case study.">
+          <circle class="node-circle" cx="300" cy="340" r="22"></circle>
+          <text class="node-label" x="300" y="372" text-anchor="middle">LEDGER</text>
+        </g>
+
+        <circle class="packet" r="3.5">
+          <animateMotion dur="2.6s" repeatCount="indefinite" path="M60,80 L60,170 L180,170 L300,110" />
+        </circle>
+        <circle class="packet" r="3.5">
+          <animateMotion dur="3.1s" begin="0.8s" repeatCount="indefinite" path="M180,170 L180,280 L300,340" />
+        </circle>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TRUST BAR ===================== -->
+<div class="trust-bar">
+  <div class="wrap">
+    <p class="trust-label">Companies &amp; ventures I've built for</p>
+    <div class="trust-row">
+      <a class="wordmark" href="https://cleverly.co.za" target="_blank" rel="noopener" onclick="trackCTA('wordmark_cleverly')">CLEVERLY AI <span class="ext">↗</span></a>
+      <a class="wordmark" href="https://123tutors.co.za" target="_blank" rel="noopener" onclick="trackCTA('wordmark_123tutors')">123TUTORS <span class="ext">↗</span></a>
+      <a class="wordmark" href="#case-alpha-ops" onclick="trackCTA('wordmark_alpha')">ALPHA INSURE</a>
+      <a class="wordmark" href="#case-akur8" onclick="trackCTA('wordmark_akur8')">AKUR8</a>
+      <a class="wordmark" href="#case-alpha-ops" onclick="trackCTA('wordmark_11thfloor')">THE 11TH FLOOR</a>
+      <a class="wordmark" href="#case-alpha-ops" onclick="trackCTA('wordmark_bag')">BODY ACTION GYM</a>
+      <a class="wordmark" href="#case-utap" onclick="trackCTA('wordmark_utap')">uTAP</a>
+      <a class="wordmark" href="https://github.com/cicology/friends-of-cinema" target="_blank" rel="noopener" onclick="trackCTA('wordmark_friendsofcinema')">FRIENDS OF CINEMA <span class="ext">↗</span></a>
+      <span class="wordmark muted">REFLEX SOLUTIONS</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== INTEREST ===================== -->
+<section id="work">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-tag">What I build</span>
+      <h2>Four disciplines, one habit: shipping things that hold up in production.</h2>
+      <p class="section-desc">I don't specialize by staying in one lane — I specialize by making sure the AI layer, the auth layer, and the business logic all actually work together under real load.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="cards reveal">
+      <div class="card">
+        <div class="card-num">01</div>
+        <h3>AI Engineering</h3>
+        <p>LLM integration (Claude, AWS Bedrock), prompt engineering, RAG, and OCR pipelines shipped in two live products.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">02</div>
+        <h3>Identity &amp; Platform Infrastructure</h3>
+        <p>Centralized SSO gateways built on OAuth2/PKCE, AWS Cognito, and KMS-signed JWTs serving multi-app ecosystems.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">03</div>
+        <h3>InsurTech &amp; FinTech Systems</h3>
+        <p>Underwriting, claims, broker management, and policy portals handling regulated, sensitive financial data.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">04</div>
+        <h3>Applied Security</h3>
+        <p>Hands-on offensive security practice with Kali Linux, and internal audits that close real production risk.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DESIRE ===================== -->
+<div class="marquee-band">
+  <div class="marquee-track">
+    <span>FULL STACK DEVELOPMENT</span><span class="dot">●</span>
+    <span>AI ENGINEERING</span><span class="dot">●</span>
+    <span>AWS &amp; CLOUD INFRASTRUCTURE</span><span class="dot">●</span>
+    <span>SSO &amp; IDENTITY SYSTEMS</span><span class="dot">●</span>
+    <span>INSURTECH &amp; FINTECH</span><span class="dot">●</span>
+    <span>APPLICATION SECURITY</span><span class="dot">●</span>
+    <span>FULL STACK DEVELOPMENT</span><span class="dot">●</span>
+    <span>AI ENGINEERING</span><span class="dot">●</span>
+    <span>AWS &amp; CLOUD INFRASTRUCTURE</span><span class="dot">●</span>
+    <span>SSO &amp; IDENTITY SYSTEMS</span><span class="dot">●</span>
+    <span>INSURTECH &amp; FINTECH</span><span class="dot">●</span>
+    <span>APPLICATION SECURITY</span><span class="dot">●</span>
+  </div>
+</div>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-tag">Case studies</span>
+      <h2>A few systems I've taken from problem to production.</h2>
+      <p class="section-desc">Not a list of technologies — a record of what each build actually had to solve.</p>
+    </div>
+
+    <div class="lane-filter reveal" role="tablist" aria-label="Filter case studies by focus area">
+      <button class="lane-chip active" data-lane="all">All Work <span class="lane-count"></span></button>
+      <button class="lane-chip" data-lane="ai">AI Engineering</button>
+      <button class="lane-chip" data-lane="platform">Platform &amp; Identity</button>
+      <button class="lane-chip" data-lane="insurtech">InsurTech &amp; FinTech</button>
+      <button class="lane-chip" data-lane="leadership">Leadership &amp; Cofounding</button>
+    </div>
+    <p class="lane-status" id="laneStatus" aria-live="polite"></p>
+
+    <div class="case reveal bracketed" data-lanes="ai">
+        <span class="bl"></span><span class="br"></span>
+      <div class="case-meta">
+        <span class="case-index">CASE 01 / 10</span>
+        <div class="co">Cleverly AI</div>
+        <h3>AI-assisted grading, built to be trusted by teachers</h3>
+        <div class="stack-tags">
+          <span class="tag">Next.js</span><span class="tag">Claude</span><span class="tag">RAG</span><span class="tag">Supabase</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <span class="label">The problem</span>
+        <p>Manual grading doesn't scale for South African schools and colleges, but AI grading no one can verify doesn't get trusted.</p>
+        <span class="label">What I built</span>
+        <p>A full-stack platform with a <strong>vendor-neutral AI provider layer</strong> for rubric-aligned, evidence-linked grading with teacher-in-the-loop review — plus a tiered OCR pipeline balancing cost against handwriting-recognition accuracy.</p>
+        <span class="label">Where it stands</span>
+        <p>Live in pilot with South African educational institutions, with prompt caching and model tiering keeping unit economics sustainable at scale.</p>
+        <a class="case-link" href="https://cleverly.co.za" target="_blank" rel="noopener" onclick="trackCTA('visit_cleverly')">Visit cleverly.co.za</a>
+      </div>
+    </div>
+
+    <div class="case reveal bracketed" data-lanes="platform">
+        <span class="bl"></span><span class="br"></span>
+      <div class="case-meta">
+        <span class="case-index">CASE 02 / 10</span>
+        <div class="co">Alpha Group</div>
+        <h3>One login, every app in the business</h3>
+        <div class="stack-tags">
+          <span class="tag">AWS Lambda</span><span class="tag">Cognito</span><span class="tag">KMS</span><span class="tag">OAuth2/PKCE</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <span class="label">The problem</span>
+        <p>An insurance company, a restaurant, and a gym — three completely different products, each needing secure, independent logins that still had to be centrally managed.</p>
+        <span class="label">What I architected &amp; built</span>
+        <p>Working with the Alpha engineering team, architected and helped build a centralized SSO authentication gateway serving every application across the organization's ecosystem, on AWS Lambda, API Gateway, Cognito, DynamoDB, and KMS-signed JWTs.</p>
+        <span class="label">Where it stands</span>
+        <p>In production, underpinning underwriting, client-facing, and internal HR systems across the group.</p>
+      </div>
+    </div>
+
+    <div class="case reveal bracketed" data-lanes="ai platform">
+        <span class="bl"></span><span class="br"></span>
+      <div class="case-meta">
+        <span class="case-index">CASE 03 / 10</span>
+        <div class="co">123tutors</div>
+        <h3>A platform migration and an AI tutor, at the same time</h3>
+        <div class="stack-tags">
+          <span class="tag">TypeScript</span><span class="tag">Prisma</span><span class="tag">Bedrock</span><span class="tag">Vercel</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <span class="label">The problem</span>
+        <p>A tutor-matching platform outgrowing its no-code foundation, while students needed more support than the tutor roster alone could give.</p>
+        <span class="label">What I built</span>
+        <p>Returned as CTO to lead a full migration from Bubble to Next.js/TypeScript on Prisma and Supabase, alongside a <strong>Claude-powered AI Tutor</strong> (via AWS Bedrock) with real-time streaming chat, intent classification, and generated interactive mindmaps.</p>
+        <span class="label">Where it stands</span>
+        <p>Migration live, AI Tutor shipped, technical roadmap now extending into the platform's matching engine.</p>
+        <a class="case-link" href="https://123tutors.co.za" target="_blank" rel="noopener" onclick="trackCTA('visit_123tutors')">Visit 123tutors.co.za</a>
+      </div>
+    </div>
+
+    <div class="case reveal bracketed" id="case-alpha-ops" data-lanes="insurtech platform">
+        <span class="bl"></span><span class="br"></span>
+      <div class="case-meta">
+        <span class="case-index">CASE 04 / 10</span>
+        <div class="co">Alpha Group</div>
+        <h3>The operations layer: billing, brokers, bookings, and HR</h3>
+        <div class="stack-tags">
+          <span class="tag">React/Node</span><span class="tag">Lambda</span><span class="tag">EventBridge</span><span class="tag">SES/SNS</span><span class="tag">MS Graph</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <span class="label">The problem</span>
+        <p>Three very different businesses — insurance, hospitality, fitness — each running on manual processes that didn't scale: paper-heavy underwriting, phone-in reservations, and monthly billing done by hand.</p>
+        <span class="label">What I architected, built &amp; collaborated on</span>
+        <p>Working with the Alpha engineering team across all four businesses: for insurance, <strong>CRM systems for underwriting, claims, and broker management</strong>, customer-facing quote calculators and policy portals, a broker onboarding workflow, and REST APIs integrating underwriting partners, banks, and reinsurers. For the restaurant, a real-time <strong>booking and capacity management system</strong>. For the gym, a membership platform plus an <strong>automated recurring debit order run</strong> — scheduled batch billing with bank reconciliation, on Lambda, EventBridge, S3, and SES/SNS. Plus an internal <strong>HR portal</strong> with org-chart, employee self-service, and a wellness session booking system, integrated with Microsoft Graph.</p>
+        <span class="label">Where it stands</span>
+        <p>All in production — policy processing time down 60%, manual data-entry errors down 85%.</p>
+      </div>
+    </div>
+
+    <div class="case reveal bracketed" data-lanes="insurtech platform">
+        <span class="bl"></span><span class="br"></span>
+      <div class="case-meta">
+        <span class="case-index">CASE 05 / 10</span>
+        <div class="co">Alpha Group</div>
+        <h3>Killing a decade-old Adobe dependency, one form at a time</h3>
+        <div class="stack-tags">
+          <span class="tag">PDF Parsing</span><span class="tag">E-Signature</span><span class="tag">Node.js</span><span class="tag">Browser-Native</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <span class="label">The problem</span>
+        <p>Hundreds of claims forms were trapped in a deprecated Adobe-only PDF format — customers on Chrome, Safari, or a phone hit a dead end and had to install desktop software just to file a claim.</p>
+        <span class="label">What I architected &amp; collaborated on</span>
+        <p>Working with the Alpha engineering team, helped architect and build an in-browser pipeline that reads each form's own underlying blueprint and reconstructs it as a fully interactive web form — conditional logic, calculations, and draw-to-sign included — then exports a pixel-accurate PDF on submission. Alongside it, an in-house <strong>document execution and e-signature platform</strong> replacing a paid third-party subscription entirely.</p>
+        <span class="label">Where it stands</span>
+        <p>Rolled out across the full form library, working end-to-end from browse to signed, submitted PDF; the e-signature platform is live handling agreement workflows.</p>
+      </div>
+    </div>
+
+    <div class="case reveal bracketed" data-lanes="platform">
+        <span class="bl"></span><span class="br"></span>
+      <div class="case-meta">
+        <span class="case-index">CASE 06 / 10</span>
+        <div class="co">Client project</div>
+        <h3>Rebuilding a property portfolio site without breaking it</h3>
+        <div class="stack-tags">
+          <span class="tag">Next.js</span><span class="tag">React Migration</span><span class="tag">Content Modeling</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <span class="label">The problem</span>
+        <p>A property development company's public site was running on a five-year-old template-based stack — every content update was a risk, and the underlying framework was long past its supportable life.</p>
+        <span class="label">What I architected &amp; collaborated on</span>
+        <p>Working with the team, helped architect a full rebuild onto a modern Next.js architecture — migrating every property listing, gallery, and page into structured, maintainable data models while preserving the exact public-facing content and behavior clients already relied on.</p>
+        <span class="label">Where it stands</span>
+        <p>In final QA, verified page-by-page against the live production site for full content and visual parity ahead of cutover.</p>
+      </div>
+    </div>
+
+    <div class="case reveal bracketed" data-lanes="ai insurtech">
+        <span class="bl"></span><span class="br"></span>
+      <div class="case-meta">
+        <span class="case-index">CASE 07 / 10</span>
+        <div class="co">123tutors</div>
+        <h3>Turning a 5-day manual review into a 2-hour automated one</h3>
+        <div class="stack-tags">
+          <span class="tag">KYC API</span><span class="tag">Biometrics</span><span class="tag">AML Screening</span><span class="tag">Supabase</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <span class="label">The problem</span>
+        <p>Every tutor application was manually reviewed by an admin before going live — a human bottleneck that couldn't scale past roughly 50 applications a week, with no verifiable identity or background checks behind it.</p>
+        <span class="label">What I built</span>
+        <p>An automated vetting pipeline integrating a South African identity verification API (InTouch) — government ID verification, facial-match and liveness biometrics, AML/sanctions screening, and bank account verification, running in parallel with a tiered auto-approve/flag-for-review decision engine.</p>
+        <span class="label">Where it stands</span>
+        <p>Vetting time down from 2–5 business days to under 2 hours; admin time per application from ~30 minutes to ~2 minutes (review queue only); scalability ceiling removed entirely.</p>
+      </div>
+    </div>
+
+    <div class="case reveal bracketed" id="case-utap" data-lanes="leadership platform">
+        <span class="bl"></span><span class="br"></span>
+      <div class="case-meta">
+        <span class="case-index">CASE 08 / 10</span>
+        <div class="co">uTap — Cofounder</div>
+        <h3>Turning a student ID into a tap-to-pay card</h3>
+        <div class="stack-tags">
+          <span class="tag">React Native</span><span class="tag">NFC</span><span class="tag">Paystack</span><span class="tag">Multi-app</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <span class="label">The problem</span>
+        <p>University campuses run on cash and cards vendors can't always process, and students carry a physical ID card that does nothing beyond proving who they are.</p>
+        <span class="label">What I built</span>
+        <p>Cofounded and architected a campus commerce platform across a multi-app ecosystem — a React Native/Expo student app, a vendor dashboard, and an admin portal — that lets students pay on-campus vendors and emulate their student card via NFC. Led the full payment gateway migration onto Paystack across mobile, web, and backend, and built the native Android NFC/card-emulation module myself.</p>
+        <span class="label">Where it stands</span>
+        <p>Preparing for pilot launch with an initial university partner, with iOS NFC support in progress.</p>
+      </div>
+    </div>
+
+    <div class="case reveal bracketed" data-lanes="platform leadership">
+        <span class="bl"></span><span class="br"></span>
+      <div class="case-meta">
+        <span class="case-index">CASE 09 / 10</span>
+        <div class="co">Friends of Cinema</div>
+        <h3>Building a cinematic identity, not just a website</h3>
+        <div class="stack-tags">
+          <span class="tag">React + Vite</span><span class="tag">Framer Motion</span><span class="tag">Supabase</span><span class="tag">Custom Cursor</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <span class="label">The problem</span>
+        <p>An independent film production company needed a site that felt like the films they make — art-house, editorial, cinematic — not another templated agency homepage.</p>
+        <span class="label">What I built</span>
+        <p>A full React/Vite/TypeScript build with Framer Motion page transitions, a custom cursor with mix-blend-mode effects, a full-screen parallax hero with film grain overlay, and a filterable portfolio grid — backed by Supabase (Postgres, Storage, Auth) with a client-manageable content schema and RLS policies.</p>
+        <span class="label">Where it stands</span>
+        <p>Live in production on Vercel.</p>
+        <a class="case-link" href="https://github.com/cicology/friends-of-cinema" target="_blank" rel="noopener" onclick="trackCTA('visit_friendsofcinema_repo')">View repo on GitHub</a>
+      </div>
+    </div>
+
+    <div class="case reveal bracketed" id="case-akur8" data-lanes="insurtech">
+        <span class="bl"></span><span class="br"></span>
+      <div class="case-meta">
+        <span class="case-index">CASE 10 / 10</span>
+        <div class="co">Alpha Insure</div>
+        <h3>Testing an actuarial pricing engine before it touches a real quote</h3>
+        <div class="stack-tags">
+          <span class="tag">React + Vite</span><span class="tag">Node/Express</span><span class="tag">Firebase</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <span class="label">The problem</span>
+        <p>Alpha Insure's motor rating engine runs on Akur8, a third-party actuarial pricing API — but validating hundreds of pricing scenarios by hand before every deploy wasn't sustainable.</p>
+        <span class="label">What I built</span>
+        <p>A full-stack UAT tool that bulk-runs CSV-defined test cases against the Akur8 rating API sequentially, tracks live pass/fail/error counts, flags invalid rows before they burn a test run, exports results for re-import, and keeps a searchable history of every batch in Firestore.</p>
+        <span class="label">Where it stands</span>
+        <p>In active use for pre-deploy validation of Alpha Insure's motor pricing.</p>
+      </div>
+    </div>
+
+    <div class="stats reveal bracketed">
+      <span class="bl"></span><span class="br"></span>
+      <div class="stat"><div class="num" data-count="60">0</div><div class="lbl">% faster policy processing</div></div>
+      <div class="stat"><div class="num" data-count="85">0</div><div class="lbl">% fewer data-entry errors</div></div>
+      <div class="stat"><div class="num" data-count="3">0</div><div class="lbl">Concurrent CTO/founder roles</div></div>
+      <div class="stat"><div class="num" data-count="2">0</div><div class="lbl">Production LLM features shipped</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LIVE PROJECTS ===================== -->
+<section id="live">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-tag">Live &amp; public</span>
+      <h2>See it running, read the code.</h2>
+      <p class="section-desc">The platforms are in production. The rest of the trail is on GitHub.</p>
+    </div>
+    <div class="proj-grid reveal">
+      <a class="proj-card" href="https://cleverly.co.za" target="_blank" rel="noopener" onclick="trackCTA('proj_cleverly')">
+        <span class="scan"></span>
+        <span class="proj-status">Live — In pilot</span>
+        <h3>Cleverly AI</h3>
+        <p>AI-assisted grading platform for South African schools, colleges, and universities. Evidence-linked marking with teacher-in-the-loop review.</p>
+        <span class="proj-url">cleverly.co.za</span>
+      </a>
+      <a class="proj-card" href="https://123tutors.co.za" target="_blank" rel="noopener" onclick="trackCTA('proj_123tutors')">
+        <span class="scan"></span>
+        <span class="proj-status">Live — In production</span>
+        <h3>123tutors</h3>
+        <p>Tutor-student matching platform, fully migrated from no-code to Next.js/TypeScript — now with a Claude-powered AI Tutor via AWS Bedrock.</p>
+        <span class="proj-url">123tutors.co.za</span>
+      </a>
+      <a class="proj-card" href="https://github.com/cicology/friends-of-cinema" target="_blank" rel="noopener" onclick="trackCTA('proj_friendsofcinema')">
+        <span class="scan"></span>
+        <span class="proj-status">Live — In production</span>
+        <h3>Friends of Cinema</h3>
+        <p>Art-house cinematic website for an independent film production company — custom cursor, film grain hero, Framer Motion transitions.</p>
+        <span class="proj-url">View on GitHub</span>
+      </a>
+      <a class="proj-card" href="https://github.com/cicology" target="_blank" rel="noopener" onclick="trackCTA('proj_github')">
+        <span class="scan"></span>
+        <span class="proj-status">Open source</span>
+        <h3>GitHub — @cicology</h3>
+        <p>Automation tools, experiments, and the working notes behind the production systems. Follow the commits.</p>
+        <span class="proj-url">github.com/cicology</span>
+      </a>
+    </div>
+
+    <div class="section-head reveal" style="margin-top:80px;">
+      <span class="section-tag">Also on record</span>
+      <h2>Earlier builds, still relevant.</h2>
+      <p class="section-desc">Smaller in scope, but each one taught me something the bigger systems now depend on.</p>
+    </div>
+    <div class="cards cards-3 reveal">
+      <div class="card">
+        <div class="card-num">05</div>
+        <h3>Cloud-Native Recommendation Engine</h3>
+        <p>FastAPI and BigQuery-based recommendation system deployed on GCP — early production ML infrastructure work.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">06</div>
+        <h3>Network Automation Suite</h3>
+        <p>Python tooling for enterprise network diagnostics, built during a 24/7 NOC role supporting FortiGate, F5, and Cisco infrastructure.</p>
+      </div>
+      <div class="card">
+        <div class="card-num">07</div>
+        <h3>Personal Cybersecurity Lab</h3>
+        <p>Segmented, VPN-gated home lab for offensive security practice — Kali Linux, Nmap, Metasploit, and Burp Suite against intentionally vulnerable applications.</p>
+      </div>
+    </div>
+
+    <!-- interactive stack explorer -->
+    <div class="stack-explorer reveal">
+      <div class="stack-tabs" role="tablist">
+        <button class="stack-tab active" data-panel="p-frontend" role="tab">frontend/</button>
+        <button class="stack-tab" data-panel="p-backend" role="tab">backend/</button>
+        <button class="stack-tab" data-panel="p-aws" role="tab">aws/</button>
+        <button class="stack-tab" data-panel="p-ai" role="tab">ai/</button>
+        <button class="stack-tab" data-panel="p-security" role="tab">security/</button>
+      </div>
+      <div class="stack-panel active" id="p-frontend">
+        <div class="terminal-line"><span class="prompt">$</span> <span class="cmd">ls frontend/</span></div>
+        <div class="terminal-line out">next.js  react  typescript  tailwind  html5/css3</div>
+        <div class="terminal-line out"># Shipped: booking platforms, policy portals, grading dashboards, HR self-service</div>
+      </div>
+      <div class="stack-panel" id="p-backend">
+        <div class="terminal-line"><span class="prompt">$</span> <span class="cmd">ls backend/</span></div>
+        <div class="terminal-line out">node.js  express  fastapi  prisma  postgresql  supabase  mongodb</div>
+        <div class="terminal-line out"># Shipped: CRM systems, RESTful APIs integrating underwriters, banks & reinsurers</div>
+      </div>
+      <div class="stack-panel" id="p-aws">
+        <div class="terminal-line"><span class="prompt">$</span> <span class="cmd">aws services --in-production</span></div>
+        <div class="terminal-line out">lambda  eventbridge  cognito  api-gateway  dynamodb  s3  kms  ses  sns  bedrock</div>
+        <div class="terminal-line out"># Shipped: SSO gateway, debit order billing runs, scheduled reconciliation jobs</div>
+      </div>
+      <div class="stack-panel" id="p-ai">
+        <div class="terminal-line"><span class="prompt">$</span> <span class="cmd">cat ai/capabilities.txt</span></div>
+        <div class="terminal-line out">llm-integration (claude, bedrock)  prompt-engineering  rag  embeddings  ocr-pipelines</div>
+        <div class="terminal-line out"># Shipped: AI grading engine (Cleverly), AI Tutor with mindmap generation (123tutors)</div>
+      </div>
+      <div class="stack-panel" id="p-security">
+        <div class="terminal-line"><span class="prompt">$</span> <span class="cmd">ls security/</span></div>
+        <div class="terminal-line out">kali-linux  nmap  metasploit  burp-suite  dependency-auditing  secrets-management</div>
+        <div class="terminal-line out"># Practice: segmented home lab vs OWASP Juice Shop & DVWA. Applied: production audits</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ACTION ===================== -->
+<section id="contact">
+  <div class="wrap contact-inner bracketed">
+    <span class="bl"></span><span class="br"></span>
+    <span class="section-tag">Get in touch</span>
+    <h2>Let's build something that has to work.</h2>
+    <p>Open to senior full stack, AI engineering, platform/identity, and fractional CTO engagements — remote or Johannesburg-based.</p>
+    <div class="contact-row">
+      <a href="mailto:herij46@gmail.com" class="btn btn-primary" onclick="trackCTA('email_click')">Email me</a>
+      <button id="emailCopyBtn" class="btn btn-ghost" type="button">Copy email</button>
+      <a href="https://www.linkedin.com/in/rusumba/" target="_blank" rel="noopener" class="btn btn-ghost" onclick="trackCTA('linkedin_click')">LinkedIn</a>
+      <a href="https://github.com/cicology" target="_blank" rel="noopener" class="btn btn-ghost" onclick="trackCTA('github_click')">GitHub</a>
+    </div>
+    <div class="badge-row">
+      <span>Next.js</span><span>AWS</span><span>Claude / Bedrock</span><span>PostgreSQL</span><span>OAuth2 / SSO</span><span>Kali Linux</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Rusumba Bukanga — Johannesburg, South Africa — <a href="mailto:herij46@gmail.com">herij46@gmail.com</a>
+  </div>
+</footer>
+
+<!-- ===================== FULL-SCREEN CONTACT OVERLAY ===================== -->
+<div id="contactOverlay" class="contact-overlay" aria-hidden="true">
+  <div class="overlay-backdrop" data-close></div>
+  <div class="overlay-panel" role="dialog" aria-modal="true" aria-labelledby="overlayTitle">
+    <button class="overlay-close" data-close aria-label="Close">✕</button>
+    <span class="section-tag">Get in touch</span>
+    <h2 id="overlayTitle">Let's build<br>something that<br>has to <span class="accent">work.</span></h2>
+    <div class="overlay-links">
+      <a href="mailto:herij46@gmail.com" class="overlay-link" onclick="trackCTA('overlay_email_click')">
+        <span>Email</span><strong>herij46@gmail.com</strong>
+      </a>
+      <a href="https://www.linkedin.com/in/rusumba/" target="_blank" rel="noopener" class="overlay-link" onclick="trackCTA('overlay_linkedin_click')">
+        <span>LinkedIn</span><strong>linkedin.com/in/rusumba</strong>
+      </a>
+      <a href="https://github.com/cicology" target="_blank" rel="noopener" class="overlay-link" onclick="trackCTA('overlay_github_click')">
+        <span>GitHub</span><strong>github.com/cicology</strong>
+      </a>
+    </div>
+    <p class="overlay-note">Open to senior full stack, AI engineering, platform/identity, and fractional CTO engagements — remote or Johannesburg-based.</p>
+  </div>
+</div>
+
+<button id="talkFab" class="talk-fab" onclick="openContactOverlay()" aria-label="Open contact panel">
+  <span class="talk-fab-dot"></span> Let's talk
+</button>
+
+<script>
+  // Scroll-reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+
+  // Animated counters
+  const counters = document.querySelectorAll('.num[data-count]');
+  const counterIO = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = parseInt(el.getAttribute('data-count'), 10);
+      let cur = 0;
+      const step = Math.max(1, Math.round(target / 40));
+      const tick = () => {
+        cur += step;
+        if (cur >= target) { el.textContent = target; return; }
+        el.textContent = cur;
+        requestAnimationFrame(tick);
+      };
+      tick();
+      counterIO.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(c => counterIO.observe(c));
+
+  // GTM / Pixel event helper — fires a dataLayer event + FB custom event on every CTA
+  function trackCTA(name){
+    if (window.dataLayer) { window.dataLayer.push({ event: 'cta_click', cta_name: name }); }
+    if (window.fbq) { fbq('trackCustom', 'CTAClick', { cta: name }); }
+  }
+
+  // Schematic node tooltips
+  const tip = document.getElementById('schemTip');
+  const schematic = document.querySelector('.schematic');
+  document.querySelectorAll('.node-group').forEach(node => {
+    node.addEventListener('mouseenter', () => {
+      tip.querySelector('.tip-title').textContent = node.dataset.title;
+      tip.querySelector('.tip-body').textContent = node.dataset.body;
+      tip.classList.add('show');
+    });
+    node.addEventListener('mousemove', (e) => {
+      const rect = schematic.getBoundingClientRect();
+      let x = e.clientX - rect.left + 14;
+      let y = e.clientY - rect.top + 14;
+      if (x + 240 > rect.width) x = x - 260;
+      if (y + 90 > rect.height) y = y - 110;
+      tip.style.left = x + 'px';
+      tip.style.top = y + 'px';
+    });
+    node.addEventListener('mouseleave', () => tip.classList.remove('show'));
+  });
+
+  // Stack explorer tabs
+  document.querySelectorAll('.stack-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.stack-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.stack-panel').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(tab.dataset.panel).classList.add('active');
+      trackCTA('stack_tab_' + tab.dataset.panel);
+    });
+  });
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Scroll progress bar
+  const progressBar = document.getElementById('scrollProgress');
+  const siteHeader = document.querySelector('header');
+  function updateProgress(){
+    const h = document.documentElement;
+    const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+    progressBar.style.width = scrolled + '%';
+    siteHeader.classList.toggle('scrolled', h.scrollTop > 20);
+  }
+  document.addEventListener('scroll', () => requestAnimationFrame(updateProgress), { passive: true });
+  updateProgress();
+
+  // Cursor spotlight (desktop only, respects reduced motion)
+  if (!reduceMotion && window.matchMedia('(hover: hover)').matches) {
+    const spotlight = document.getElementById('spotlight');
+    document.addEventListener('mousemove', (e) => {
+      spotlight.style.setProperty('--sx', e.clientX + 'px');
+      spotlight.style.setProperty('--sy', e.clientY + 'px');
+    }, { passive: true });
+  }
+
+  // ---------- Live status clock (Johannesburg / SAST, UTC+2) ----------
+  const clockEl = document.getElementById('liveClock');
+  function updateClock(){
+    if (!clockEl) return;
+    const now = new Date(new Date().toLocaleString('en-US', { timeZone: 'Africa/Johannesburg' }));
+    const hh = String(now.getHours()).padStart(2, '0');
+    const mm = String(now.getMinutes()).padStart(2, '0');
+    const ss = String(now.getSeconds()).padStart(2, '0');
+    clockEl.textContent = `${hh}:${mm}:${ss}`;
+  }
+  updateClock();
+  setInterval(updateClock, 1000);
+
+  if (!reduceMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    document.body.classList.add('custom-cursor-on');
+    const dot = document.getElementById('cursorDot');
+    const ring = document.getElementById('cursorRing');
+    let ringX = window.innerWidth / 2, ringY = window.innerHeight / 2;
+    document.addEventListener('mousemove', (e) => {
+      dot.style.left = e.clientX + 'px';
+      dot.style.top = e.clientY + 'px';
+      targetX = e.clientX; targetY = e.clientY;
+    }, { passive: true });
+    let targetX = ringX, targetY = ringY;
+    function animateRing(){
+      ringX += (targetX - ringX) * 0.18;
+      ringY += (targetY - ringY) * 0.18;
+      ring.style.left = ringX + 'px';
+      ring.style.top = ringY + 'px';
+      requestAnimationFrame(animateRing);
+    }
+    animateRing();
+    document.querySelectorAll('a, button, .node-group, .lane-chip, .stack-tab').forEach(el => {
+      el.addEventListener('mouseenter', () => ring.classList.add('grow'));
+      el.addEventListener('mouseleave', () => ring.classList.remove('grow'));
+    });
+    document.addEventListener('mouseleave', () => { dot.classList.add('hide'); ring.classList.add('hide'); });
+    document.addEventListener('mouseenter', () => { dot.classList.remove('hide'); ring.classList.remove('hide'); });
+  }
+
+  // Staggered reveal: index cards within their grids
+  document.querySelectorAll('.cards, .cards-3, .proj-grid').forEach(grid => {
+    [...grid.children].forEach((child, i) => child.style.setProperty('--i', i));
+  });
+
+  // Magnetic tilt on project cards (desktop only)
+  if (!reduceMotion && window.matchMedia('(hover: hover)').matches) {
+    document.querySelectorAll('.proj-card, .card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const r = card.getBoundingClientRect();
+        const px = (e.clientX - r.left) / r.width - 0.5;
+        const py = (e.clientY - r.top) / r.height - 0.5;
+        card.style.transform = `perspective(600px) rotateX(${(-py * 6).toFixed(2)}deg) rotateY(${(px * 6).toFixed(2)}deg) translateY(-4px)`;
+      });
+      card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+    });
+  }
+
+  // ---------- Lane filter ----------
+  const allCases = [...document.querySelectorAll('.case[data-lanes]')];
+  const laneChips = document.querySelectorAll('.lane-chip');
+  const laneStatus = document.getElementById('laneStatus');
+
+  function applyLaneFilter(lane){
+    let visible = 0;
+    allCases.forEach(c => {
+      const lanes = c.dataset.lanes.split(' ');
+      const match = lane === 'all' || lanes.includes(lane);
+      c.classList.toggle('lane-hidden', !match);
+      c.classList.toggle('lane-match', match && lane !== 'all');
+      if (match) visible++;
+    });
+    laneStatus.textContent = lane === 'all'
+      ? `Showing all ${allCases.length} case studies`
+      : `Showing ${visible} of ${allCases.length} case studies for ${lane === 'ai' ? 'AI Engineering' : lane === 'platform' ? 'Platform & Identity' : lane === 'insurtech' ? 'InsurTech & FinTech' : 'Leadership & Cofounding'}`;
+  }
+
+  laneChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      laneChips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      applyLaneFilter(chip.dataset.lane);
+      trackCTA('lane_filter_' + chip.dataset.lane);
+    });
+  });
+  document.querySelector('.lane-chip[data-lane="all"] .lane-count').textContent = `(${allCases.length})`;
+
+  // ---------- Clickable schematic nodes → jump to matching case study ----------
+  const nodeToLane = {
+    'SSO Gateway': 'platform',
+    'AI Engine': 'ai',
+    'Bedrock': 'ai',
+    'Ledger': 'insurtech',
+    'Claims DB': 'insurtech',
+    'Cognito': 'platform',
+  };
+  document.querySelectorAll('.node-group').forEach(node => {
+    const title = node.dataset.title;
+    const lane = nodeToLane[title];
+    if (!lane) return;
+    node.style.cursor = 'pointer';
+    node.addEventListener('click', () => {
+      const targetChip = document.querySelector(`.lane-chip[data-lane="${lane}"]`);
+      if (targetChip) targetChip.click();
+      document.getElementById('projects').scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
+      trackCTA('schematic_click_' + lane);
+    });
+  });
+
+  // ---------- Wordmark anchors: flash-highlight the targeted case study ----------
+  function flashTarget(id){
+    const el = document.getElementById(id);
+    if (!el) return;
+    const allChip = document.querySelector('.lane-chip[data-lane="all"]');
+    if (allChip && el.classList.contains('lane-hidden')) allChip.click();
+    el.classList.remove('flash-target');
+    void el.offsetWidth;
+    el.classList.add('flash-target');
+    el.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'center' });
+  }
+  document.querySelectorAll('a[href^="#case-"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      flashTarget(link.getAttribute('href').slice(1));
+    });
+  });
+
+  // ---------- Full-screen contact overlay ----------
+  const overlay = document.getElementById('contactOverlay');
+  let lastFocused = null;
+  function openContactOverlay(){
+    lastFocused = document.activeElement;
+    overlay.classList.add('open');
+    overlay.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    trackCTA('contact_overlay_open');
+    const closeBtn = overlay.querySelector('.overlay-close');
+    if (closeBtn) closeBtn.focus();
+  }
+  function closeContactOverlay(){
+    overlay.classList.remove('open');
+    overlay.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (lastFocused) lastFocused.focus();
+  }
+  overlay.querySelectorAll('[data-close]').forEach(el => el.addEventListener('click', closeContactOverlay));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlay.classList.contains('open')) closeContactOverlay();
+  });
+  window.openContactOverlay = openContactOverlay;
+
+  const navCta = document.querySelector('.nav-cta');
+  if (navCta) {
+    navCta.addEventListener('click', (e) => {
+      e.preventDefault();
+      openContactOverlay();
+    });
+  }
+
+  const emailBtn = document.getElementById('emailCopyBtn');
+  if (emailBtn) {
+    emailBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      navigator.clipboard.writeText('herij46@gmail.com').then(() => {
+        const original = emailBtn.textContent;
+        emailBtn.textContent = 'Copied ✓';
+        trackCTA('email_copied');
+        setTimeout(() => { emailBtn.textContent = original; }, 1800);
+      }).catch(() => { window.location.href = 'mailto:herij46@gmail.com'; });
+    });
+  }
+</script>
+
+</body>
+</html>
