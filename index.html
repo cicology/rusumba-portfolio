@@ -225,7 +225,7 @@ fbq('track', 'PageView');
     min-height:100svh;display:flex;align-items:center;
     padding-top:110px;padding-bottom:60px;position:relative;overflow:hidden;
   }
-  .hero-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:48px;align-items:center;}
+  .hero-grid{display:grid;grid-template-columns:1.35fr 0.65fr;gap:24px;align-items:center;}
   @media (max-width:900px){ .hero-grid{grid-template-columns:1fr;} }
   .eyebrow{
     font-family:var(--font-mono);font-size:13px;letter-spacing:0.08em;
@@ -241,7 +241,7 @@ fbq('track', 'PageView');
   }
   h1{
     font-family:var(--font-display);font-weight:700;
-    font-size:clamp(34px,5vw,58px);line-height:1.08;letter-spacing:-0.01em;
+    font-size:clamp(38px,6.4vw,76px);line-height:1.02;letter-spacing:-0.02em;
     margin-bottom:22px;
   }
   h1 .accent{color:var(--amber);}
@@ -300,6 +300,32 @@ fbq('track', 'PageView');
   .card-num{font-family:var(--font-mono);font-size:12px;color:var(--line-blue);margin-bottom:18px;letter-spacing:0.05em;}
   .card h3{font-family:var(--font-display);font-size:19px;font-weight:600;margin-bottom:10px;}
   .card p{font-size:14.5px;color:var(--paper-dim);}
+
+  /* ---------- horizontal card rail (not a generic grid) ---------- */
+  .scroll-hint{
+    font-family:var(--font-mono);font-size:11px;letter-spacing:0.1em;color:var(--paper-dim);
+    margin-bottom:14px;display:flex;align-items:center;gap:6px;opacity:0.7;
+  }
+  .scroll-hint span{display:inline-block;animation:hint-nudge 1.6s ease-in-out infinite;}
+  @keyframes hint-nudge{0%,100%{transform:translateX(0);}50%{transform:translateX(6px);}}
+  .card-rail{
+    display:flex;gap:1px;overflow-x:auto;scroll-snap-type:x proximity;
+    background:rgba(120,160,220,0.14);border:1px solid rgba(120,160,220,0.14);
+    scrollbar-width:none;-ms-overflow-style:none;cursor:grab;
+  }
+  .card-rail:active{cursor:grabbing;}
+  .card-rail::-webkit-scrollbar{display:none;}
+  .rail-card{
+    background:var(--ink);flex:0 0 300px;padding:36px 28px;scroll-snap-align:start;
+    transition:background .25s;
+  }
+  .rail-card:hover{background:var(--ink-panel);}
+  .rail-tag{font-family:var(--font-mono);font-size:13px;color:var(--amber);margin-bottom:20px;letter-spacing:0.04em;}
+  .rail-card h3{font-family:var(--font-display);font-size:20px;font-weight:600;margin-bottom:12px;}
+  .rail-card p{font-size:14.5px;color:var(--paper-dim);}
+  .rail-progress{height:2px;background:rgba(120,160,220,0.14);margin-top:2px;position:relative;overflow:hidden;max-width:1120px;margin-left:auto;margin-right:auto;}
+  .rail-progress-fill{position:absolute;top:0;left:0;height:100%;width:25%;background:var(--amber);transition:width .1s linear;}
+  @media (max-width:700px){ .rail-card{flex:0 0 260px;padding:28px 22px;} }
 
   /* ---------- DESIRE: case studies ---------- */
   .case{
@@ -461,6 +487,37 @@ fbq('track', 'PageView');
   .wordmark:hover .ext{transform:translate(2px,-2px);opacity:1;}
   .wordmark.muted{opacity:0.55;cursor:default;}
   .wordmark.muted:hover{border-color:rgba(120,160,220,0.22);transform:none;color:var(--paper-dim);}
+  /* ---------- AS SEEN ON — hero-adjacent press/company slide ---------- */
+  .seen-on{
+    background:var(--ink-panel);border-top:1px solid rgba(120,160,220,0.14);border-bottom:1px solid rgba(120,160,220,0.14);
+    padding:22px 0;position:relative;overflow:hidden;
+  }
+  .seen-on::before{
+    content:"AS SEEN ON";position:absolute;left:28px;top:50%;transform:translateY(-50%);
+    font-family:var(--font-mono);font-size:11px;letter-spacing:0.12em;color:var(--amber);
+    background:var(--ink-panel);padding-right:18px;z-index:2;
+  }
+  .seen-on-mask{
+    mask-image:linear-gradient(90deg, transparent, #000 140px, #000 calc(100% - 60px), transparent);
+    -webkit-mask-image:linear-gradient(90deg, transparent, #000 140px, #000 calc(100% - 60px), transparent);
+    overflow:hidden;padding-left:150px;
+  }
+  .seen-on-track{
+    display:flex;align-items:center;gap:22px;white-space:nowrap;width:max-content;
+    animation:marquee-scroll 26s linear infinite;
+  }
+  .seen-on:hover .seen-on-track{ animation-play-state:paused; }
+  .seen-on-mark{
+    font-family:var(--font-display);font-size:22px;font-weight:600;color:var(--paper-dim);
+    text-decoration:none;transition:color .2s ease;letter-spacing:-0.01em;
+  }
+  .seen-on-mark:hover{ color:var(--amber); }
+  .seen-on-sep{color:var(--line-blue);font-size:14px;opacity:0.5;}
+  @media (max-width:700px){
+    .seen-on::before{ display:none; }
+    .seen-on-mask{ padding-left:0; mask-image:linear-gradient(90deg, transparent, #000 30px, #000 calc(100% - 30px), transparent); -webkit-mask-image:linear-gradient(90deg, transparent, #000 30px, #000 calc(100% - 30px), transparent); }
+    .seen-on-mark{ font-size:17px; }
+  }
 
   /* flash highlight when a case study is jumped to via wordmark/anchor */
   .case.flash-target{ animation:flash-highlight 1.6s ease; }
@@ -544,7 +601,14 @@ fbq('track', 'PageView');
     background:radial-gradient(600px circle at var(--sx,50%) var(--sy,50%), rgba(91,141,239,0.08), transparent 70%);
     transition:background .15s ease;
   }
-  body > *:not(#spotlight):not(#scrollProgress):not(header):not(#cursorDot):not(#cursorRing):not(#contactOverlay):not(#talkFab){ position:relative; z-index:2; }
+
+  /* ---------- tactile grain — breaks the flat-vector look ---------- */
+  #grain{
+    position:fixed;inset:0;pointer-events:none;z-index:1;opacity:0.05;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    mix-blend-mode:overlay;
+  }
+  body > *:not(#spotlight):not(#scrollProgress):not(header):not(#cursorDot):not(#cursorRing):not(#contactOverlay):not(#talkFab):not(#grain){ position:relative; z-index:2; }
   header{ z-index:50; }
 
   /* ---------- shimmer accent ---------- */
@@ -603,6 +667,7 @@ fbq('track', 'PageView');
 
 <div id="scrollProgress"></div>
 <div id="spotlight"></div>
+<div id="grain"></div>
 <div id="cursorDot"></div>
 <div id="cursorRing"></div>
 
@@ -694,20 +759,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- ===================== TRUST BAR ===================== -->
-<div class="trust-bar">
-  <div class="wrap">
-    <p class="trust-label">Companies &amp; ventures I've built for</p>
-    <div class="trust-row">
-      <a class="wordmark" href="https://cleverly.co.za" target="_blank" rel="noopener" onclick="trackCTA('wordmark_cleverly')">CLEVERLY AI <span class="ext">↗</span></a>
-      <a class="wordmark" href="https://123tutors.co.za" target="_blank" rel="noopener" onclick="trackCTA('wordmark_123tutors')">123TUTORS <span class="ext">↗</span></a>
-      <a class="wordmark" href="#case-alpha-ops" onclick="trackCTA('wordmark_alpha')">ALPHA INSURE</a>
-      <a class="wordmark" href="#case-akur8" onclick="trackCTA('wordmark_akur8')">AKUR8</a>
-      <a class="wordmark" href="#case-alpha-ops" onclick="trackCTA('wordmark_11thfloor')">THE 11TH FLOOR</a>
-      <a class="wordmark" href="#case-alpha-ops" onclick="trackCTA('wordmark_bag')">BODY ACTION GYM</a>
-      <a class="wordmark" href="https://utapwebsite.vercel.app" target="_blank" rel="noopener" onclick="trackCTA('wordmark_utap')">uTAP <span class="ext">↗</span></a>
-      <a class="wordmark" href="https://github.com/cicology/friends-of-cinema" target="_blank" rel="noopener" onclick="trackCTA('wordmark_friendsofcinema')">FRIENDS OF CINEMA <span class="ext">↗</span></a>
-      <span class="wordmark muted">REFLEX SOLUTIONS</span>
+<!-- ===================== AS SEEN ON ===================== -->
+<div class="seen-on">
+  <div class="seen-on-mask">
+    <div class="seen-on-track">
+      <a class="seen-on-mark" href="https://cleverly.co.za" target="_blank" rel="noopener" onclick="trackCTA('wordmark_cleverly')">Cleverly AI</a>
+      <span class="seen-on-sep">/</span>
+      <a class="seen-on-mark" href="https://123tutors.co.za" target="_blank" rel="noopener" onclick="trackCTA('wordmark_123tutors')">123tutors</a>
+      <span class="seen-on-sep">/</span>
+      <a class="seen-on-mark" href="#case-alpha-ops" onclick="trackCTA('wordmark_alpha')">Alpha Insure</a>
+      <span class="seen-on-sep">/</span>
+      <a class="seen-on-mark" href="#case-akur8" onclick="trackCTA('wordmark_akur8')">Akur8</a>
+      <span class="seen-on-sep">/</span>
+      <a class="seen-on-mark" href="#case-alpha-ops" onclick="trackCTA('wordmark_11thfloor')">The 11th Floor</a>
+      <span class="seen-on-sep">/</span>
+      <a class="seen-on-mark" href="#case-alpha-ops" onclick="trackCTA('wordmark_bag')">Body Action Gym</a>
+      <span class="seen-on-sep">/</span>
+      <a class="seen-on-mark" href="https://utapwebsite.vercel.app" target="_blank" rel="noopener" onclick="trackCTA('wordmark_utap')">uTap</a>
+      <span class="seen-on-sep">/</span>
+      <a class="seen-on-mark" href="https://github.com/cicology/friends-of-cinema" target="_blank" rel="noopener" onclick="trackCTA('wordmark_friendsofcinema')">Friends of Cinema</a>
+      <span class="seen-on-sep">/</span>
+      <a class="seen-on-mark" href="https://cleverly.co.za" target="_blank" rel="noopener" onclick="trackCTA('wordmark_cleverly')">Cleverly AI</a>
+      <span class="seen-on-sep">/</span>
+      <a class="seen-on-mark" href="https://123tutors.co.za" target="_blank" rel="noopener" onclick="trackCTA('wordmark_123tutors')">123tutors</a>
+      <span class="seen-on-sep">/</span>
+      <a class="seen-on-mark" href="#case-alpha-ops" onclick="trackCTA('wordmark_alpha')">Alpha Insure</a>
+      <span class="seen-on-sep">/</span>
+      <a class="seen-on-mark" href="#case-akur8" onclick="trackCTA('wordmark_akur8')">Akur8</a>
+      <span class="seen-on-sep">/</span>
+      <a class="seen-on-mark" href="#case-alpha-ops" onclick="trackCTA('wordmark_11thfloor')">The 11th Floor</a>
+      <span class="seen-on-sep">/</span>
+      <a class="seen-on-mark" href="#case-alpha-ops" onclick="trackCTA('wordmark_bag')">Body Action Gym</a>
+      <span class="seen-on-sep">/</span>
+      <a class="seen-on-mark" href="https://utapwebsite.vercel.app" target="_blank" rel="noopener" onclick="trackCTA('wordmark_utap')">uTap</a>
+      <span class="seen-on-sep">/</span>
+      <a class="seen-on-mark" href="https://github.com/cicology/friends-of-cinema" target="_blank" rel="noopener" onclick="trackCTA('wordmark_friendsofcinema')">Friends of Cinema</a>
+      <span class="seen-on-sep">/</span>
     </div>
   </div>
 </div>
@@ -722,28 +809,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
   <div class="wrap">
-    <div class="cards reveal">
-      <div class="card">
-        <div class="card-num">01</div>
+    <div class="scroll-hint reveal">DRAG TO EXPLORE <span>&rarr;</span></div>
+    <div class="card-rail reveal" id="cardRail">
+      <div class="rail-card">
+        <div class="rail-tag">[AI]</div>
         <h3>AI Engineering</h3>
         <p>LLM integration (Claude, AWS Bedrock), prompt engineering, RAG, and OCR pipelines shipped in two live products.</p>
       </div>
-      <div class="card">
-        <div class="card-num">02</div>
+      <div class="rail-card">
+        <div class="rail-tag">[AUTH]</div>
         <h3>Identity &amp; Platform Infrastructure</h3>
         <p>Centralized SSO gateways built on OAuth2/PKCE, AWS Cognito, and KMS-signed JWTs serving multi-app ecosystems.</p>
       </div>
-      <div class="card">
-        <div class="card-num">03</div>
+      <div class="rail-card">
+        <div class="rail-tag">[FIN]</div>
         <h3>InsurTech &amp; FinTech Systems</h3>
         <p>Underwriting, claims, broker management, and policy portals handling regulated, sensitive financial data.</p>
       </div>
-      <div class="card">
-        <div class="card-num">04</div>
+      <div class="rail-card">
+        <div class="rail-tag">[SEC]</div>
         <h3>Applied Security</h3>
         <p>Hands-on offensive security practice with Kali Linux, and internal audits that close real production risk.</p>
       </div>
     </div>
+    <div class="rail-progress"><div class="rail-progress-fill" id="railProgressFill"></div></div>
   </div>
 </section>
 
@@ -782,8 +871,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <p class="lane-status" id="laneStatus" aria-live="polite"></p>
 
-    <div class="case reveal bracketed" data-lanes="ai">
-        <span class="bl"></span><span class="br"></span>
+    <div class="case reveal" data-lanes="ai">
       <div class="case-meta">
         <span class="case-index">CASE 01 / 10</span>
         <div class="co">Cleverly AI</div>
@@ -803,8 +891,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
 
-    <div class="case reveal bracketed" data-lanes="platform">
-        <span class="bl"></span><span class="br"></span>
+    <div class="case reveal" data-lanes="platform">
       <div class="case-meta">
         <span class="case-index">CASE 02 / 10</span>
         <div class="co">Alpha Group</div>
@@ -823,8 +910,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
 
-    <div class="case reveal bracketed" data-lanes="ai platform">
-        <span class="bl"></span><span class="br"></span>
+    <div class="case reveal" data-lanes="ai platform">
       <div class="case-meta">
         <span class="case-index">CASE 03 / 10</span>
         <div class="co">123tutors</div>
@@ -844,8 +930,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
 
-    <div class="case reveal bracketed" id="case-alpha-ops" data-lanes="insurtech platform">
-        <span class="bl"></span><span class="br"></span>
+    <div class="case reveal" id="case-alpha-ops" data-lanes="insurtech platform">
       <div class="case-meta">
         <span class="case-index">CASE 04 / 10</span>
         <div class="co">Alpha Group</div>
@@ -864,8 +949,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
 
-    <div class="case reveal bracketed" data-lanes="insurtech platform">
-        <span class="bl"></span><span class="br"></span>
+    <div class="case reveal" data-lanes="insurtech platform">
       <div class="case-meta">
         <span class="case-index">CASE 05 / 10</span>
         <div class="co">Alpha Group</div>
@@ -884,8 +968,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
 
-    <div class="case reveal bracketed" data-lanes="platform">
-        <span class="bl"></span><span class="br"></span>
+    <div class="case reveal" data-lanes="platform">
       <div class="case-meta">
         <span class="case-index">CASE 06 / 10</span>
         <div class="co">Client project</div>
@@ -904,8 +987,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
 
-    <div class="case reveal bracketed" data-lanes="ai insurtech">
-        <span class="bl"></span><span class="br"></span>
+    <div class="case reveal" data-lanes="ai insurtech">
       <div class="case-meta">
         <span class="case-index">CASE 07 / 10</span>
         <div class="co">123tutors</div>
@@ -924,8 +1006,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
 
-    <div class="case reveal bracketed" id="case-utap" data-lanes="leadership platform">
-        <span class="bl"></span><span class="br"></span>
+    <div class="case reveal" id="case-utap" data-lanes="leadership platform">
       <div class="case-meta">
         <span class="case-index">CASE 08 / 10</span>
         <div class="co">uTap — Engineer</div>
@@ -945,8 +1026,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
 
-    <div class="case reveal bracketed" data-lanes="platform leadership">
-        <span class="bl"></span><span class="br"></span>
+    <div class="case reveal" data-lanes="platform leadership">
       <div class="case-meta">
         <span class="case-index">CASE 09 / 10</span>
         <div class="co">Friends of Cinema</div>
@@ -966,8 +1046,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
 
-    <div class="case reveal bracketed" id="case-akur8" data-lanes="insurtech">
-        <span class="bl"></span><span class="br"></span>
+    <div class="case reveal" id="case-akur8" data-lanes="insurtech">
       <div class="case-meta">
         <span class="case-index">CASE 10 / 10</span>
         <div class="co">Alpha Insure</div>
@@ -1210,6 +1289,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     node.addEventListener('mouseleave', () => tip.classList.remove('show'));
   });
 
+  // Card rail scroll progress + drag-to-scroll
+  const cardRail = document.getElementById('cardRail');
+  const railFill = document.getElementById('railProgressFill');
+  if (cardRail && railFill) {
+    function updateRailProgress(){
+      const max = cardRail.scrollWidth - cardRail.clientWidth;
+      const pct = max > 0 ? (cardRail.scrollLeft / max) * 100 : 0;
+      railFill.style.width = Math.max(8, pct) + '%';
+    }
+    cardRail.addEventListener('scroll', updateRailProgress, { passive: true });
+    updateRailProgress();
+    let isDown = false, startX, scrollStart;
+    cardRail.addEventListener('mousedown', (e) => {
+      isDown = true; startX = e.pageX; scrollStart = cardRail.scrollLeft;
+    });
+    window.addEventListener('mouseup', () => { isDown = false; });
+    window.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      cardRail.scrollLeft = scrollStart - (e.pageX - startX);
+    });
+  }
   // Stack explorer tabs
   document.querySelectorAll('.stack-tab').forEach(tab => {
     tab.addEventListener('click', () => {
