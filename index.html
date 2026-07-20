@@ -559,6 +559,42 @@ fbq('track', 'PageView');
   .stack-panel .terminal-line .cmd{color:var(--paper);}
   .stack-panel .terminal-line .out{color:var(--paper-dim);}
 
+  /* ---------- interactive terminal ---------- */
+  .terminal-window{
+    border:1px solid rgba(120,160,220,0.25);margin-top:60px;
+    background:#0a1628;box-shadow:0 20px 50px rgba(0,0,0,0.35);
+  }
+  .terminal-titlebar{
+    display:flex;align-items:center;gap:8px;padding:10px 14px;
+    background:var(--ink-panel);border-bottom:1px solid rgba(120,160,220,0.18);
+  }
+  .terminal-dot{width:10px;height:10px;border-radius:50%;}
+  .terminal-dot.red{background:#ff5f57;}
+  .terminal-dot.amber{background:#febc2e;}
+  .terminal-dot.green{background:#28c840;}
+  .terminal-title{font-family:var(--font-mono);font-size:12px;color:var(--paper-dim);margin-left:10px;}
+  .terminal-body{
+    padding:20px 18px;height:260px;overflow-y:auto;
+    font-family:var(--font-mono);font-size:13.5px;line-height:1.7;
+  }
+  .terminal-body::-webkit-scrollbar{width:8px;}
+  .terminal-body::-webkit-scrollbar-thumb{background:rgba(120,160,220,0.25);}
+  .terminal-input-row{
+    display:flex;align-items:center;gap:10px;padding:12px 18px;
+    border-top:1px solid rgba(120,160,220,0.18);
+  }
+  .terminal-input{
+    flex:1;background:none;border:none;outline:none;
+    font-family:var(--font-mono);font-size:13.5px;color:var(--paper);caret-color:var(--amber);
+  }
+  .terminal-input::placeholder{color:rgba(183,194,217,0.4);}
+  .terminal-line{margin-bottom:6px;word-break:break-word;}
+  .terminal-line .prompt{color:var(--teal);margin-right:6px;}
+  .terminal-line .cmd{color:var(--paper);}
+  .terminal-line.out{color:var(--paper-dim);}
+  .terminal-line.echo{color:var(--paper);}
+  .terminal-line a{color:var(--amber);}
+
   /* ---------- project showcase grid ---------- */
   .proj-grid{display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:20px;margin-top:20px;}
   @media (max-width:900px){ .proj-grid{grid-template-columns:1fr;} }
@@ -1193,39 +1229,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
 
-    <!-- interactive stack explorer -->
-    <div class="stack-explorer reveal">
-      <div class="stack-tabs" role="tablist">
-        <button class="stack-tab active" data-panel="p-frontend" role="tab">frontend/</button>
-        <button class="stack-tab" data-panel="p-backend" role="tab">backend/</button>
-        <button class="stack-tab" data-panel="p-aws" role="tab">aws/</button>
-        <button class="stack-tab" data-panel="p-ai" role="tab">ai/</button>
-        <button class="stack-tab" data-panel="p-security" role="tab">security/</button>
+    <!-- interactive terminal -->
+    <div class="terminal-window reveal">
+      <div class="terminal-titlebar">
+        <span class="terminal-dot red"></span><span class="terminal-dot amber"></span><span class="terminal-dot green"></span>
+        <span class="terminal-title">rusumba@portfolio: ~</span>
       </div>
-      <div class="stack-panel active" id="p-frontend">
-        <div class="terminal-line"><span class="prompt">$</span> <span class="cmd">ls frontend/</span></div>
-        <div class="terminal-line out">next.js  react  typescript  tailwind  html5/css3</div>
-        <div class="terminal-line out"># Shipped: booking platforms, policy portals, grading dashboards, HR self-service</div>
+      <div class="terminal-body" id="terminalBody" tabindex="0">
+        <div class="terminal-line out">Welcome. This is a real shell &mdash; type <span class="cmd">help</span> to see what it can do.</div>
       </div>
-      <div class="stack-panel" id="p-backend">
-        <div class="terminal-line"><span class="prompt">$</span> <span class="cmd">ls backend/</span></div>
-        <div class="terminal-line out">node.js  express  fastapi  prisma  postgresql  supabase  mongodb</div>
-        <div class="terminal-line out"># Shipped: CRM systems, RESTful APIs integrating underwriters, banks & reinsurers</div>
-      </div>
-      <div class="stack-panel" id="p-aws">
-        <div class="terminal-line"><span class="prompt">$</span> <span class="cmd">aws services --in-production</span></div>
-        <div class="terminal-line out">lambda  eventbridge  cognito  api-gateway  dynamodb  s3  kms  ses  sns  bedrock</div>
-        <div class="terminal-line out"># Shipped: SSO gateway, debit order billing runs, scheduled reconciliation jobs</div>
-      </div>
-      <div class="stack-panel" id="p-ai">
-        <div class="terminal-line"><span class="prompt">$</span> <span class="cmd">cat ai/capabilities.txt</span></div>
-        <div class="terminal-line out">llm-integration (claude, bedrock)  prompt-engineering  rag  embeddings  ocr-pipelines</div>
-        <div class="terminal-line out"># Shipped: AI grading engine (Cleverly), AI Tutor with mindmap generation (123tutors)</div>
-      </div>
-      <div class="stack-panel" id="p-security">
-        <div class="terminal-line"><span class="prompt">$</span> <span class="cmd">ls security/</span></div>
-        <div class="terminal-line out">kali-linux  nmap  metasploit  burp-suite  dependency-auditing  secrets-management</div>
-        <div class="terminal-line out"># Practice: segmented home lab vs OWASP Juice Shop & DVWA. Applied: production audits</div>
+      <div class="terminal-input-row">
+        <span class="prompt">$</span>
+        <input type="text" id="terminalInput" class="terminal-input" autocomplete="off" spellcheck="false" placeholder="type a command..." aria-label="Portfolio terminal command input">
       </div>
     </div>
   </div>
@@ -1384,16 +1399,53 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       cardRail.scrollLeft = scrollStart - (e.pageX - startX);
     });
   }
-  // Stack explorer tabs
-  document.querySelectorAll('.stack-tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      document.querySelectorAll('.stack-tab').forEach(t => t.classList.remove('active'));
-      document.querySelectorAll('.stack-panel').forEach(p => p.classList.remove('active'));
-      tab.classList.add('active');
-      document.getElementById(tab.dataset.panel).classList.add('active');
-      trackCTA('stack_tab_' + tab.dataset.panel);
+  // ---------- Interactive terminal ----------
+  const termBody = document.getElementById('terminalBody');
+  const termInput = document.getElementById('terminalInput');
+  function termPrint(html, cls){
+    const div = document.createElement('div');
+    div.className = 'terminal-line ' + (cls || 'out');
+    div.innerHTML = html;
+    termBody.appendChild(div);
+    termBody.scrollTop = termBody.scrollHeight;
+  }
+  const termCommands = {
+    help: () => `Available commands:<br>&nbsp;&nbsp;whoami &mdash; who I am<br>&nbsp;&nbsp;skills &mdash; core tech stack<br>&nbsp;&nbsp;projects &mdash; jump to case studies<br>&nbsp;&nbsp;contact &mdash; open the contact panel<br>&nbsp;&nbsp;cv &mdash; download my CV<br>&nbsp;&nbsp;about &mdash; short bio<br>&nbsp;&nbsp;clear &mdash; clear the screen`,
+    whoami: () => `Rusumba Bukanga &mdash; Full Stack Developer, AI Engineer, Cofounder &amp; CTO. Johannesburg, South Africa.`,
+    about: () => `Cofounder &amp; CTO at Cleverly AI. CTO at 123tutors. Engineer with equity at uTap. Full stack dev at Alpha Group. I build systems that handle real money, real students, and real members.`,
+    skills: () => `Next.js / React / TypeScript &middot; Node.js / Express / FastAPI &middot; AWS (Lambda, Cognito, Bedrock, EventBridge) &middot; Claude / RAG / Prompt Engineering &middot; PostgreSQL / Supabase &middot; OAuth2 / SSO &middot; Kali Linux`,
+    projects: () => { document.getElementById('projects').scrollIntoView({behavior:'smooth'}); return `Jumping to case studies&hellip;`; },
+    contact: () => { if (window.openContactOverlay) window.openContactOverlay(); return `Opening contact panel&hellip;`; },
+    cv: () => `<a href="/Rusumba_Bukanga_2026_CV_1Page.pdf" target="_blank">Download CV (PDF)</a>`,
+    ls: () => `cleverly.txt  123tutors.txt  alpha.txt  utap.txt  friends-of-cinema.txt  akur8.txt`,
+    'sudo hire-me': () => `Permission granted. <a href="#contact" onclick="openContactOverlay();return false;">Let's talk</a> &rarr;`,
+    clear: () => { termBody.innerHTML = ''; return null; }
+  };
+  function termRun(raw){
+    const cmd = raw.trim();
+    if (!cmd) return;
+    termPrint(`<span class="prompt">$</span> <span class="cmd">${cmd.replace(/</g,'&lt;')}</span>`, 'echo');
+    const key = cmd.toLowerCase();
+    if (termCommands[key]) {
+      const out = termCommands[key]();
+      if (out) termPrint(out);
+    } else if (key.startsWith('cat ')) {
+      const file = key.slice(4).replace('.txt','');
+      const map = { cleverly:'#case-alpha-ops', alpha:'#case-alpha-ops', utap:'#case-utap', akur8:'#case-akur8' };
+      termPrint(`Opening ${file}.txt&hellip;`);
+      const target = document.getElementById((map[file]||'#projects').slice(1)) || document.getElementById('projects');
+      target.scrollIntoView({behavior:'smooth'});
+    } else {
+      termPrint(`command not found: ${cmd.replace(/</g,'&lt;')} &mdash; type <span class="cmd">help</span>`);
+    }
+    trackCTA('terminal_cmd_' + key.split(' ')[0]);
+  }
+  if (termInput) {
+    termInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') { termRun(termInput.value); termInput.value = ''; }
     });
-  });
+    document.querySelector('.terminal-window').addEventListener('click', () => termInput.focus());
+  }
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
