@@ -195,6 +195,8 @@ fbq('track', 'PageView');
     pointer-events:none;z-index:0;
   }
   #hero .hero-grid{position:relative;z-index:1;}
+  #vantaBg{position:absolute;inset:0;z-index:0;opacity:0.55;}
+  @media (max-width:760px){ #vantaBg{ display:none; } }
 
   /* ---------- NAV ---------- */
   header{
@@ -713,6 +715,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ===================== ATTENTION ===================== -->
 <section id="hero">
+  <div id="vantaBg"></div>
   <div class="wrap hero-grid">
     <div>
       <div class="eyebrow">Johannesburg, South Africa — <span id="liveClock">--:--:--</span> SAST — Available for select engagements</div>
@@ -1299,6 +1302,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <span class="talk-fab-dot"></span> Let's talk
 </button>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.net.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
 <script>
   // Scroll-reveal
   const revealEls = document.querySelectorAll('.reveal');
@@ -1388,6 +1396,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   });
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---------- Vanta.js animated network background (hero only, desktop + motion-ok) ----------
+  if (!reduceMotion && window.innerWidth > 760 && window.VANTA && window.THREE) {
+    try {
+      VANTA.NET({
+        el: "#vantaBg",
+        THREE: THREE,
+        mouseControls: true,
+        touchControls: false,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.0,
+        scaleMobile: 1.0,
+        color: 0x5b8def,
+        backgroundColor: 0x0c1b33,
+        backgroundAlpha: 0,
+        points: 9.0,
+        maxDistance: 22.0,
+        spacing: 18.0,
+        showDots: true
+      });
+    } catch (e) { /* fail silently, grid background still looks fine without it */ }
+  }
+
 
   // Scroll progress bar
   const progressBar = document.getElementById('scrollProgress');
