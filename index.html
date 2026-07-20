@@ -207,6 +207,8 @@ fbq('track', 'PageView');
   nav.wrap{display:flex;align-items:center;justify-content:space-between;height:68px;}
   .logo{font-family:var(--font-mono);font-size:15px;letter-spacing:0.02em;color:var(--paper);text-decoration:none;}
   .logo span{color:var(--amber);}
+  .stamp{display:flex;flex-direction:column;line-height:1;font-family:var(--font-mono);font-size:9px;color:var(--paper-dim);letter-spacing:0.02em;margin-left:14px;padding-left:14px;border-left:1px solid rgba(120,160,220,0.25);opacity:0.75;}
+  @media (max-width:760px){ .stamp{ display:none; } }
   nav ul{list-style:none;display:flex;gap:32px;font-family:var(--font-mono);font-size:13px;letter-spacing:0.03em;}
   nav ul a{text-decoration:none;color:var(--paper-dim);transition:color .2s;}
   nav ul a:hover{color:var(--paper);}
@@ -285,6 +287,7 @@ fbq('track', 'PageView');
     letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;display:block;
   }
   h2{font-family:var(--font-display);font-size:clamp(26px,3.4vw,38px);font-weight:600;margin-bottom:16px;}
+  .stat-num{color:var(--amber);font-size:1.15em;}
   .section-desc{color:var(--paper-dim);font-size:16px;max-width:56ch;}
 
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease;}
@@ -326,6 +329,17 @@ fbq('track', 'PageView');
   .rail-progress{height:2px;background:rgba(120,160,220,0.14);margin-top:2px;position:relative;overflow:hidden;max-width:1120px;margin-left:auto;margin-right:auto;}
   .rail-progress-fill{position:absolute;top:0;left:0;height:100%;width:25%;background:var(--amber);transition:width .1s linear;}
   @media (max-width:700px){ .rail-card{flex:0 0 260px;padding:28px 22px;} }
+
+  /* ---------- process strip: real sequence, unlike the old fake-numbered cards ---------- */
+  .process-strip{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:32px;margin-top:70px;
+    padding-top:40px;border-top:1px solid rgba(120,160,220,0.14);
+  }
+  .process-num{font-family:var(--font-mono);font-size:13px;color:var(--amber);letter-spacing:0.04em;display:block;margin-bottom:14px;}
+  .process-step h4{font-family:var(--font-display);font-size:17px;font-weight:600;margin-bottom:8px;}
+  .process-step p{font-size:13.5px;color:var(--paper-dim);line-height:1.55;}
+  @media (max-width:900px){ .process-strip{grid-template-columns:repeat(2,1fr);row-gap:36px;} }
+  @media (max-width:560px){ .process-strip{grid-template-columns:1fr;} }
 
   /* ---------- DESIRE: case studies ---------- */
   .case{
@@ -659,8 +673,14 @@ fbq('track', 'PageView');
     #spotlight{ display:none; }
   }
 
-  footer{padding:36px 0;text-align:center;font-family:var(--font-mono);font-size:12px;color:var(--paper-dim);}
-  footer a{color:var(--teal);text-decoration:none;}
+    footer{padding:56px 0 0;font-family:var(--font-mono);font-size:13px;color:var(--paper-dim);border-top:1px solid rgba(120,160,220,0.14);}
+  footer a{color:var(--paper);text-decoration:none;transition:color .2s;}
+  footer a:hover{color:var(--amber);}
+  .footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding-bottom:36px;}
+  .footer-col{display:flex;flex-direction:column;gap:8px;}
+  .footer-label{color:var(--amber);letter-spacing:0.08em;text-transform:uppercase;font-size:11px;margin-bottom:4px;}
+  .footer-bottom{border-top:1px solid rgba(120,160,220,0.14);padding:18px 0;font-size:11px;opacity:0.7;}
+  @media (max-width:700px){ .footer-grid{grid-template-columns:repeat(2,1fr);} }
 </style>
 </head>
 <body>
@@ -678,6 +698,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <header>
   <nav class="wrap">
     <a href="#hero" class="logo">RUSUMBA<span>.</span>BUKANGA</a>
+    <div class="stamp"><span>&copy;</span><span>2025&ndash;</span><span>2026</span></div>
     <div class="nav-links">
       <ul>
         <li><a href="#work">What I Build</a></li>
@@ -695,7 +716,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap hero-grid">
     <div>
       <div class="eyebrow">Johannesburg, South Africa — <span id="liveClock">--:--:--</span> SAST — Available for select engagements</div>
-      <h1>I build the systems companies trust with <span class="accent">money, students, and members.</span></h1>
+      <h1>i build the systems companies trust with <span class="accent">MONEY</span>, <span class="accent">STUDENTS</span>, and <span class="accent">MEMBERS.</span></h1>
       <p class="hero-sub">Full stack developer and CTO working across InsurTech, EdTech, and AI — from centralized authentication infrastructure to production LLM products, for Cleverly AI, 123tutors, and Alpha Group.</p>
       <div class="cta-row">
         <a href="#projects" class="btn btn-primary" onclick="trackCTA('view_work')">View my work</a>
@@ -834,6 +855,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <div class="rail-progress"><div class="rail-progress-fill" id="railProgressFill"></div></div>
   </div>
+
+  <div class="wrap">
+    <div class="process-strip reveal">
+      <div class="process-step">
+        <span class="process-num">01</span>
+        <h4>Discover</h4>
+        <p>Understand the real constraint &mdash; regulatory, technical debt, or a team that can''t scale past a bottleneck.</p>
+      </div>
+      <div class="process-step">
+        <span class="process-num">02</span>
+        <h4>Architect</h4>
+        <p>Design the system boundaries first: what talks to what, what owns the data, what can fail safely.</p>
+      </div>
+      <div class="process-step">
+        <span class="process-num">03</span>
+        <h4>Build</h4>
+        <p>Ship in slices. Working software in front of real users beats a perfect spec every time.</p>
+      </div>
+      <div class="process-step">
+        <span class="process-num">04</span>
+        <h4>Ship &amp; Own</h4>
+        <p>Production is the job. I stay on-call for what I build &mdash; not just the demo.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ===================== DESIRE ===================== -->
@@ -858,7 +904,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap">
     <div class="section-head reveal">
       <span class="section-tag">Case studies</span>
-      <h2>A few systems I've taken from problem to production.</h2>
+      <h2 class="stat-lead"><span class="stat-num">10</span> systems shipped across <span class="stat-num">3</span> concurrent leadership roles — these are the ones worth walking through.</h2>
       <p class="section-desc">Not a list of technologies — a record of what each build actually had to solve.</p>
     </div>
 
@@ -1202,8 +1248,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <footer>
-  <div class="wrap">
-    Rusumba Bukanga — Johannesburg, South Africa — <a href="mailto:herij46@gmail.com">herij46@gmail.com</a>
+  <div class="wrap footer-grid">
+    <div class="footer-col">
+      <span class="footer-label">rusumba</span>
+      <a href="#hero">Back to top</a>
+    </div>
+    <div class="footer-col">
+      <span class="footer-label">connect</span>
+      <a href="https://github.com/cicology" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/rusumba/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+    <div class="footer-col">
+      <span class="footer-label">reach</span>
+      <a href="mailto:herij46@gmail.com">herij46@gmail.com</a>
+      <span>+27 79 905 6758</span>
+    </div>
+    <div class="footer-col">
+      <span class="footer-label">location</span>
+      <span>Johannesburg, South Africa</span>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>&copy; 2025&ndash;2026 Rusumba Bukanga. All rights reserved.</span>
   </div>
 </footer>
 
