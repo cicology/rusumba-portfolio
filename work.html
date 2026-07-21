@@ -6,10 +6,10 @@
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="Rusumba Bukanga">
 <meta name="theme-color" content="#0C1B33">
-<title>Rusumba Bukanga — Full Stack Developer & AI Engineer, Johannesburg</title>
+<title>Work — Rusumba Bukanga | Case Studies &amp; Live Projects</title>
 <meta name="description" content="Rusumba Bukanga is a full stack developer and CTO based in Johannesburg, building AI products, authentication infrastructure, and InsurTech systems for Cleverly AI, 123tutors, and Alpha Group.">
 <meta name="keywords" content="full stack developer Johannesburg, AI engineer South Africa, InsurTech developer, AWS developer, CTO for hire, SSO authentication engineer, Claude Bedrock developer">
-<link rel="canonical" href="https://www.rusumbabukanga.com/">
+<link rel="canonical" href="https://www.rusumbabukanga.com/work.html">
 
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -195,6 +195,11 @@ fbq('track', 'PageView');
     pointer-events:none;z-index:0;
   }
   #hero .hero-grid{position:relative;z-index:1;}
+  #work-header{padding:150px 0 60px;}
+  .back-link{font-family:var(--font-mono);font-size:13px;color:var(--paper-dim);text-decoration:none;display:inline-block;margin-bottom:28px;transition:color .2s;}
+  .back-link:hover{color:var(--amber);}
+  .work-h1{font-family:var(--font-display);font-weight:700;font-size:clamp(28px,4.4vw,50px);line-height:1.12;letter-spacing:-0.01em;margin-bottom:20px;max-width:18ch;}
+  .work-h1 .accent{color:var(--amber);}
   #vantaBg{position:absolute;inset:0;z-index:0;opacity:0.55;}
   @media (max-width:760px){ #vantaBg{ display:none; } }
 
@@ -289,22 +294,7 @@ fbq('track', 'PageView');
     letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;display:block;
   }
   h2{font-family:var(--font-display);font-size:clamp(26px,3.4vw,38px);font-weight:600;margin-bottom:16px;}
-  
   .stat-num{color:var(--amber);font-size:1.15em;}
-  /* homepage case-study teaser */
-  .teaser-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:20px;}
-  @media (max-width:860px){ .teaser-grid{grid-template-columns:1fr;} }
-  .teaser-card{
-    border:1px solid rgba(120,160,220,0.2);background:var(--ink-panel);padding:28px;
-    text-decoration:none;display:flex;flex-direction:column;gap:12px;
-    transition:transform .25s ease, border-color .25s ease, box-shadow .25s ease;
-  }
-  .teaser-card:hover{transform:translateY(-6px);border-color:var(--amber);box-shadow:0 14px 34px rgba(0,0,0,0.35);}
-  .teaser-co{font-family:var(--font-mono);font-size:12px;color:var(--amber);letter-spacing:0.04em;text-transform:uppercase;}
-  .teaser-card h3{font-family:var(--font-display);font-size:20px;font-weight:600;color:var(--paper);line-height:1.25;}
-  .teaser-card p{font-size:14px;color:var(--paper-dim);flex-grow:1;}
-  .teaser-tags{font-family:var(--font-mono);font-size:11px;color:var(--paper-dim);opacity:0.7;}
-  .teaser-cta{margin-top:32px;text-align:center;}
   .section-desc{color:var(--paper-dim);font-size:16px;max-width:56ch;}
 
   .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease, transform .7s ease;}
@@ -777,8 +767,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="nav-links">
       <ul>
         <li><a href="#work">What I Build</a></li>
-        <li><a href="work.html">Case Studies</a></li>
-        <li><a href="work.html#live">Live Projects</a></li>
+        <li><a href="#projects">Case Studies</a></li>
+        <li><a href="#live">Live Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
       <a href="#contact" class="nav-cta" onclick="trackCTA('nav_cta')">Get in touch</a>
@@ -786,76 +776,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </nav>
 </header>
 
-<!-- ===================== ATTENTION ===================== -->
-<section id="hero">
-  <div id="vantaBg"></div>
-  <div class="wrap hero-grid">
-    <div>
-      <div class="eyebrow">Johannesburg, South Africa — <span id="liveClock">--:--:--</span> SAST — Available for select engagements</div>
-      <h1>i build the systems companies trust with <span class="accent">MONEY</span>, <span class="accent">STUDENTS</span>, and <span class="accent">MEMBERS.</span></h1>
-      <p class="hero-sub">Full stack developer and CTO working across InsurTech, EdTech, and AI — from centralized authentication infrastructure to production LLM products, for Cleverly AI, 123tutors, and Alpha Group.</p>
-      <div class="cta-row">
-        <a href="#projects" class="btn btn-primary" onclick="trackCTA('view_work')">View my work</a>
-        <a href="/Rusumba_Bukanga_2026_CV_1Page.pdf" class="btn btn-ghost" onclick="trackCTA('download_cv')">Download CV</a>
-      </div>
-    </div>
-    <div class="schematic" role="img" aria-label="System schematic: client apps connect through an SSO gateway to Cognito, an AI engine on Bedrock, a claims database, and a billing ledger">
-      <div class="schem-tip" id="schemTip"><span class="tip-title"></span><span class="tip-body"></span></div>
-      <svg viewBox="0 0 360 420">
-        <path class="schem-path" d="M60,80 L60,170" />
-        <path class="schem-path delay1" d="M60,170 L180,170" />
-        <path class="schem-path delay1" d="M180,170 L300,110" />
-        <path class="schem-path delay2" d="M180,170 L180,280" />
-        <path class="schem-path delay2" d="M180,170 L300,230" />
-        <path class="schem-path delay3" d="M180,280 L60,340" />
-        <path class="schem-path delay3" d="M180,280 L300,340" />
-
-        <g class="node-group" data-title="Client Apps" data-body="Web + mobile frontends across insurance, hospitality, fitness, and education products.">
-          <circle class="node-circle" cx="60" cy="80" r="26"></circle>
-          <text class="node-label" x="60" y="46" text-anchor="middle">CLIENT</text>
-        </g>
-
-        <g class="node-group" data-title="SSO Gateway" data-body="Centralized OAuth2/PKCE auth gateway I built serving every app in the Alpha ecosystem. Click to view the case study.">
-          <circle class="node-circle active" cx="180" cy="170" r="30"></circle>
-          <text class="node-label" x="180" y="212" text-anchor="middle">SSO GATEWAY</text>
-        </g>
-
-        <g class="node-group" data-title="AWS Cognito" data-body="Identity pools + KMS-signed JWTs for secure, verifiable session tokens. Click to view the case study.">
-          <circle class="node-circle" cx="300" cy="110" r="24"></circle>
-          <text class="node-label" x="300" y="80" text-anchor="middle">COGNITO</text>
-        </g>
-
-        <g class="node-group" data-title="AI Engine" data-body="LLM-powered grading and tutoring features — prompt engineering, RAG, OCR pipelines. Click to view the case study.">
-          <circle class="node-circle" cx="180" cy="280" r="26"></circle>
-          <text class="node-label" x="180" y="322" text-anchor="middle">AI ENGINE</text>
-        </g>
-
-        <g class="node-group" data-title="AWS Bedrock" data-body="Cloud-native Claude access powering the 123tutors AI Tutor in production. Click to view the case study.">
-          <circle class="node-circle" cx="300" cy="230" r="22"></circle>
-          <text class="node-label" x="300" y="200" text-anchor="middle">BEDROCK</text>
-        </g>
-
-        <g class="node-group" data-title="Claims DB" data-body="Underwriting + claims data behind Alpha Insure's CRM and policy systems. Click to view the case study.">
-          <circle class="node-circle" cx="60" cy="340" r="22"></circle>
-          <text class="node-label" x="60" y="372" text-anchor="middle">CLAIMS DB</text>
-        </g>
-
-        <g class="node-group" data-title="Ledger" data-body="Automated debit order billing + bank reconciliation on Lambda, EventBridge, S3, SES/SNS. Click to view the case study.">
-          <circle class="node-circle" cx="300" cy="340" r="22"></circle>
-          <text class="node-label" x="300" y="372" text-anchor="middle">LEDGER</text>
-        </g>
-
-        <circle class="packet" r="3.5">
-          <animateMotion dur="2.6s" repeatCount="indefinite" path="M60,80 L60,170 L180,170 L300,110" />
-        </circle>
-        <circle class="packet" r="3.5">
-          <animateMotion dur="3.1s" begin="0.8s" repeatCount="indefinite" path="M180,170 L180,280 L300,340" />
-        </circle>
-      </svg>
-    </div>
+<!-- ===================== WORK PAGE HEADER ===================== -->
+<section id="work-header">
+  <div class="wrap">
+    <a href="index.html" class="back-link">&larr; Home</a>
+    <span class="section-tag">The work</span>
+    <h1 class="work-h1">10 systems, shipped &mdash; <span class="accent">here''s how each one actually went.</span></h1>
+    <p class="hero-sub">Not a portfolio of screenshots. Real problems, real constraints, and what I architected, built, or collaborated on to solve them.</p>
   </div>
 </section>
-
 <!-- ===================== AS SEEN ON ===================== -->
 <div class="seen-on">
   <div class="seen-on-mask">
@@ -896,86 +825,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </div>
 
-<!-- ===================== INTEREST ===================== -->
-<section id="work">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="section-tag">What I build</span>
-      <h2>Four disciplines, one habit: shipping things that hold up in production.</h2>
-      <p class="section-desc">I don't specialize by staying in one lane — I specialize by making sure the AI layer, the auth layer, and the business logic all actually work together under real load.</p>
-    </div>
-  </div>
-  <div class="wrap">
-    <div class="scroll-hint reveal">DRAG TO EXPLORE <span>&rarr;</span></div>
-    <div class="card-rail reveal" id="cardRail">
-      <div class="rail-card">
-        <div class="rail-tag">[AI]</div>
-        <h3>AI Engineering</h3>
-        <p>LLM integration (Claude, AWS Bedrock), prompt engineering, RAG, and OCR pipelines shipped in two live products.</p>
-      </div>
-      <div class="rail-card">
-        <div class="rail-tag">[AUTH]</div>
-        <h3>Identity &amp; Platform Infrastructure</h3>
-        <p>Centralized SSO gateways built on OAuth2/PKCE, AWS Cognito, and KMS-signed JWTs serving multi-app ecosystems.</p>
-      </div>
-      <div class="rail-card">
-        <div class="rail-tag">[FIN]</div>
-        <h3>InsurTech &amp; FinTech Systems</h3>
-        <p>Underwriting, claims, broker management, and policy portals handling regulated, sensitive financial data.</p>
-      </div>
-      <div class="rail-card">
-        <div class="rail-tag">[SEC]</div>
-        <h3>Applied Security</h3>
-        <p>Hands-on offensive security practice with Kali Linux, and internal audits that close real production risk.</p>
-      </div>
-    </div>
-    <div class="rail-progress"><div class="rail-progress-fill" id="railProgressFill"></div></div>
-  </div>
-
-  <div class="wrap">
-    <div class="process-strip reveal">
-      <div class="process-step">
-        <span class="process-num">01</span>
-        <h4>Discover</h4>
-        <p>Understand the real constraint &mdash; regulatory, technical debt, or a team that can''t scale past a bottleneck.</p>
-      </div>
-      <div class="process-step">
-        <span class="process-num">02</span>
-        <h4>Architect</h4>
-        <p>Design the system boundaries first: what talks to what, what owns the data, what can fail safely.</p>
-      </div>
-      <div class="process-step">
-        <span class="process-num">03</span>
-        <h4>Build</h4>
-        <p>Ship in slices. Working software in front of real users beats a perfect spec every time.</p>
-      </div>
-      <div class="process-step">
-        <span class="process-num">04</span>
-        <h4>Ship &amp; Own</h4>
-        <p>Production is the job. I stay on-call for what I build &mdash; not just the demo.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== DESIRE ===================== -->
-<div class="marquee-band">
-  <div class="marquee-track">
-    <span>FULL STACK DEVELOPMENT</span><span class="dot">●</span>
-    <span>AI ENGINEERING</span><span class="dot">●</span>
-    <span>AWS &amp; CLOUD INFRASTRUCTURE</span><span class="dot">●</span>
-    <span>SSO &amp; IDENTITY SYSTEMS</span><span class="dot">●</span>
-    <span>INSURTECH &amp; FINTECH</span><span class="dot">●</span>
-    <span>APPLICATION SECURITY</span><span class="dot">●</span>
-    <span>FULL STACK DEVELOPMENT</span><span class="dot">●</span>
-    <span>AI ENGINEERING</span><span class="dot">●</span>
-    <span>AWS &amp; CLOUD INFRASTRUCTURE</span><span class="dot">●</span>
-    <span>SSO &amp; IDENTITY SYSTEMS</span><span class="dot">●</span>
-    <span>INSURTECH &amp; FINTECH</span><span class="dot">●</span>
-    <span>APPLICATION SECURITY</span><span class="dot">●</span>
-  </div>
-</div>
-
 <section id="projects">
   <div class="wrap">
     <div class="section-head reveal">
@@ -984,29 +833,209 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="section-desc">Not a list of technologies — a record of what each build actually had to solve.</p>
     </div>
 
-    <div class="teaser-grid reveal">
-      <a href="work.html" class="teaser-card">
-        <span class="teaser-co">Cleverly AI</span>
+    <div class="lane-filter reveal" role="tablist" aria-label="Filter case studies by focus area">
+      <button class="lane-chip active" data-lane="all">All Work <span class="lane-count"></span></button>
+      <button class="lane-chip" data-lane="ai">AI Engineering</button>
+      <button class="lane-chip" data-lane="platform">Platform &amp; Identity</button>
+      <button class="lane-chip" data-lane="insurtech">InsurTech &amp; FinTech</button>
+      <button class="lane-chip" data-lane="leadership">Leadership &amp; Cofounding</button>
+    </div>
+    <p class="lane-status" id="laneStatus" aria-live="polite"></p>
+
+    <div class="case reveal" data-lanes="ai">
+      <div class="case-meta">
+        <span class="case-index">CASE 01 / 10</span>
+        <div class="co">Cleverly AI</div>
         <h3>AI-assisted grading, built to be trusted by teachers</h3>
-        <p>A vendor-neutral AI provider layer for rubric-aligned, evidence-linked grading with teacher-in-the-loop review.</p>
-        <span class="teaser-tags">Next.js &middot; Claude &middot; RAG &middot; Supabase</span>
-      </a>
-      <a href="work.html" class="teaser-card">
-        <span class="teaser-co">Alpha Group</span>
+        <div class="stack-tags">
+          <span class="tag">Next.js</span><span class="tag">Claude</span><span class="tag">RAG</span><span class="tag">Supabase</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <span class="label">The problem</span>
+        <p>Manual grading doesn't scale for South African schools and colleges, but AI grading no one can verify doesn't get trusted.</p>
+        <span class="label">What I built</span>
+        <p>A full-stack platform with a <strong>vendor-neutral AI provider layer</strong> for rubric-aligned, evidence-linked grading with teacher-in-the-loop review — plus a tiered OCR pipeline balancing cost against handwriting-recognition accuracy.</p>
+        <span class="label">Where it stands</span>
+        <p>Live in pilot with South African educational institutions, with prompt caching and model tiering keeping unit economics sustainable at scale.</p>
+        <a class="case-link" href="https://cleverly.co.za" target="_blank" rel="noopener" onclick="trackCTA('visit_cleverly')">Visit cleverly.co.za</a>
+      </div>
+    </div>
+
+    <div class="case reveal" data-lanes="platform">
+      <div class="case-meta">
+        <span class="case-index">CASE 02 / 10</span>
+        <div class="co">Alpha Group</div>
         <h3>One login, every app in the business</h3>
-        <p>A centralized SSO authentication gateway serving every application across an insurance, hospitality, and fitness ecosystem.</p>
-        <span class="teaser-tags">AWS Lambda &middot; Cognito &middot; KMS &middot; OAuth2</span>
-      </a>
-      <a href="work.html" class="teaser-card">
-        <span class="teaser-co">Alpha Insure</span>
-        <h3>Testing an actuarial pricing engine before it ships</h3>
-        <p>A full-stack UAT tool that bulk-validates the Akur8 motor rating API &mdash; my strongest solo build.</p>
-        <span class="teaser-tags">React + Vite &middot; Node/Express &middot; Firebase</span>
-      </a>
+        <div class="stack-tags">
+          <span class="tag">AWS Lambda</span><span class="tag">Cognito</span><span class="tag">KMS</span><span class="tag">OAuth2/PKCE</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <span class="label">The problem</span>
+        <p>An insurance company, a restaurant, and a gym — three completely different products, each needing secure, independent logins that still had to be centrally managed.</p>
+        <span class="label">What I architected &amp; built</span>
+        <p>Working with the Alpha engineering team, architected and helped build a centralized SSO authentication gateway serving every application across the organization's ecosystem, on AWS Lambda, API Gateway, Cognito, DynamoDB, and KMS-signed JWTs.</p>
+        <span class="label">Where it stands</span>
+        <p>In production, underpinning underwriting, client-facing, and internal HR systems across the group.</p>
+      </div>
     </div>
-    <div class="teaser-cta reveal">
-      <a href="work.html" class="btn btn-primary" onclick="trackCTA('view_all_work')">View all 10 case studies &rarr;</a>
+
+    <div class="case reveal" data-lanes="ai platform">
+      <div class="case-meta">
+        <span class="case-index">CASE 03 / 10</span>
+        <div class="co">123tutors</div>
+        <h3>A platform migration and an AI tutor, at the same time</h3>
+        <div class="stack-tags">
+          <span class="tag">TypeScript</span><span class="tag">Prisma</span><span class="tag">Bedrock</span><span class="tag">Vercel</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <span class="label">The problem</span>
+        <p>A tutor-matching platform outgrowing its no-code foundation, while students needed more support than the tutor roster alone could give.</p>
+        <span class="label">What I built</span>
+        <p>Returned as CTO to lead a full migration from Bubble to Next.js/TypeScript on Prisma and Supabase, alongside a <strong>Claude-powered AI Tutor</strong> (via AWS Bedrock) with real-time streaming chat, intent classification, and generated interactive mindmaps.</p>
+        <span class="label">Where it stands</span>
+        <p>Migration live, AI Tutor shipped, technical roadmap now extending into the platform's matching engine.</p>
+        <a class="case-link" href="https://123tutors.co.za" target="_blank" rel="noopener" onclick="trackCTA('visit_123tutors')">Visit 123tutors.co.za</a>
+      </div>
     </div>
+
+    <div class="case reveal" id="case-alpha-ops" data-lanes="insurtech platform">
+      <div class="case-meta">
+        <span class="case-index">CASE 04 / 10</span>
+        <div class="co">Alpha Group</div>
+        <h3>The operations layer: billing, brokers, bookings, and HR</h3>
+        <div class="stack-tags">
+          <span class="tag">React/Node</span><span class="tag">Lambda</span><span class="tag">EventBridge</span><span class="tag">SES/SNS</span><span class="tag">MS Graph</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <span class="label">The problem</span>
+        <p>Three very different businesses — insurance, hospitality, fitness — each running on manual processes that didn't scale: paper-heavy underwriting, phone-in reservations, and monthly billing done by hand.</p>
+        <span class="label">What I architected, built &amp; collaborated on</span>
+        <p>Working with the Alpha engineering team across all four businesses: for insurance, <strong>CRM systems for underwriting, claims, and broker management</strong>, customer-facing quote calculators and policy portals, a broker onboarding workflow, and REST APIs integrating underwriting partners, banks, and reinsurers. For the restaurant, a real-time <strong>booking and capacity management system</strong>. For the gym, a membership platform plus an <strong>automated recurring debit order run</strong> — scheduled batch billing with bank reconciliation, on Lambda, EventBridge, S3, and SES/SNS. Plus an internal <strong>HR portal</strong> with org-chart, employee self-service, and a wellness session booking system, integrated with Microsoft Graph.</p>
+        <span class="label">Where it stands</span>
+        <p>All in production — policy processing time down 60%, manual data-entry errors down 85%.</p>
+      </div>
+    </div>
+
+    <div class="case reveal" data-lanes="insurtech platform">
+      <div class="case-meta">
+        <span class="case-index">CASE 05 / 10</span>
+        <div class="co">Alpha Group</div>
+        <h3>Killing a decade-old Adobe dependency, one form at a time</h3>
+        <div class="stack-tags">
+          <span class="tag">PDF Parsing</span><span class="tag">E-Signature</span><span class="tag">Node.js</span><span class="tag">Browser-Native</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <span class="label">The problem</span>
+        <p>Hundreds of claims forms were trapped in a deprecated Adobe-only PDF format — customers on Chrome, Safari, or a phone hit a dead end and had to install desktop software just to file a claim.</p>
+        <span class="label">What I architected &amp; collaborated on</span>
+        <p>Working with the Alpha engineering team, helped architect and build an in-browser pipeline that reads each form's own underlying blueprint and reconstructs it as a fully interactive web form — conditional logic, calculations, and draw-to-sign included — then exports a pixel-accurate PDF on submission. Alongside it, an in-house <strong>document execution and e-signature platform</strong> replacing a paid third-party subscription entirely.</p>
+        <span class="label">Where it stands</span>
+        <p>Rolled out across the full form library, working end-to-end from browse to signed, submitted PDF; the e-signature platform is live handling agreement workflows.</p>
+      </div>
+    </div>
+
+    <div class="case reveal" data-lanes="platform">
+      <div class="case-meta">
+        <span class="case-index">CASE 06 / 10</span>
+        <div class="co">Client project</div>
+        <h3>Rebuilding a property portfolio site without breaking it</h3>
+        <div class="stack-tags">
+          <span class="tag">Next.js</span><span class="tag">React Migration</span><span class="tag">Content Modeling</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <span class="label">The problem</span>
+        <p>A property development company's public site was running on a five-year-old template-based stack — every content update was a risk, and the underlying framework was long past its supportable life.</p>
+        <span class="label">What I architected &amp; collaborated on</span>
+        <p>Working with the team, helped architect a full rebuild onto a modern Next.js architecture — migrating every property listing, gallery, and page into structured, maintainable data models while preserving the exact public-facing content and behavior clients already relied on.</p>
+        <span class="label">Where it stands</span>
+        <p>In final QA, verified page-by-page against the live production site for full content and visual parity ahead of cutover.</p>
+      </div>
+    </div>
+
+    <div class="case reveal" data-lanes="ai insurtech">
+      <div class="case-meta">
+        <span class="case-index">CASE 07 / 10</span>
+        <div class="co">123tutors</div>
+        <h3>Turning a 5-day manual review into a 2-hour automated one</h3>
+        <div class="stack-tags">
+          <span class="tag">KYC API</span><span class="tag">Biometrics</span><span class="tag">AML Screening</span><span class="tag">Supabase</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <span class="label">The problem</span>
+        <p>Every tutor application was manually reviewed by an admin before going live — a human bottleneck that couldn't scale past roughly 50 applications a week, with no verifiable identity or background checks behind it.</p>
+        <span class="label">What I built</span>
+        <p>An automated vetting pipeline integrating a South African identity verification API (InTouch) — government ID verification, facial-match and liveness biometrics, AML/sanctions screening, and bank account verification, running in parallel with a tiered auto-approve/flag-for-review decision engine.</p>
+        <span class="label">Where it stands</span>
+        <p>Vetting time down from 2–5 business days to under 2 hours; admin time per application from ~30 minutes to ~2 minutes (review queue only); scalability ceiling removed entirely.</p>
+      </div>
+    </div>
+
+    <div class="case reveal" id="case-utap" data-lanes="leadership platform">
+      <div class="case-meta">
+        <span class="case-index">CASE 08 / 10</span>
+        <div class="co">uTap — Engineer</div>
+        <h3>Turning a student ID into a tap-to-pay card</h3>
+        <div class="stack-tags">
+          <span class="tag">React Native</span><span class="tag">NFC</span><span class="tag">Paystack</span><span class="tag">Multi-app</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <span class="label">The problem</span>
+        <p>University campuses run on cash and cards vendors can't always process, and students carry a physical ID card that does nothing beyond proving who they are.</p>
+        <span class="label">What I built</span>
+        <p>As an engineer with equity in uTap, architected a campus commerce platform across a multi-app ecosystem — a React Native/Expo student app, a vendor dashboard, and an admin portal — that lets students pay on-campus vendors and emulate their student card via NFC. Led the full payment gateway migration onto Paystack across mobile, web, and backend, and built the native Android NFC/card-emulation module myself.</p>
+        <span class="label">Where it stands</span>
+        <p>Preparing for pilot launch with an initial university partner, with iOS NFC support in progress.</p>
+        <a class="case-link" href="https://utapwebsite.vercel.app" target="_blank" rel="noopener" onclick="trackCTA('visit_utap')">Visit utapwebsite.vercel.app</a>
+      </div>
+    </div>
+
+    <div class="case reveal" data-lanes="platform leadership">
+      <div class="case-meta">
+        <span class="case-index">CASE 09 / 10</span>
+        <div class="co">Friends of Cinema</div>
+        <h3>Building a cinematic identity, not just a website</h3>
+        <div class="stack-tags">
+          <span class="tag">React + Vite</span><span class="tag">Framer Motion</span><span class="tag">Supabase</span><span class="tag">Custom Cursor</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <span class="label">The problem</span>
+        <p>An independent film production company needed a site that felt like the films they make — art-house, editorial, cinematic — not another templated agency homepage.</p>
+        <span class="label">What I built</span>
+        <p>A full React/Vite/TypeScript build with Framer Motion page transitions, a custom cursor with mix-blend-mode effects, a full-screen parallax hero with film grain overlay, and a filterable portfolio grid — backed by Supabase (Postgres, Storage, Auth) with a client-manageable content schema and RLS policies.</p>
+        <span class="label">Where it stands</span>
+        <p>Live in production on Vercel.</p>
+        <a class="case-link" href="https://github.com/cicology/friends-of-cinema" target="_blank" rel="noopener" onclick="trackCTA('visit_friendsofcinema_repo')">View repo on GitHub</a>
+      </div>
+    </div>
+
+    <div class="case reveal" id="case-akur8" data-lanes="insurtech">
+      <div class="case-meta">
+        <span class="case-index">CASE 10 / 10</span>
+        <div class="co">Alpha Insure</div>
+        <h3>Testing an actuarial pricing engine before it touches a real quote</h3>
+        <div class="stack-tags">
+          <span class="tag">React + Vite</span><span class="tag">Node/Express</span><span class="tag">Firebase</span>
+        </div>
+      </div>
+      <div class="case-body">
+        <span class="label">The problem</span>
+        <p>Alpha Insure's motor rating engine runs on Akur8, a third-party actuarial pricing API — but validating hundreds of pricing scenarios by hand before every deploy wasn't sustainable.</p>
+        <span class="label">What I built</span>
+        <p>A full-stack UAT tool that bulk-runs CSV-defined test cases against the Akur8 rating API sequentially, tracks live pass/fail/error counts, flags invalid rows before they burn a test run, exports results for re-import, and keeps a searchable history of every batch in Firestore.</p>
+        <span class="label">Where it stands</span>
+        <p>In active use for pre-deploy validation of Alpha Insure's motor pricing.</p>
+      </div>
+    </div>
+
     <div class="stats reveal bracketed">
       <span class="bl"></span><span class="br"></span>
       <div class="stat"><div class="num" data-count="60">0</div><div class="lbl">% faster policy processing</div></div>
@@ -1086,21 +1115,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
 
-    <!-- interactive terminal -->
-    <div class="terminal-window reveal">
-      <div class="terminal-titlebar">
-        <span class="terminal-dot red"></span><span class="terminal-dot amber"></span><span class="terminal-dot green"></span>
-        <span class="terminal-title">rusumba@portfolio: ~</span>
       </div>
-      <div class="terminal-body" id="terminalBody" tabindex="0">
-        <div class="terminal-line out">Welcome. This is a real shell &mdash; type <span class="cmd">help</span> to see what it can do.</div>
-      </div>
-      <div class="terminal-input-row">
-        <span class="prompt">$</span>
-        <input type="text" id="terminalInput" class="terminal-input" autocomplete="off" spellcheck="false" placeholder="type a command..." aria-label="Portfolio terminal command input">
-      </div>
-    </div>
-  </div>
 </section>
 
 <!-- ===================== ACTION ===================== -->
@@ -1173,11 +1188,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <button id="talkFab" class="talk-fab" onclick="openContactOverlay()" aria-label="Open contact panel">
   <span class="talk-fab-dot"></span> Let's talk
 </button>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.net.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
 <script>
   // Scroll-reveal
