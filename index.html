@@ -195,7 +195,7 @@ fbq('track', 'PageView');
     pointer-events:none;z-index:0;
   }
   #hero .hero-grid{position:relative;z-index:1;}
-  #vantaBg{position:absolute;inset:0;z-index:0;opacity:0.55;}
+  #vantaBg{position:absolute;inset:0;z-index:0;opacity:0.28;}
   @media (max-width:760px){ #vantaBg{ display:none; } }
 
   /* ---------- NAV ---------- */
@@ -227,7 +227,7 @@ fbq('track', 'PageView');
   /* ---------- HERO (ATTENTION) ---------- */
   #hero{
     min-height:100svh;display:flex;align-items:center;
-    padding-top:110px;padding-bottom:60px;position:relative;overflow:hidden;
+    padding-top:130px;padding-bottom:90px;position:relative;overflow:hidden;
   }
   .hero-grid{display:grid;grid-template-columns:1.35fr 0.65fr;gap:24px;align-items:center;}
   @media (max-width:900px){ .hero-grid{grid-template-columns:1fr;} }
@@ -575,6 +575,7 @@ fbq('track', 'PageView');
   .stack-panel .terminal-line .out{color:var(--paper-dim);}
 
   /* ---------- interactive terminal ---------- */
+  #terminal-section{background:radial-gradient(ellipse 1000px 500px at 50% 0%, rgba(94,234,212,0.05), transparent 60%);}
   .terminal-window{
     border:1px solid rgba(120,160,220,0.25);margin-top:60px;
     background:#0a1628;box-shadow:0 20px 50px rgba(0,0,0,0.35);
@@ -856,126 +857,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- ===================== AS SEEN ON ===================== -->
-<div class="seen-on">
-  <div class="seen-on-mask">
-    <div class="seen-on-track">
-      <a class="seen-on-mark" href="https://cleverly.co.za" target="_blank" rel="noopener" onclick="trackCTA('wordmark_cleverly')">Cleverly AI</a>
-      <span class="seen-on-sep">/</span>
-      <a class="seen-on-mark" href="https://123tutors.co.za" target="_blank" rel="noopener" onclick="trackCTA('wordmark_123tutors')">123tutors</a>
-      <span class="seen-on-sep">/</span>
-      <a class="seen-on-mark" href="#case-alpha-ops" onclick="trackCTA('wordmark_alpha')">Alpha Insure</a>
-      <span class="seen-on-sep">/</span>
-      <a class="seen-on-mark" href="#case-akur8" onclick="trackCTA('wordmark_akur8')">Akur8</a>
-      <span class="seen-on-sep">/</span>
-      <a class="seen-on-mark" href="#case-alpha-ops" onclick="trackCTA('wordmark_11thfloor')">The 11th Floor</a>
-      <span class="seen-on-sep">/</span>
-      <a class="seen-on-mark" href="#case-alpha-ops" onclick="trackCTA('wordmark_bag')">Body Action Gym</a>
-      <span class="seen-on-sep">/</span>
-      <a class="seen-on-mark" href="https://utapwebsite.vercel.app" target="_blank" rel="noopener" onclick="trackCTA('wordmark_utap')">uTap</a>
-      <span class="seen-on-sep">/</span>
-      <a class="seen-on-mark" href="https://github.com/cicology/friends-of-cinema" target="_blank" rel="noopener" onclick="trackCTA('wordmark_friendsofcinema')">Friends of Cinema</a>
-      <span class="seen-on-sep">/</span>
-      <a class="seen-on-mark" href="https://cleverly.co.za" target="_blank" rel="noopener" onclick="trackCTA('wordmark_cleverly')">Cleverly AI</a>
-      <span class="seen-on-sep">/</span>
-      <a class="seen-on-mark" href="https://123tutors.co.za" target="_blank" rel="noopener" onclick="trackCTA('wordmark_123tutors')">123tutors</a>
-      <span class="seen-on-sep">/</span>
-      <a class="seen-on-mark" href="#case-alpha-ops" onclick="trackCTA('wordmark_alpha')">Alpha Insure</a>
-      <span class="seen-on-sep">/</span>
-      <a class="seen-on-mark" href="#case-akur8" onclick="trackCTA('wordmark_akur8')">Akur8</a>
-      <span class="seen-on-sep">/</span>
-      <a class="seen-on-mark" href="#case-alpha-ops" onclick="trackCTA('wordmark_11thfloor')">The 11th Floor</a>
-      <span class="seen-on-sep">/</span>
-      <a class="seen-on-mark" href="#case-alpha-ops" onclick="trackCTA('wordmark_bag')">Body Action Gym</a>
-      <span class="seen-on-sep">/</span>
-      <a class="seen-on-mark" href="https://utapwebsite.vercel.app" target="_blank" rel="noopener" onclick="trackCTA('wordmark_utap')">uTap</a>
-      <span class="seen-on-sep">/</span>
-      <a class="seen-on-mark" href="https://github.com/cicology/friends-of-cinema" target="_blank" rel="noopener" onclick="trackCTA('wordmark_friendsofcinema')">Friends of Cinema</a>
-      <span class="seen-on-sep">/</span>
-    </div>
-  </div>
-</div>
-
-<!-- ===================== INTEREST ===================== -->
-<section id="work">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="section-tag">What I build</span>
-      <h2>Four disciplines, one habit: shipping things that hold up in production.</h2>
-      <p class="section-desc">I don't specialize by staying in one lane — I specialize by making sure the AI layer, the auth layer, and the business logic all actually work together under real load.</p>
-    </div>
-  </div>
-  <div class="wrap">
-    <div class="scroll-hint reveal">DRAG TO EXPLORE <span>&rarr;</span></div>
-    <div class="card-rail reveal" id="cardRail">
-      <div class="rail-card">
-        <div class="rail-tag">[AI]</div>
-        <h3>AI Engineering</h3>
-        <p>LLM integration (Claude, AWS Bedrock), prompt engineering, RAG, and OCR pipelines shipped in two live products.</p>
-      </div>
-      <div class="rail-card">
-        <div class="rail-tag">[AUTH]</div>
-        <h3>Identity &amp; Platform Infrastructure</h3>
-        <p>Centralized SSO gateways built on OAuth2/PKCE, AWS Cognito, and KMS-signed JWTs serving multi-app ecosystems.</p>
-      </div>
-      <div class="rail-card">
-        <div class="rail-tag">[FIN]</div>
-        <h3>InsurTech &amp; FinTech Systems</h3>
-        <p>Underwriting, claims, broker management, and policy portals handling regulated, sensitive financial data.</p>
-      </div>
-      <div class="rail-card">
-        <div class="rail-tag">[SEC]</div>
-        <h3>Applied Security</h3>
-        <p>Hands-on offensive security practice with Kali Linux, and internal audits that close real production risk.</p>
-      </div>
-    </div>
-    <div class="rail-progress"><div class="rail-progress-fill" id="railProgressFill"></div></div>
-  </div>
-
-  <div class="wrap">
-    <div class="process-strip reveal">
-      <div class="process-step">
-        <span class="process-num">01</span>
-        <h4>Discover</h4>
-        <p>Understand the real constraint &mdash; regulatory, technical debt, or a team that can''t scale past a bottleneck.</p>
-      </div>
-      <div class="process-step">
-        <span class="process-num">02</span>
-        <h4>Architect</h4>
-        <p>Design the system boundaries first: what talks to what, what owns the data, what can fail safely.</p>
-      </div>
-      <div class="process-step">
-        <span class="process-num">03</span>
-        <h4>Build</h4>
-        <p>Ship in slices. Working software in front of real users beats a perfect spec every time.</p>
-      </div>
-      <div class="process-step">
-        <span class="process-num">04</span>
-        <h4>Ship &amp; Own</h4>
-        <p>Production is the job. I stay on-call for what I build &mdash; not just the demo.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== DESIRE ===================== -->
-<div class="marquee-band">
-  <div class="marquee-track">
-    <span>FULL STACK DEVELOPMENT</span><span class="dot">●</span>
-    <span>AI ENGINEERING</span><span class="dot">●</span>
-    <span>AWS &amp; CLOUD INFRASTRUCTURE</span><span class="dot">●</span>
-    <span>SSO &amp; IDENTITY SYSTEMS</span><span class="dot">●</span>
-    <span>INSURTECH &amp; FINTECH</span><span class="dot">●</span>
-    <span>APPLICATION SECURITY</span><span class="dot">●</span>
-    <span>FULL STACK DEVELOPMENT</span><span class="dot">●</span>
-    <span>AI ENGINEERING</span><span class="dot">●</span>
-    <span>AWS &amp; CLOUD INFRASTRUCTURE</span><span class="dot">●</span>
-    <span>SSO &amp; IDENTITY SYSTEMS</span><span class="dot">●</span>
-    <span>INSURTECH &amp; FINTECH</span><span class="dot">●</span>
-    <span>APPLICATION SECURITY</span><span class="dot">●</span>
-  </div>
-</div>
-
 <section id="projects">
   <div class="wrap">
     <div class="section-head reveal">
@@ -1017,75 +898,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- ===================== LIVE PROJECTS ===================== -->
-<section id="live">
+<!-- ===================== SIGNATURE: TERMINAL ===================== -->
+<section id="terminal-section">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="section-tag">Live &amp; public</span>
-      <h2>See it running, read the code.</h2>
-      <p class="section-desc">The platforms are in production. The rest of the trail is on GitHub.</p>
+      <span class="section-tag">Try it</span>
+      <h2>A portfolio you can talk to.</h2>
+      <p class="section-desc">This is a real shell. Type a command &mdash; start with <span style="color:var(--amber)">help</span>.</p>
     </div>
-    <div class="proj-grid reveal">
-      <a class="proj-card" href="https://cleverly.co.za" target="_blank" rel="noopener" onclick="trackCTA('proj_cleverly')">
-        <span class="scan"></span>
-        <span class="proj-status">Live — In pilot</span>
-        <h3>Cleverly AI</h3>
-        <p>AI-assisted grading platform for South African schools, colleges, and universities. Evidence-linked marking with teacher-in-the-loop review.</p>
-        <span class="proj-url">cleverly.co.za</span>
-      </a>
-      <a class="proj-card" href="https://123tutors.co.za" target="_blank" rel="noopener" onclick="trackCTA('proj_123tutors')">
-        <span class="scan"></span>
-        <span class="proj-status">Live — In production</span>
-        <h3>123tutors</h3>
-        <p>Tutor-student matching platform, fully migrated from no-code to Next.js/TypeScript — now with a Claude-powered AI Tutor via AWS Bedrock.</p>
-        <span class="proj-url">123tutors.co.za</span>
-      </a>
-      <a class="proj-card" href="https://utapwebsite.vercel.app" target="_blank" rel="noopener" onclick="trackCTA('proj_utap')">
-        <span class="scan"></span>
-        <span class="proj-status">Live — Pre-pilot</span>
-        <h3>uTap</h3>
-        <p>University campus commerce and access platform — React Native/Expo app, NFC card emulation, Paystack payments.</p>
-        <span class="proj-url">utapwebsite.vercel.app</span>
-      </a>
-      <a class="proj-card" href="https://github.com/cicology/friends-of-cinema" target="_blank" rel="noopener" onclick="trackCTA('proj_friendsofcinema')">
-        <span class="scan"></span>
-        <span class="proj-status">Live — In production</span>
-        <h3>Friends of Cinema</h3>
-        <p>Art-house cinematic website for an independent film production company — custom cursor, film grain hero, Framer Motion transitions.</p>
-        <span class="proj-url">View on GitHub</span>
-      </a>
-      <a class="proj-card" href="https://github.com/cicology" target="_blank" rel="noopener" onclick="trackCTA('proj_github')">
-        <span class="scan"></span>
-        <span class="proj-status">Open source</span>
-        <h3>GitHub — @cicology</h3>
-        <p>Automation tools, experiments, and the working notes behind the production systems. Follow the commits.</p>
-        <span class="proj-url">github.com/cicology</span>
-      </a>
-    </div>
-
-    <div class="section-head reveal" style="margin-top:80px;">
-      <span class="section-tag">Also on record</span>
-      <h2>Earlier builds, still relevant.</h2>
-      <p class="section-desc">Smaller in scope, but each one taught me something the bigger systems now depend on.</p>
-    </div>
-    <div class="cards cards-3 reveal">
-      <div class="card">
-        <div class="card-num">05</div>
-        <h3>Cloud-Native Recommendation Engine</h3>
-        <p>FastAPI and BigQuery-based recommendation system deployed on GCP — early production ML infrastructure work.</p>
-      </div>
-      <div class="card">
-        <div class="card-num">06</div>
-        <h3>Network Automation Suite</h3>
-        <p>Python tooling for enterprise network diagnostics, built during a 24/7 NOC role supporting FortiGate, F5, and Cisco infrastructure.</p>
-      </div>
-      <div class="card">
-        <div class="card-num">07</div>
-        <h3>Personal Cybersecurity Lab</h3>
-        <p>Segmented, VPN-gated home lab for offensive security practice — Kali Linux, Nmap, Metasploit, and Burp Suite against intentionally vulnerable applications.</p>
-      </div>
-    </div>
-
     <!-- interactive terminal -->
     <div class="terminal-window reveal">
       <div class="terminal-titlebar">
@@ -1101,8 +921,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
   </div>
-</section>
 
+  </div>
+</section>
 <!-- ===================== ACTION ===================== -->
 <section id="contact">
   <div class="wrap contact-inner bracketed">
