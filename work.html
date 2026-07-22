@@ -396,7 +396,24 @@ fbq('track', 'PageView');
   .lane-chip:hover{border-color:var(--paper-dim);color:var(--paper);}
   .lane-chip.active{background:var(--amber);border-color:var(--amber);color:var(--ink);font-weight:500;}
   .lane-count{opacity:0.7;font-size:11px;}
-  .lane-status{font-family:var(--font-mono);font-size:12px;color:var(--paper-dim);margin-bottom:8px;}
+    .lane-status{font-family:var(--font-mono);font-size:12px;color:var(--paper-dim);margin-bottom:8px;}
+  /* project index cards */
+  .index-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:24px;}
+  @media (max-width:760px){ .index-grid{grid-template-columns:1fr;} }
+  .index-card{
+    display:flex;flex-direction:column;gap:12px;padding:32px;
+    background:var(--ink-panel);border:1px solid rgba(120,160,220,0.18);
+    text-decoration:none;transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
+  }
+  .index-card:hover{transform:translateY(-6px);border-color:var(--amber);box-shadow:0 16px 38px rgba(0,0,0,0.35);}
+  .index-card.lane-hidden{display:none;}
+  .index-card-top{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;}
+  .index-cat{font-family:var(--font-mono);font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--amber);}
+  .index-role{font-family:var(--font-mono);font-size:11px;color:var(--paper-dim);}
+  .index-card h3{font-family:var(--font-display);font-size:23px;font-weight:600;color:var(--paper);line-height:1.2;}
+  .index-card p{font-size:14.5px;color:var(--paper-dim);flex-grow:1;line-height:1.55;}
+  .index-readmore{font-family:var(--font-mono);font-size:12px;color:var(--amber);transition:letter-spacing .2s;}
+  .index-card:hover .index-readmore{letter-spacing:0.02em;}
   .case{transition:opacity .35s ease, max-height .35s ease, transform .35s ease;}
   .case.lane-hidden{
     display:none;
@@ -833,7 +850,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="section-desc">Not a list of technologies — a record of what each build actually had to solve.</p>
     </div>
 
-    <div class="lane-filter reveal" role="tablist" aria-label="Filter case studies by focus area">
+    <div class="lane-filter reveal" role="tablist" aria-label="Filter projects by focus area">
       <button class="lane-chip active" data-lane="all">All Work <span class="lane-count"></span></button>
       <button class="lane-chip" data-lane="ai">AI Engineering</button>
       <button class="lane-chip" data-lane="platform">Platform &amp; Identity</button>
@@ -842,198 +859,67 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
     <p class="lane-status" id="laneStatus" aria-live="polite"></p>
 
-    <div class="case reveal" data-lanes="ai">
-      <div class="case-meta">
-        <span class="case-index">CASE 01 / 10</span>
-        <div class="co">Cleverly AI</div>
-        <h3>AI-assisted grading, built to be trusted by teachers</h3>
-        <div class="stack-tags">
-          <span class="tag">Next.js</span><span class="tag">Claude</span><span class="tag">RAG</span><span class="tag">Supabase</span>
-        </div>
-      </div>
-      <div class="case-body">
-        <span class="label">The problem</span>
-        <p>Manual grading doesn't scale for South African schools and colleges, but AI grading no one can verify doesn't get trusted.</p>
-        <span class="label">What I built</span>
-        <p>A full-stack platform with a <strong>vendor-neutral AI provider layer</strong> for rubric-aligned, evidence-linked grading with teacher-in-the-loop review — plus a tiered OCR pipeline balancing cost against handwriting-recognition accuracy.</p>
-        <span class="label">Where it stands</span>
-        <p>Live in pilot with South African educational institutions, with prompt caching and model tiering keeping unit economics sustainable at scale.</p>
-        <a class="case-link" href="https://cleverly.co.za" target="_blank" rel="noopener" onclick="trackCTA('visit_cleverly')">Visit cleverly.co.za</a>
-      </div>
-    </div>
-
-    <div class="case reveal" data-lanes="platform">
-      <div class="case-meta">
-        <span class="case-index">CASE 02 / 10</span>
-        <div class="co">Alpha Group</div>
-        <h3>One login, every app in the business</h3>
-        <div class="stack-tags">
-          <span class="tag">AWS Lambda</span><span class="tag">Cognito</span><span class="tag">KMS</span><span class="tag">OAuth2/PKCE</span>
-        </div>
-      </div>
-      <div class="case-body">
-        <span class="label">The problem</span>
-        <p>An insurance company, a restaurant, and a gym — three completely different products, each needing secure, independent logins that still had to be centrally managed.</p>
-        <span class="label">What I architected &amp; built</span>
-        <p>Working with the Alpha engineering team, architected and helped build a centralized SSO authentication gateway serving every application across the organization's ecosystem, on AWS Lambda, API Gateway, Cognito, DynamoDB, and KMS-signed JWTs.</p>
-        <span class="label">Where it stands</span>
-        <p>In production, underpinning underwriting, client-facing, and internal HR systems across the group.</p>
-      </div>
-    </div>
-
-    <div class="case reveal" data-lanes="ai platform">
-      <div class="case-meta">
-        <span class="case-index">CASE 03 / 10</span>
-        <div class="co">123tutors</div>
-        <h3>A platform migration and an AI tutor, at the same time</h3>
-        <div class="stack-tags">
-          <span class="tag">TypeScript</span><span class="tag">Prisma</span><span class="tag">Bedrock</span><span class="tag">Vercel</span>
-        </div>
-      </div>
-      <div class="case-body">
-        <span class="label">The problem</span>
-        <p>A tutor-matching platform outgrowing its no-code foundation, while students needed more support than the tutor roster alone could give.</p>
-        <span class="label">What I built</span>
-        <p>Returned as CTO to lead a full migration from Bubble to Next.js/TypeScript on Prisma and Supabase, alongside a <strong>Claude-powered AI Tutor</strong> (via AWS Bedrock) with real-time streaming chat, intent classification, and generated interactive mindmaps.</p>
-        <span class="label">Where it stands</span>
-        <p>Migration live, AI Tutor shipped, technical roadmap now extending into the platform's matching engine.</p>
-        <a class="case-link" href="https://123tutors.co.za" target="_blank" rel="noopener" onclick="trackCTA('visit_123tutors')">Visit 123tutors.co.za</a>
-      </div>
-    </div>
-
-    <div class="case reveal" id="case-alpha-ops" data-lanes="insurtech platform">
-      <div class="case-meta">
-        <span class="case-index">CASE 04 / 10</span>
-        <div class="co">Alpha Group</div>
-        <h3>The operations layer: billing, brokers, bookings, and HR</h3>
-        <div class="stack-tags">
-          <span class="tag">React/Node</span><span class="tag">Lambda</span><span class="tag">EventBridge</span><span class="tag">SES/SNS</span><span class="tag">MS Graph</span>
-        </div>
-      </div>
-      <div class="case-body">
-        <span class="label">The problem</span>
-        <p>Three very different businesses — insurance, hospitality, fitness — each running on manual processes that didn't scale: paper-heavy underwriting, phone-in reservations, and monthly billing done by hand.</p>
-        <span class="label">What I architected, built &amp; collaborated on</span>
-        <p>Working with the Alpha engineering team across all four businesses: for insurance, <strong>CRM systems for underwriting, claims, and broker management</strong>, customer-facing quote calculators and policy portals, a broker onboarding workflow, and REST APIs integrating underwriting partners, banks, and reinsurers. For the restaurant, a real-time <strong>booking and capacity management system</strong>. For the gym, a membership platform plus an <strong>automated recurring debit order run</strong> — scheduled batch billing with bank reconciliation, on Lambda, EventBridge, S3, and SES/SNS. Plus an internal <strong>HR portal</strong> with org-chart, employee self-service, and a wellness session booking system, integrated with Microsoft Graph.</p>
-        <span class="label">Where it stands</span>
-        <p>All in production — policy processing time down 60%, manual data-entry errors down 85%.</p>
-      </div>
-    </div>
-
-    <div class="case reveal" data-lanes="insurtech platform">
-      <div class="case-meta">
-        <span class="case-index">CASE 05 / 10</span>
-        <div class="co">Alpha Group</div>
-        <h3>Killing a decade-old Adobe dependency, one form at a time</h3>
-        <div class="stack-tags">
-          <span class="tag">PDF Parsing</span><span class="tag">E-Signature</span><span class="tag">Node.js</span><span class="tag">Browser-Native</span>
-        </div>
-      </div>
-      <div class="case-body">
-        <span class="label">The problem</span>
-        <p>Hundreds of claims forms were trapped in a deprecated Adobe-only PDF format — customers on Chrome, Safari, or a phone hit a dead end and had to install desktop software just to file a claim.</p>
-        <span class="label">What I architected &amp; collaborated on</span>
-        <p>Working with the Alpha engineering team, helped architect and build an in-browser pipeline that reads each form's own underlying blueprint and reconstructs it as a fully interactive web form — conditional logic, calculations, and draw-to-sign included — then exports a pixel-accurate PDF on submission. Alongside it, an in-house <strong>document execution and e-signature platform</strong> replacing a paid third-party subscription entirely.</p>
-        <span class="label">Where it stands</span>
-        <p>Rolled out across the full form library, working end-to-end from browse to signed, submitted PDF; the e-signature platform is live handling agreement workflows.</p>
-      </div>
-    </div>
-
-    <div class="case reveal" data-lanes="platform">
-      <div class="case-meta">
-        <span class="case-index">CASE 06 / 10</span>
-        <div class="co">Client project</div>
-        <h3>Rebuilding a property portfolio site without breaking it</h3>
-        <div class="stack-tags">
-          <span class="tag">Next.js</span><span class="tag">React Migration</span><span class="tag">Content Modeling</span>
-        </div>
-      </div>
-      <div class="case-body">
-        <span class="label">The problem</span>
-        <p>A property development company's public site was running on a five-year-old template-based stack — every content update was a risk, and the underlying framework was long past its supportable life.</p>
-        <span class="label">What I architected &amp; collaborated on</span>
-        <p>Working with the team, helped architect a full rebuild onto a modern Next.js architecture — migrating every property listing, gallery, and page into structured, maintainable data models while preserving the exact public-facing content and behavior clients already relied on.</p>
-        <span class="label">Where it stands</span>
-        <p>In final QA, verified page-by-page against the live production site for full content and visual parity ahead of cutover.</p>
-      </div>
-    </div>
-
-    <div class="case reveal" data-lanes="ai insurtech">
-      <div class="case-meta">
-        <span class="case-index">CASE 07 / 10</span>
-        <div class="co">123tutors</div>
-        <h3>Turning a 5-day manual review into a 2-hour automated one</h3>
-        <div class="stack-tags">
-          <span class="tag">KYC API</span><span class="tag">Biometrics</span><span class="tag">AML Screening</span><span class="tag">Supabase</span>
-        </div>
-      </div>
-      <div class="case-body">
-        <span class="label">The problem</span>
-        <p>Every tutor application was manually reviewed by an admin before going live — a human bottleneck that couldn't scale past roughly 50 applications a week, with no verifiable identity or background checks behind it.</p>
-        <span class="label">What I built</span>
-        <p>An automated vetting pipeline integrating a South African identity verification API (InTouch) — government ID verification, facial-match and liveness biometrics, AML/sanctions screening, and bank account verification, running in parallel with a tiered auto-approve/flag-for-review decision engine.</p>
-        <span class="label">Where it stands</span>
-        <p>Vetting time down from 2–5 business days to under 2 hours; admin time per application from ~30 minutes to ~2 minutes (review queue only); scalability ceiling removed entirely.</p>
-      </div>
-    </div>
-
-    <div class="case reveal" id="case-utap" data-lanes="leadership platform">
-      <div class="case-meta">
-        <span class="case-index">CASE 08 / 10</span>
-        <div class="co">uTap — Engineer</div>
-        <h3>Turning a student ID into a tap-to-pay card</h3>
-        <div class="stack-tags">
-          <span class="tag">React Native</span><span class="tag">NFC</span><span class="tag">Paystack</span><span class="tag">Multi-app</span>
-        </div>
-      </div>
-      <div class="case-body">
-        <span class="label">The problem</span>
-        <p>University campuses run on cash and cards vendors can't always process, and students carry a physical ID card that does nothing beyond proving who they are.</p>
-        <span class="label">What I built</span>
-        <p>As an engineer with equity in uTap, architected a campus commerce platform across a multi-app ecosystem — a React Native/Expo student app, a vendor dashboard, and an admin portal — that lets students pay on-campus vendors and emulate their student card via NFC. Led the full payment gateway migration onto Paystack across mobile, web, and backend, and built the native Android NFC/card-emulation module myself.</p>
-        <span class="label">Where it stands</span>
-        <p>Preparing for pilot launch with an initial university partner, with iOS NFC support in progress.</p>
-        <a class="case-link" href="https://utapwebsite.vercel.app" target="_blank" rel="noopener" onclick="trackCTA('visit_utap')">Visit utapwebsite.vercel.app</a>
-      </div>
-    </div>
-
-    <div class="case reveal" data-lanes="platform leadership">
-      <div class="case-meta">
-        <span class="case-index">CASE 09 / 10</span>
-        <div class="co">Friends of Cinema</div>
-        <h3>Building a cinematic identity, not just a website</h3>
-        <div class="stack-tags">
-          <span class="tag">React + Vite</span><span class="tag">Framer Motion</span><span class="tag">Supabase</span><span class="tag">Custom Cursor</span>
-        </div>
-      </div>
-      <div class="case-body">
-        <span class="label">The problem</span>
-        <p>An independent film production company needed a site that felt like the films they make — art-house, editorial, cinematic — not another templated agency homepage.</p>
-        <span class="label">What I built</span>
-        <p>A full React/Vite/TypeScript build with Framer Motion page transitions, a custom cursor with mix-blend-mode effects, a full-screen parallax hero with film grain overlay, and a filterable portfolio grid — backed by Supabase (Postgres, Storage, Auth) with a client-manageable content schema and RLS policies.</p>
-        <span class="label">Where it stands</span>
-        <p>Live in production on Vercel.</p>
-        <a class="case-link" href="https://github.com/cicology/friends-of-cinema" target="_blank" rel="noopener" onclick="trackCTA('visit_friendsofcinema_repo')">View repo on GitHub</a>
-      </div>
-    </div>
-
-    <div class="case reveal" id="case-akur8" data-lanes="insurtech">
-      <div class="case-meta">
-        <span class="case-index">CASE 10 / 10</span>
-        <div class="co">Alpha Insure</div>
-        <h3>Testing an actuarial pricing engine before it touches a real quote</h3>
-        <div class="stack-tags">
-          <span class="tag">React + Vite</span><span class="tag">Node/Express</span><span class="tag">Firebase</span>
-        </div>
-      </div>
-      <div class="case-body">
-        <span class="label">The problem</span>
-        <p>Alpha Insure's motor rating engine runs on Akur8, a third-party actuarial pricing API — but validating hundreds of pricing scenarios by hand before every deploy wasn't sustainable.</p>
-        <span class="label">What I built</span>
-        <p>A full-stack UAT tool that bulk-runs CSV-defined test cases against the Akur8 rating API sequentially, tracks live pass/fail/error counts, flags invalid rows before they burn a test run, exports results for re-import, and keeps a searchable history of every batch in Firestore.</p>
-        <span class="label">Where it stands</span>
-        <p>In active use for pre-deploy validation of Alpha Insure's motor pricing.</p>
-      </div>
+    <div class="index-grid">
+      <a class="index-card" href="projects/cleverly-ai-grading.html" data-lanes="ai leadership">
+        <div class="index-card-top"><span class="index-cat">AI / EdTech</span><span class="index-role">Cofounder &amp; CTO</span></div>
+        <h3>Cleverly AI</h3>
+        <p>AI-assisted grading for schools &mdash; rubric-aligned, evidence-linked, teacher-in-the-loop.</p>
+        <span class="index-readmore">Read the full story &rarr;</span>
+      </a>
+      <a class="index-card" href="projects/alpha-sso-gateway.html" data-lanes="platform">
+        <div class="index-card-top"><span class="index-cat">Platform / Identity</span><span class="index-role">Architect (team)</span></div>
+        <h3>SSO Authentication Gateway</h3>
+        <p>One login serving every app across an insurance, hospitality, and fitness group.</p>
+        <span class="index-readmore">Read the full story &rarr;</span>
+      </a>
+      <a class="index-card" href="projects/123tutors-platform.html" data-lanes="ai platform">
+        <div class="index-card-top"><span class="index-cat">AI / EdTech</span><span class="index-role">CTO</span></div>
+        <h3>123tutors</h3>
+        <p>A no-code-to-Next.js migration and a Claude-powered AI Tutor, shipped together.</p>
+        <span class="index-readmore">Read the full story &rarr;</span>
+      </a>
+      <a class="index-card" href="projects/alpha-operations.html" data-lanes="insurtech platform">
+        <div class="index-card-top"><span class="index-cat">InsurTech / FinTech</span><span class="index-role">Architect &amp; Builder (team)</span></div>
+        <h3>The Operations Layer</h3>
+        <p>CRM, billing, bookings and HR across three businesses. 60% faster, 85% fewer errors.</p>
+        <span class="index-readmore">Read the full story &rarr;</span>
+      </a>
+      <a class="index-card" href="projects/claim-forms-modernisation.html" data-lanes="insurtech platform">
+        <div class="index-card-top"><span class="index-cat">InsurTech / Documents</span><span class="index-role">Architect (team)</span></div>
+        <h3>Claim Forms Modernisation</h3>
+        <p>Hundreds of Adobe-only forms, rebuilt browser-native with e-signature.</p>
+        <span class="index-readmore">Read the full story &rarr;</span>
+      </a>
+      <a class="index-card" href="projects/tutor-vetting-automation.html" data-lanes="ai insurtech">
+        <div class="index-card-top"><span class="index-cat">AI / Compliance</span><span class="index-role">Engineer</span></div>
+        <h3>Tutor Vetting Automation</h3>
+        <p>A 5-day manual review turned into a 2-hour automated one &mdash; KYC, biometrics, AML.</p>
+        <span class="index-readmore">Read the full story &rarr;</span>
+      </a>
+      <a class="index-card" href="projects/property-portfolio-rebuild.html" data-lanes="platform">
+        <div class="index-card-top"><span class="index-cat">Web / Migration</span><span class="index-role">Architect (team)</span></div>
+        <h3>Property Portfolio Rebuild</h3>
+        <p>A legacy property site migrated to Next.js with full content parity.</p>
+        <span class="index-readmore">Read the full story &rarr;</span>
+      </a>
+      <a class="index-card" href="projects/utap-campus-commerce.html" data-lanes="leadership platform">
+        <div class="index-card-top"><span class="index-cat">FinTech / Mobile</span><span class="index-role">Engineer (equity)</span></div>
+        <h3>uTap</h3>
+        <p>Turning a student ID into a tap-to-pay card &mdash; React Native, NFC, Paystack.</p>
+        <span class="index-readmore">Read the full story &rarr;</span>
+      </a>
+      <a class="index-card" href="projects/friends-of-cinema.html" data-lanes="platform leadership">
+        <div class="index-card-top"><span class="index-cat">Web / Creative</span><span class="index-role">Sole Builder</span></div>
+        <h3>Friends of Cinema</h3>
+        <p>A cinematic site for an indie film studio &mdash; Framer Motion, custom cursor, Supabase.</p>
+        <span class="index-readmore">Read the full story &rarr;</span>
+      </a>
+      <a class="index-card" href="projects/akur8-uat-runner.html" data-lanes="insurtech">
+        <div class="index-card-top"><span class="index-cat">InsurTech / Tooling</span><span class="index-role">Sole Builder</span></div>
+        <h3>Akur8 UAT Runner</h3>
+        <p>Bulk-validating an actuarial motor rating API before it touches a real quote.</p>
+        <span class="index-readmore">Read the full story &rarr;</span>
+      </a>
     </div>
 
     <div class="stats reveal bracketed">
@@ -1316,21 +1202,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // ---------- Page transition curtain (real cross-page navigation, not just anchors) ----------
+  // ---------- Page transition: on-load reveal + non-blocking cover (robust, native nav) ----------
   const transEl = document.getElementById('pageTransition');
-  if (transEl && !reduceMotion) {
-    requestAnimationFrame(() => { transEl.classList.add('reveal'); });
-    document.querySelectorAll('a[href="index.html"], a[href="work.html"], a[href="./index.html"], a[href="./work.html"]').forEach(link => {
-      link.addEventListener('click', (e) => {
-        const dest = link.getAttribute('href');
-        e.preventDefault();
-        transEl.classList.remove('reveal');
-        transEl.classList.add('cover');
-        setTimeout(() => { window.location.href = dest; }, 480);
+  if (transEl) {
+    if (reduceMotion) {
+      transEl.style.display = 'none';
+    } else {
+      // Reveal the destination page on load (curtain wipes away)
+      requestAnimationFrame(() => { transEl.classList.add('reveal'); });
+      // On internal-link click, drop the curtain WITHOUT blocking the browser's native navigation.
+      document.querySelectorAll('a[href]').forEach(link => {
+        const href = link.getAttribute('href');
+        const target = link.getAttribute('target');
+        const isInternal = href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto') && target !== '_blank';
+        if (isInternal) {
+          link.addEventListener('click', () => {
+            transEl.classList.remove('reveal');
+            transEl.classList.add('cover');
+            // no preventDefault, no setTimeout: the browser navigates natively and reliably
+          });
+        }
       });
-    });
-  } else if (transEl) {
-    transEl.style.display = 'none';
+    }
   }
 
   // ---------- Vanta.js animated network background (hero only, desktop + motion-ok) ----------
@@ -1438,7 +1331,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
 
   // ---------- Lane filter ----------
-  const allCases = [...document.querySelectorAll('.case[data-lanes]')];
+  const allCases = [...document.querySelectorAll('.index-card[data-lanes]')];
   const laneChips = document.querySelectorAll('.lane-chip');
   const laneStatus = document.getElementById('laneStatus');
 

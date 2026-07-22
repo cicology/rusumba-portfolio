@@ -1169,21 +1169,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     requestAnimationFrame(() => { requestAnimationFrame(() => block.classList.add('is-shown')); });
   })();
 
-  // ---------- Page transition curtain (real cross-page navigation, not just anchors) ----------
+  // ---------- Page transition: on-load reveal + non-blocking cover (robust, native nav) ----------
   const transEl = document.getElementById('pageTransition');
-  if (transEl && !reduceMotion) {
-    requestAnimationFrame(() => { transEl.classList.add('reveal'); });
-    document.querySelectorAll('a[href="index.html"], a[href="work.html"], a[href="./index.html"], a[href="./work.html"]').forEach(link => {
-      link.addEventListener('click', (e) => {
-        const dest = link.getAttribute('href');
-        e.preventDefault();
-        transEl.classList.remove('reveal');
-        transEl.classList.add('cover');
-        setTimeout(() => { window.location.href = dest; }, 480);
+  if (transEl) {
+    if (reduceMotion) {
+      transEl.style.display = 'none';
+    } else {
+      // Reveal the destination page on load (curtain wipes away)
+      requestAnimationFrame(() => { transEl.classList.add('reveal'); });
+      // On internal-link click, drop the curtain WITHOUT blocking the browser's native navigation.
+      document.querySelectorAll('a[href]').forEach(link => {
+        const href = link.getAttribute('href');
+        const target = link.getAttribute('target');
+        const isInternal = href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto') && target !== '_blank';
+        if (isInternal) {
+          link.addEventListener('click', () => {
+            transEl.classList.remove('reveal');
+            transEl.classList.add('cover');
+            // no preventDefault, no setTimeout: the browser navigates natively and reliably
+          });
+        }
       });
-    });
-  } else if (transEl) {
-    transEl.style.display = 'none';
+    }
   }
 
   // ---------- Vanta.js animated network background (hero only, desktop + motion-ok) ----------
