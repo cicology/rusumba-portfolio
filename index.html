@@ -700,6 +700,38 @@ fbq('track', 'PageView');
   }
   header{ z-index:50; }
 
+
+
+  /* ===== transitions.dev: texts-reveal + shimmer (tuned defaults) ===== */
+  :root{
+    --stagger-dur:600ms; --stagger-distance:14px; --stagger-stagger:70ms; --stagger-blur:4px;
+    --stagger-ease:cubic-bezier(0.22, 1, 0.36, 1);
+    --shimmer-base:var(--amber); --shimmer-highlight:#ffe0a8; --shimmer-band:220px;
+    --shimmer-dur:4.5s; --shimmer-ease:linear;
+  }
+  .t-stagger-line{
+    display:block;opacity:0;transform:translateY(var(--stagger-distance));filter:blur(var(--stagger-blur));
+    transition:opacity var(--stagger-dur) var(--stagger-ease), transform var(--stagger-dur) var(--stagger-ease), filter var(--stagger-dur) var(--stagger-ease);
+    will-change:transform, opacity, filter;
+  }
+  .t-stagger-line--2{transition-delay:var(--stagger-stagger);}
+  .t-stagger-line--3{transition-delay:calc(var(--stagger-stagger) * 2);}
+  .t-stagger.is-shown .t-stagger-line{opacity:1;transform:translateY(0);filter:blur(0);}
+  .t-shimmer{position:relative;display:inline-block;color:var(--shimmer-base);}
+  .t-shimmer::before{
+    content:attr(data-text);position:absolute;inset:0;pointer-events:none;
+    background-image:linear-gradient(90deg, transparent 0%, transparent 40%, var(--shimmer-highlight) 50%, transparent 60%, transparent 100%);
+    background-size:var(--shimmer-band) 100%;background-repeat:no-repeat;
+    -webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;
+    animation:t-shimmer var(--shimmer-dur) var(--shimmer-ease) infinite;
+  }
+  @keyframes t-shimmer{0%{background-position:100% 0;}100%{background-position:0% 0;}}
+  @media (prefers-reduced-motion: reduce){
+    .t-stagger-line{transition:none !important;opacity:1;transform:none;filter:none;}
+    .t-shimmer::before{animation:none !important;}
+  }
+  /* when .accent is also a t-shimmer, let t-shimmer own the effect */
+  h1 .accent.t-shimmer{ background:none;-webkit-text-fill-color:var(--amber);color:var(--amber);animation:none; }
   /* ---------- shimmer accent ---------- */
   h1 .accent{
     background:linear-gradient(100deg, var(--amber) 30%, #ffd591 42%, var(--amber) 54%);
@@ -793,8 +825,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap hero-grid">
     <div>
       <div class="eyebrow">Johannesburg, South Africa — <span id="liveClock">--:--:--</span> SAST — Available for select engagements</div>
-      <h1>i build the systems companies trust with <span class="accent">MONEY</span>, <span class="accent">STUDENTS</span>, and <span class="accent">MEMBERS.</span></h1>
-      <p class="hero-sub">Full stack developer and CTO working across InsurTech, EdTech, and AI — from centralized authentication infrastructure to production LLM products, for Cleverly AI, 123tutors, and Alpha Group.</p>
+      <div class="t-stagger" id="heroStagger">
+        <h1 class="t-stagger-line t-stagger-line--1">i build the systems companies trust with <span class="accent t-shimmer" data-text="MONEY">MONEY</span>, <span class="accent t-shimmer" data-text="STUDENTS">STUDENTS</span>, and <span class="accent t-shimmer" data-text="MEMBERS.">MEMBERS.</span></h1>
+        <p class="hero-sub t-stagger-line t-stagger-line--2">Full stack developer and CTO working across InsurTech, EdTech, and AI — from centralized authentication infrastructure to production LLM products, for Cleverly AI, 123tutors, and Alpha Group.</p>
+      </div>
       <div class="cta-row">
         <a href="#projects" class="btn btn-primary" onclick="trackCTA('view_work')">View my work</a>
         <a href="/Rusumba_Bukanga_2026_CV_1Page.pdf" class="btn btn-ghost" onclick="trackCTA('download_cv')">Download CV</a>
@@ -1126,6 +1160,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---------- transitions.dev: hero texts-reveal on load ----------
+  (function(){
+    const block = document.getElementById('heroStagger');
+    if (!block) return;
+    if (reduceMotion) { block.classList.add('is-shown'); return; }
+    requestAnimationFrame(() => { requestAnimationFrame(() => block.classList.add('is-shown')); });
+  })();
 
   // ---------- Page transition curtain (real cross-page navigation, not just anchors) ----------
   const transEl = document.getElementById('pageTransition');
