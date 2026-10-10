@@ -12,11 +12,11 @@ Single-file static site. No build step, no framework, no dependencies.
 - `robots.txt` + `sitemap.xml` — SEO
 - `favicon.svg` — browser tab icon
 
-## ⚠️ Still needed before deploy
+## Still needed before the site is fully done
 
-- `og-image.jpg` — social share card (was generated earlier in the Claude session; download it from the chat and drop it in this folder)
-- `apple-touch-icon.png` — same as above
-- `Rusumba_Bukanga_2026_CV_1Page.pdf` — **use the latest version** (includes Akur8, team-collaboration framing, Friends of Cinema). The one in Downloads dated July 1 is outdated.
+- `og-image.jpg` and `apple-touch-icon.png` (social share card and touch icon, not in the repo yet)
+- Final domain: canonical, OG and sitemap URLs currently use `https://www.rusumbabukanga.com/`; change them if the live domain differs
+- Optional: add Google Tag Manager or Meta Pixel back if wanted (placeholders were removed; `trackCTA` already works with them if they are present)
 
 ## Features
 
