@@ -14,8 +14,8 @@ Single-file static site. No build step, no framework, no dependencies.
 
 ## Still needed before the site is fully done
 
-- `og-image.jpg` and `apple-touch-icon.png` (social share card and touch icon, not in the repo yet)
-- Final domain: canonical, OG and sitemap URLs currently use `https://www.rusumbabukanga.com/`; change them if the live domain differs
+- Custom domain: canonical, OG and sitemap URLs use `https://rusumba-portfolio.vercel.app`; change them once a custom domain is attached in Vercel
+- Case-study screenshot galleries were removed; add real screenshots back when ready
 - Optional: add Google Tag Manager or Meta Pixel back if wanted (placeholders were removed; `trackCTA` already works with them if they are present)
 
 ## Features
