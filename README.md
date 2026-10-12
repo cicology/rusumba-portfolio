@@ -38,3 +38,13 @@ Single-file static site. No build step, no framework, no dependencies.
 
 **Vercel:** `npx vercel` from the repo root, or connect the repo at vercel.com.
 **Netlify:** drag the folder onto app.netlify.com/drop, or connect the repo.
+
+## Building the pages
+
+The HTML is generated. Edit `scripts/projects.json` (case-study content), `scripts/build.js` (templates and copy), `assets/site.css` or `assets/site.js`, then run:
+
+    node scripts/build.js
+
+That rewrites `index.html`, `work.html` and `projects/*.html`. Commit the generated files; Vercel serves them as static files with no build step.
+
+To show a portrait in the hero, add `assets/portrait.jpg` (square, at least 640px) and rebuild.

@@ -1,0 +1,258 @@
+[
+  {
+    "slug": "123tutors-platform",
+    "title": "123tutors",
+    "cat": "AI / EdTech",
+    "meta": {
+      "role": "Chief Technology Officer",
+      "client": "123tutors (EdTech platform)",
+      "year": "2026",
+      "status": "Live in production"
+    },
+    "stack": [
+      "Next.js",
+      "TypeScript",
+      "Prisma",
+      "AWS Bedrock",
+      "Supabase",
+      "Vercel"
+    ],
+    "body": "<h2>The project</h2>\n    <p>123tutors matches students with tutors. The platform had outgrown the no-code foundation it launched on, and at the same time students needed more support than a tutor roster alone could provide, help at 11pm the night before an exam, when no tutor is online.</p>\n    <p>I returned as CTO to solve both at once: move the platform onto a foundation it could grow on, and give students an AI tutor that is always available.</p>\n\n    <h2>What I did</h2>\n    <ul>\n      <li><strong>Led a full platform migration</strong> from Bubble to Next.js/TypeScript on Prisma and Supabase, without losing the existing user base or data.</li>\n      <li><strong>Shipped a Claude-powered AI Tutor</strong> via AWS Bedrock, with real-time streaming chat and intent classification.</li>\n      <li><strong>Built generated interactive mindmaps</strong> so the AI Tutor can lay a concept out visually, not just in text.</li>\n      <li><strong>Set the technical roadmap</strong> now extending into the platform''s matching engine and institutional reporting.</li>\n    </ul>\n\n    <h2>Where it landed</h2>\n    <p>Migration live, AI Tutor shipped and in daily use by students. The platform now runs on a stack the team can extend, instead of one they had to work around.</p>\n    <p><a class=\"proj-live-link\" href=\"https://123tutors.co.za\" target=\"_blank\" rel=\"noopener\">Visit 123tutors.co.za &rarr;</a></p>",
+    "figure": {
+      "src": "assets/123tutors-home.jpg",
+      "alt": "The 123tutors homepage in production",
+      "caption": "123tutors.co.za"
+    },
+    "next": "alpha-sso-gateway",
+    "nextLabel": "SSO Authentication Gateway",
+    "pageTitle": "123tutors | Rusumba Bukanga",
+    "desc": "Rusumba Bukanga is a full stack developer and CTO based in Johannesburg, building AI products, authentication infrastructure, and InsurTech systems for Cleverly AI, 123tutors, and Alpha Group."
+  },
+  {
+    "slug": "akur8-uat-runner",
+    "title": "Akur8 UAT Runner",
+    "cat": "InsurTech / Actuarial Tooling",
+    "meta": {
+      "role": "Sole Builder",
+      "client": "Alpha Insure (InsurTech)",
+      "year": "2026",
+      "status": "In active use"
+    },
+    "stack": [
+      "React",
+      "Vite",
+      "Node.js",
+      "Express",
+      "Firebase",
+      "Firestore"
+    ],
+    "body": "<h2>The project</h2>\n    <p>Alpha Insure prices motor insurance through Akur8, a third-party actuarial rating engine. Before any pricing change reaches a real customer quote, it has to be validated against hundreds of scenarios, and doing that by hand, one case at a time, was slow, error-prone, and didn''t scale with how often the rating logic changed.</p>\n    <p>This tool exists to make that validation fast, repeatable, and auditable.</p>\n\n    <h2>What I did</h2>\n    <ul>\n      <li><strong>Built the full stack solo</strong>, React/Vite frontend, Node/Express backend, and Firebase/Firestore for storage and history, end to end.</li>\n      <li><strong>Bulk test execution</strong>, upload CSV-defined test batches that run sequentially against the Akur8 rating API, with live pass/fail/error tracking as the run progresses.</li>\n      <li><strong>Input validation up front</strong>, invalid rows are flagged before a run starts, so a malformed test case never silently burns a batch.</li>\n      <li><strong>Auditable history</strong>, every run is stored and searchable in Firestore, and results export cleanly for re-import and comparison.</li>\n    </ul>\n\n    <h2>Where it landed</h2>\n    <p>The tool is in active use for pre-deploy validation of Alpha Insure''s motor pricing. What used to be a manual, one-at-a-time check is now a bulk run with a clear pass/fail signal and a full audit trail, the kind of safety net that lets a pricing team ship changes with confidence.</p>",
+    "figure": null,
+    "next": "cleverly-ai-grading",
+    "nextLabel": "Cleverly AI, AI-Assisted Grading",
+    "pageTitle": "Akur8 UAT Runner | Rusumba Bukanga",
+    "desc": "Akur8 UAT Runner: a full-stack tool for bulk-validating an actuarial motor rating API. Built by Rusumba Bukanga with React, Vite, Node/Express and Firebase."
+  },
+  {
+    "slug": "alpha-operations",
+    "title": "The Operations Layer",
+    "cat": "InsurTech / Operations",
+    "meta": {
+      "role": "Architect, Builder & Contributor (team)",
+      "client": "InsurTech group (internal)",
+      "year": "2025",
+      "status": "In production"
+    },
+    "stack": [
+      "React",
+      "Node.js",
+      "AWS Lambda",
+      "EventBridge",
+      "SES/SNS",
+      "Microsoft Graph"
+    ],
+    "body": "<h2>The project</h2>\n    <p>Three very different businesses, insurance, hospitality, fitness, each running on manual processes that did not scale: paper-heavy underwriting, phone-in reservations, and monthly billing done by hand.</p>\n    <p>The work was to replace those manual processes with systems, across all four businesses, alongside the Alpha engineering team.</p>\n\n    <h2>What I did</h2>\n    <ul>\n      <li><strong>Insurance:</strong> CRM systems for underwriting, claims, and broker management; customer-facing quote calculators and policy portals; a broker onboarding workflow; and REST APIs integrating underwriting partners, banks, and reinsurers.</li>\n      <li><strong>Hospitality:</strong> a real-time booking and capacity-management system for a high-traffic rooftop restaurant.</li>\n      <li><strong>Fitness:</strong> a membership platform plus an automated recurring debit-order run, scheduled batch billing with bank reconciliation, on Lambda, EventBridge, S3, and SES/SNS.</li>\n      <li><strong>Internal:</strong> an HR portal with org-chart, employee self-service, and a wellness booking system, integrated with Microsoft Graph.</li>\n    </ul>\n\n    <h2>Where it landed</h2>\n    <p>All in production. Policy processing time is down 60% and manual data-entry errors down 85%, the measurable result of turning manual workflows into systems.</p>",
+    "figure": null,
+    "next": "claim-forms-modernisation",
+    "nextLabel": "Claim Forms Modernisation",
+    "pageTitle": "The Operations Layer | Rusumba Bukanga",
+    "desc": "Rusumba Bukanga is a full stack developer and CTO based in Johannesburg, building AI products, authentication infrastructure, and InsurTech systems for Cleverly AI, 123tutors, and Alpha Group."
+  },
+  {
+    "slug": "alpha-sso-gateway",
+    "title": "SSO Authentication Gateway",
+    "cat": "Platform & Identity",
+    "meta": {
+      "role": "Architect & Contributor (team)",
+      "client": "InsurTech group (internal)",
+      "year": "2025",
+      "status": "In production"
+    },
+    "stack": [
+      "AWS Lambda",
+      "API Gateway",
+      "Cognito",
+      "DynamoDB",
+      "KMS",
+      "OAuth2/PKCE"
+    ],
+    "body": "<h2>The project</h2>\n    <p>One organisation, three completely different businesses under it: an insurance operation, a restaurant, and a gym. Each had its own applications, its own users, and its own login, but all of it had to be centrally managed, secure, and consistent.</p>\n    <p>The answer was a single authentication gateway every application could sit behind, rather than each one reinventing login on its own.</p>\n\n    <h2>What I did</h2>\n    <ul>\n      <li><strong>Architected the gateway</strong> and worked with the Alpha engineering team to build it, a centralised auth service every application in the ecosystem authenticates through.</li>\n      <li><strong>Built on AWS Cognito with KMS-signed JWTs</strong>, so session tokens are verifiable and tamper-evident across services.</li>\n      <li><strong>Implemented an OAuth2/PKCE flow</strong> on Lambda and API Gateway, with DynamoDB backing identity and session state.</li>\n      <li><strong>Collaborated across the team</strong> on rollout to underwriting, client-facing, and internal HR systems without disrupting existing users.</li>\n    </ul>\n\n    <h2>Where it landed</h2>\n    <p>In production, underpinning underwriting, client-facing, and internal HR systems across the group. One login layer instead of many, centrally managed, and secure by design.</p>",
+    "figure": null,
+    "next": "alpha-operations",
+    "nextLabel": "Alpha, Operations Layer",
+    "pageTitle": "SSO Authentication Gateway | Rusumba Bukanga",
+    "desc": "Rusumba Bukanga is a full stack developer and CTO based in Johannesburg, building AI products, authentication infrastructure, and InsurTech systems for Cleverly AI, 123tutors, and Alpha Group."
+  },
+  {
+    "slug": "claim-forms-modernisation",
+    "title": "Claim Forms Modernisation",
+    "cat": "InsurTech / Document Systems",
+    "meta": {
+      "role": "Architect & Contributor (team)",
+      "client": "InsurTech group (internal)",
+      "year": "2025",
+      "status": "Rolled out"
+    },
+    "stack": [
+      "Node.js",
+      "PDF Parsing",
+      "E-Signature",
+      "Browser-Native",
+      "React"
+    ],
+    "body": "<h2>The project</h2>\n    <p>Hundreds of claims forms were trapped in a deprecated, Adobe-only PDF format. A customer on Chrome, Safari, or a phone hit a dead end, they had to install desktop software just to file a claim. In an insurance context, that is lost claims and frustrated customers.</p>\n    <p>The job was to free those forms from Adobe entirely, and to replace a paid third-party signing tool while we were at it.</p>\n\n    <h2>What I did</h2>\n    <ul>\n      <li><strong>Helped architect an in-browser pipeline</strong>, with the Alpha engineering team, that reads each form''s own underlying blueprint and reconstructs it as a fully interactive web form.</li>\n      <li><strong>Preserved conditional logic, calculations, and draw-to-sign</strong>, then exported a pixel-accurate PDF on submission, identical to the original on paper.</li>\n      <li><strong>Built an in-house document execution and e-signature platform</strong> that replaced a paid third-party subscription entirely.</li>\n      <li><strong>Rolled it out across the full form library</strong>, working end-to-end from browse to signed, submitted PDF.</li>\n    </ul>\n\n    <h2>Where it landed</h2>\n    <p>Rolled out across the full form library, working end-to-end from any browser to a signed, submitted PDF. The e-signature platform is live handling agreement workflows, and the Adobe dependency is gone.</p>",
+    "figure": null,
+    "next": "property-portfolio-rebuild",
+    "nextLabel": "Property Portfolio Rebuild",
+    "pageTitle": "Claim Forms Modernisation | Rusumba Bukanga",
+    "desc": "Rusumba Bukanga is a full stack developer and CTO based in Johannesburg, building AI products, authentication infrastructure, and InsurTech systems for Cleverly AI, 123tutors, and Alpha Group."
+  },
+  {
+    "slug": "cleverly-ai-grading",
+    "title": "Cleverly AI",
+    "cat": "AI / EdTech",
+    "meta": {
+      "role": "Cofounder & CTO",
+      "client": "Cleverly AI (own venture)",
+      "year": "2025",
+      "status": "Live in pilot"
+    },
+    "stack": [
+      "Next.js",
+      "Claude",
+      "RAG",
+      "Supabase",
+      "OCR",
+      "TypeScript"
+    ],
+    "body": "<h2>The project</h2>\n    <p>Manual grading does not scale for South African schools, colleges, and universities. But the obvious fix, AI that grades for you, runs into a harder problem: a teacher will not trust a mark they cannot see the reasoning behind.</p>\n    <p>Cleverly is built around that tension. The goal was never to replace the teacher, but to do the heavy lifting and then show its work.</p>\n\n    <h2>What I did</h2>\n    <ul>\n      <li><strong>Founded the company and set the technical direction</strong> as Cofounder & CTO, owning architecture, AI systems, and cloud infrastructure.</li>\n      <li><strong>Built a vendor-neutral AI provider layer</strong> so the grading engine is not locked to a single LLM, models can be swapped or tiered by cost and task.</li>\n      <li><strong>Designed evidence-linked, rubric-aligned grading</strong> with a teacher-in-the-loop review step, so every mark traces back to the rubric and the student''s own work.</li>\n      <li><strong>Built a tiered OCR pipeline</strong> that balances cost against handwriting-recognition accuracy, routing harder scripts to stronger models only when needed.</li>\n    </ul>\n\n    <h2>Where it landed</h2>\n    <p>Live in pilot with South African educational institutions. Prompt caching and model tiering keep the unit economics sustainable as usage scales, the difference between a demo and a business.</p>",
+    "figure": {
+      "src": "assets/cleverly-how-it-works.jpg",
+      "alt": "Cleverly workflow: upload the assessment pack, review suggested grading logic, moderate with confidence",
+      "caption": "Cleverly, how it works"
+    },
+    "next": "123tutors-platform",
+    "nextLabel": "123tutors, Platform & AI Tutor",
+    "pageTitle": "Cleverly AI | Rusumba Bukanga",
+    "desc": "Rusumba Bukanga is a full stack developer and CTO based in Johannesburg, building AI products, authentication infrastructure, and InsurTech systems for Cleverly AI, 123tutors, and Alpha Group."
+  },
+  {
+    "slug": "friends-of-cinema",
+    "title": "Friends of Cinema",
+    "cat": "Web / Creative",
+    "meta": {
+      "role": "Sole Builder",
+      "client": "Independent film production company",
+      "year": "2026",
+      "status": "Live in production"
+    },
+    "stack": [
+      "React",
+      "Vite",
+      "TypeScript",
+      "Framer Motion",
+      "Supabase"
+    ],
+    "body": "<h2>The project</h2>\n    <p>An independent film production company needed a website that felt like the films they make, art-house, editorial, cinematic, not another templated agency homepage. For a creative studio, the site is a portfolio piece in its own right.</p>\n    <p>I built it solo, front to back, with the visual craft the brief demanded.</p>\n\n    <h2>What I did</h2>\n    <ul>\n      <li><strong>Built the full React/Vite/TypeScript site</strong> end to end, solo.</li>\n      <li><strong>Crafted the motion and feel</strong>, Framer Motion page transitions, a custom cursor with mix-blend-mode effects, and a full-screen parallax hero with a film-grain overlay.</li>\n      <li><strong>Built a filterable portfolio grid</strong> for their film work.</li>\n      <li><strong>Backed it with Supabase</strong> (Postgres, Storage, Auth) on a client-manageable content schema with RLS policies, so the studio can update it themselves.</li>\n    </ul>\n\n    <h2>Where it landed</h2>\n    <p>Live in production on Vercel, a site that carries the studio''s creative identity rather than flattening it into a template.</p>\n    <p><a class=\"proj-live-link\" href=\"https://github.com/cicology/friends-of-cinema\" target=\"_blank\" rel=\"noopener\">View repo on GitHub &rarr;</a></p>",
+    "figure": {
+      "src": "assets/friends-of-cinema-home.jpg",
+      "alt": "The Friends of Cinema homepage",
+      "caption": "Friends of Cinema, homepage"
+    },
+    "next": "akur8-uat-runner",
+    "nextLabel": "Akur8 UAT Runner",
+    "pageTitle": "Friends of Cinema | Rusumba Bukanga",
+    "desc": "Rusumba Bukanga is a full stack developer and CTO based in Johannesburg, building AI products, authentication infrastructure, and InsurTech systems for Cleverly AI, 123tutors, and Alpha Group."
+  },
+  {
+    "slug": "property-portfolio-rebuild",
+    "title": "Property Portfolio Rebuild",
+    "cat": "Platform / Web",
+    "meta": {
+      "role": "Architect & Contributor (team)",
+      "client": "Property development company",
+      "year": "2025",
+      "status": "In final QA"
+    },
+    "stack": [
+      "Next.js",
+      "React",
+      "Content Modeling",
+      "Migration"
+    ],
+    "body": "<h2>The project</h2>\n    <p>A property development company''s public site was running on a five-year-old template-based stack. Every content update was a risk, and the underlying framework was long past its supportable life, the kind of technical debt that quietly gets more expensive every month.</p>\n    <p>The work was a full rebuild that modernised the foundation without changing what the public and existing clients already relied on.</p>\n\n    <h2>What I did</h2>\n    <ul>\n      <li><strong>Helped architect a full rebuild</strong>, with the team, onto a modern Next.js architecture.</li>\n      <li><strong>Migrated every property listing, gallery, and page</strong> into structured, maintainable data models.</li>\n      <li><strong>Preserved exact public-facing content and behaviour</strong>, so nothing clients depended on shifted underneath them.</li>\n      <li><strong>Verified page-by-page against the live site</strong> for full content and visual parity ahead of cutover.</li>\n    </ul>\n\n    <h2>Where it landed</h2>\n    <p>In final QA, verified page-by-page against the live production site for full content and visual parity ahead of cutover, a modern, maintainable foundation replacing an unsupportable one.</p>",
+    "figure": null,
+    "next": "tutor-vetting-automation",
+    "nextLabel": "Tutor Vetting Automation",
+    "pageTitle": "Property Portfolio Rebuild | Rusumba Bukanga",
+    "desc": "Rusumba Bukanga is a full stack developer and CTO based in Johannesburg, building AI products, authentication infrastructure, and InsurTech systems for Cleverly AI, 123tutors, and Alpha Group."
+  },
+  {
+    "slug": "tutor-vetting-automation",
+    "title": "Tutor Vetting Automation",
+    "cat": "AI / Automation",
+    "meta": {
+      "role": "Engineer",
+      "client": "123tutors (EdTech platform)",
+      "year": "2026",
+      "status": "In production"
+    },
+    "stack": [
+      "KYC API",
+      "Biometrics",
+      "AML Screening",
+      "Supabase",
+      "Node.js"
+    ],
+    "body": "<h2>The project</h2>\n    <p>Every tutor application was manually reviewed by an admin before going live, a human bottleneck that could not scale past roughly 50 applications a week, with no verifiable identity or background checks behind it. For a platform putting tutors in front of students, that is both a growth ceiling and a trust problem.</p>\n    <p>The work was to automate vetting end to end, without lowering the bar on who gets approved.</p>\n\n    <h2>What I did</h2>\n    <ul>\n      <li><strong>Built an automated vetting pipeline</strong> integrating a South African identity verification API (InTouch).</li>\n      <li><strong>Wired in government ID verification, facial-match and liveness biometrics</strong>, AML/sanctions screening, and bank-account verification, running in parallel.</li>\n      <li><strong>Built a tiered decision engine</strong> that auto-approves clean applications and flags edge cases for human review.</li>\n      <li><strong>Cut the admin out of the happy path</strong>, leaving humans to handle only genuine exceptions.</li>\n    </ul>\n\n    <h2>Where it landed</h2>\n    <p>Vetting time dropped from 2&ndash;5 business days to under 2 hours. Admin time per application fell from ~30 minutes to ~2 minutes on the review queue only, and the scalability ceiling is gone entirely.</p>",
+    "figure": null,
+    "next": "utap-campus-commerce",
+    "nextLabel": "uTap, Campus Commerce",
+    "pageTitle": "Tutor Vetting Automation | Rusumba Bukanga",
+    "desc": "Rusumba Bukanga is a full stack developer and CTO based in Johannesburg, building AI products, authentication infrastructure, and InsurTech systems for Cleverly AI, 123tutors, and Alpha Group."
+  },
+  {
+    "slug": "utap-campus-commerce",
+    "title": "uTap",
+    "cat": "FinTech / Mobile",
+    "meta": {
+      "role": "Engineer (equity)",
+      "client": "uTap (own venture)",
+      "year": "2026",
+      "status": "Preparing pilot"
+    },
+    "stack": [
+      "React Native",
+      "Expo",
+      "NFC",
+      "Paystack",
+      "Android Native"
+    ],
+    "body": "<h2>The project</h2>\n    <p>University campuses run on cash and cards that vendors cannot always process, and students already carry a physical ID card that does nothing beyond proving who they are. uTap turns that card into a payment method and the phone into the terminal.</p>\n    <p>I joined as an engineer with equity in the venture, owning core technical pieces of the build.</p>\n\n    <h2>What I did</h2>\n    <ul>\n      <li><strong>Worked across a multi-app ecosystem</strong>: a React Native/Expo student app, a vendor dashboard, and an admin portal.</li>\n      <li><strong>Led the full payment gateway migration onto Paystack</strong> across mobile, web, and backend.</li>\n      <li><strong>Contributed to the NFC tap-to-pay work</strong>, the piece that lets a student tap to pay with their student card.</li>\n      <li><strong>Took iOS NFC as far as the platform currently allows</strong>, with support in progress pending permissions.</li>\n    </ul>\n\n    <h2>Where it landed</h2>\n    <p>Preparing for pilot launch with an initial university partner, with iOS NFC support in progress. The student app, vendor dashboard, and admin portal are built and integrated on Paystack.</p>",
+    "figure": null,
+    "next": "friends-of-cinema",
+    "nextLabel": "Friends of Cinema",
+    "pageTitle": "uTap | Rusumba Bukanga",
+    "desc": "Rusumba Bukanga is a full stack developer and CTO based in Johannesburg, building AI products, authentication infrastructure, and InsurTech systems for Cleverly AI, 123tutors, and Alpha Group."
+  }
+]
