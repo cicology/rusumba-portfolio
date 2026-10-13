@@ -232,7 +232,7 @@ function home() {
   const desc = "Rusumba Bukanga is a full stack developer and CTO in Johannesburg building AI products, authentication infrastructure and InsurTech systems for Cleverly AI, 123tutors and Alpha Group. Open to senior, lead and fractional CTO roles, remote or on site.";
   const ld = `<script type="application/ld+json">${JSON.stringify({
     "@context": "https://schema.org", "@type": "Person", name: "Rusumba Bukanga", jobTitle: "Full Stack Developer, AI Engineer and CTO",
-    description: desc, url: SITE + "/", image: SITE + "/og-image.jpg", email: "mailto:herij46@gmail.com", telephone: "+27799056758",
+    description: desc, url: SITE + "/", image: hasPortrait ? SITE + "/assets/portrait.jpg" : SITE + "/og-image.jpg", email: "mailto:herij46@gmail.com", telephone: "+27799056758",
     address: { "@type": "PostalAddress", addressLocality: "Johannesburg", addressCountry: "ZA" },
     sameAs: ["https://www.linkedin.com/in/rusumba/", "https://github.com/cicology"],
     worksFor: [{ "@type": "Organization", name: "Alpha Insure" }, { "@type": "Organization", name: "123tutors", url: "https://123tutors.co.za" }, { "@type": "Organization", name: "Cleverly AI" }, { "@type": "Organization", name: "Oryares Solutions" }],

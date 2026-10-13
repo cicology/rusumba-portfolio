@@ -251,7 +251,7 @@ section.flush { border-top: 0; }
 .orbit .tag.t1 { top: 4%; right: -6%; animation-delay: 0.9s; }
 .orbit .tag.t2 { bottom: 16%; left: -10%; animation-delay: 1.1s; }
 .orbit .tag.t3 { bottom: -2%; right: 4%; animation-delay: 1.3s; }
-.portrait { width: 42%; aspect-ratio: 1; border-radius: 50%; object-fit: cover; border: 1px solid var(--hair-strong); box-shadow: var(--glow); }
+.portrait { width: 42%; height: auto; aspect-ratio: 1; border-radius: 50%; object-fit: cover; border: 1px solid var(--hair-strong); box-shadow: var(--glow); }
 .hero-meta { display: grid; grid-template-columns: repeat(4, auto); justify-content: start; gap: 28px; margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--hair-soft); }
 .hero-meta div { display: grid; gap: 2px; }
 .hero-meta b { font-family: var(--display); font-size: 28px; font-weight: 600; color: var(--gold-400); line-height: 1; }
