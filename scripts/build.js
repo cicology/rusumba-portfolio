@@ -228,10 +228,10 @@ const HOME_LINKS = [
 ];
 
 function home() {
-  const title = "Rusumba Bukanga | Full Stack Developer & AI Engineer, Johannesburg";
-  const desc = "Rusumba Bukanga is a full stack developer and CTO in Johannesburg building AI products, authentication infrastructure and InsurTech systems for Cleverly AI, 123tutors and Alpha Group. Open to senior, lead and fractional CTO roles, remote or on site.";
+  const title = "Rusumba Bukanga | AI Product Engineer & CTO, Johannesburg";
+  const desc = "Rusumba Bukanga is an AI product engineer and CTO in Johannesburg building production LLM products and insurance systems for Cleverly AI, 123tutors and Alpha Group. Open to senior, lead and fractional CTO roles, remote or on site.";
   const ld = `<script type="application/ld+json">${JSON.stringify({
-    "@context": "https://schema.org", "@type": "Person", name: "Rusumba Bukanga", jobTitle: "Full Stack Developer, AI Engineer and CTO",
+    "@context": "https://schema.org", "@type": "Person", name: "Rusumba Bukanga", jobTitle: "AI Product Engineer and CTO",
     description: desc, url: SITE + "/", image: hasPortrait ? SITE + "/assets/portrait.jpg" : SITE + "/og-image.jpg", email: "mailto:herij46@gmail.com", telephone: "+27799056758",
     address: { "@type": "PostalAddress", addressLocality: "Johannesburg", addressCountry: "ZA" },
     sameAs: ["https://www.linkedin.com/in/rusumba/", "https://github.com/cicology"],
@@ -261,7 +261,7 @@ function home() {
 <div>
 <span class="eyebrow hl"><i class="pulse"></i>Johannesburg / Open to senior, lead and fractional CTO roles</span>
 <h1 class="hl">I build the systems companies trust with <em>money</em>, <em>students</em> and <em>members.</em></h1>
-<p class="lead hl">Full stack engineer and CTO working across InsurTech, EdTech and AI, from centralised authentication to production LLM products. Engineering at Alpha Insure by day, building 123tutors, Cleverly AI and Oryares Solutions on my own.</p>
+<p class="lead hl">AI product engineer and CTO building production LLM products and the insurance systems around them, from AI grading and tutoring to forms, e-signing and single sign-on. Engineering at Alpha Insure by day, building 123tutors, Cleverly AI and Oryares Solutions on my own.</p>
 <div class="ctas hl"><a class="btn btn-primary" href="#work">View my work <span class="arr">&rarr;</span></a><a class="btn btn-ghost" href="Rusumba_Bukanga_2026_CV.pdf">Download CV</a></div>
 <div class="hero-meta hl"><div><b>10</b><span>Systems shipped</span></div><div><b>3</b><span>Leadership roles</span></div><div><b>60%</b><span>Faster policy processing</span></div><div><b>2</b><span>Languages, EN and FR</span></div></div>
 </div>
