@@ -314,7 +314,7 @@ function home() {
 <a class="res reveal" data-d="2" href="work.html"><span class="icon">${ICON.grid}</span><span><b>Case studies</b><span>Ten systems with decisions and results</span></span><span class="arr">${ICON.arrowUpRight}</span></a>
 <a class="res reveal" data-d="3" href="https://github.com/cicology" target="_blank" rel="noopener"><span class="icon">${ICON.github}</span><span><b>GitHub</b><span>github.com/cicology</span></span><span class="arr">${ICON.arrowUpRight}</span></a>
 <a class="res reveal" data-d="4" href="https://www.linkedin.com/in/rusumba/" target="_blank" rel="noopener"><span class="icon">${ICON.linkedin}</span><span><b>LinkedIn</b><span>linkedin.com/in/rusumba</span></span><span class="arr">${ICON.arrowUpRight}</span></a>
-<a class="res reveal" data-d="5" href="https://oryares-solutions-oryares.vercel.app/" target="_blank" rel="noopener"><span class="icon">${ICON.star}</span><span><b>Oryares Solutions</b><span>Fractional CTO and AI implementation</span></span><span class="arr">${ICON.arrowUpRight}</span></a>
+<a class="res reveal" data-d="5" href="https://oryares.solutions/" target="_blank" rel="noopener"><span class="icon">${ICON.star}</span><span><b>Oryares Solutions</b><span>My consultancy: process and AI automation for professional firms</span></span><span class="arr">${ICON.arrowUpRight}</span></a>
 <a class="res reveal" data-d="6" href="mailto:herij46@gmail.com"><span class="icon">${ICON.mail}</span><span><b>Email</b><span>herij46@gmail.com</span></span><span class="arr">${ICON.arrowUpRight}</span></a>
 </div>
 <div class="sec-head reveal" style="margin-top:64px"><span class="eyebrow">Stack and years hands-on</span><p>Honest numbers. Where it says one year, it means one year.</p></div>
