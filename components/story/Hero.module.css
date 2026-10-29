@@ -1,0 +1,57 @@
+.hero {
+  position: relative; z-index: 1;
+  min-height: 100svh;
+  display: flex; align-items: flex-end;
+  padding: 128px 0 clamp(56px, 9vh, 110px);
+}
+.inner { width: min(100% - 2 * var(--gutter), 1440px); }
+
+.kicker { font-size: 15px; color: var(--ink-2); margin-bottom: 20px; }
+
+.title { max-width: 11ch; }
+.lineClip { display: block; overflow: hidden; padding-bottom: 0.04em; }
+.line {
+  display: block;
+  transform: translateY(110%);
+  animation: rise 1100ms var(--ease) forwards;
+}
+
+.below {
+  margin-top: clamp(28px, 4vh, 44px);
+  display: grid;
+  gap: 26px;
+  max-width: 560px;
+}
+.lead { max-width: 46ch; }
+.ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+.status { display: inline-flex; align-items: center; gap: 10px; max-width: 60ch; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--cobalt); box-shadow: 0 0 0 4px var(--cobalt-soft); flex: none; }
+
+.in { opacity: 0; animation: fade 900ms var(--ease) forwards; }
+
+.scrollCue {
+  position: absolute; right: var(--gutter); bottom: 28px;
+  display: inline-flex; align-items: center; gap: 12px;
+  font-size: 13px; color: var(--ink-3);
+  opacity: 0; animation: fade 900ms var(--ease) 900ms forwards;
+}
+.scrollCue:hover { text-decoration: none; color: var(--ink); }
+.cueLine { width: 48px; height: 1px; background: currentColor; transform-origin: left; animation: pulse 2.6s ease-in-out infinite; }
+
+@keyframes rise { to { transform: translateY(0); } }
+@keyframes fade { to { opacity: 1; } }
+@keyframes pulse { 0%, 100% { transform: scaleX(0.4); } 50% { transform: scaleX(1); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .line { transform: none; animation: none; }
+  .in, .scrollCue { opacity: 1; animation: none; }
+  .cueLine { animation: none; }
+}
+@media (max-width: 900px) {
+  .title { max-width: none; }
+}
+@media (max-width: 560px) {
+  .hero { padding-top: 110px; }
+  .scrollCue { display: none; }
+  .inner { padding: 18px 16px 20px; margin-inline: auto; width: min(100% - 2 * var(--gutter), 1440px); background: rgba(233, 232, 226, 0.78); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+}

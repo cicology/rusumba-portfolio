@@ -1,0 +1,46 @@
+.panel {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 32px clamp(24px, 3vw, 56px);
+  margin-top: 6vh;
+  padding: 26px 28px 30px;
+  background: rgba(233, 232, 226, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid var(--ink);
+}
+
+.tabs { display: grid; row-gap: 4px; align-content: start; }
+.tab {
+  position: relative;
+  display: grid; row-gap: 4px;
+  text-align: left;
+  padding: 16px 18px 16px 22px;
+  border-radius: var(--radius);
+  color: var(--ink-2);
+  transition: color var(--t) var(--ease), background var(--t) var(--ease);
+}
+.tab:hover { color: var(--ink); }
+.on { color: var(--ink); background: rgba(21, 23, 27, 0.045); }
+.place { font-size: 13px; color: var(--ink-3); }
+.tabName { font-weight: 600; }
+.tabMarker {
+  position: absolute; left: 0; top: 14px; bottom: 14px; width: 3px;
+  background: var(--cobalt);
+  transform: scaleY(0); transform-origin: top;
+  transition: transform var(--t) var(--ease);
+}
+.on .tabMarker { transform: scaleY(1); }
+
+.detail { min-height: 280px; }
+.body { margin-bottom: 20px; }
+.caps { display: grid; row-gap: 8px; margin-bottom: 24px; }
+.caps li { position: relative; padding-left: 22px; font-size: 16px; color: var(--ink-2); }
+.caps li::before { content: ""; position: absolute; left: 0; top: 0.7em; width: 10px; height: 1px; background: var(--cobalt); }
+.study { font-weight: 560; color: var(--cobalt); text-decoration: underline; text-underline-offset: 0.2em; }
+
+@media (max-width: 720px) {
+  .panel { grid-template-columns: 1fr; padding: 18px 18px 22px; }
+  .tabs { grid-template-columns: 1fr; }
+  .detail { min-height: 0; }
+}

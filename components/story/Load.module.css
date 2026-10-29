@@ -1,0 +1,17 @@
+.list { display: grid; row-gap: clamp(56px, 12vh, 140px); padding-top: 6vh; }
+.item {
+  padding: 22px 26px 26px;
+  background: rgba(233, 232, 226, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  max-width: 640px;
+}
+.wordRow { position: relative; display: inline-block; margin-bottom: 18px; }
+.word { display: block; }
+.bar {
+  position: absolute; left: 0; right: 0; bottom: -6px; height: 3px;
+  background: var(--cobalt);
+  transform-origin: left;
+}
+.body { margin-bottom: 10px; }
+.where { color: var(--ink-3); }

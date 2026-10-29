@@ -1,0 +1,51 @@
+.pinWrap { position: relative; }
+.sticky { position: sticky; top: 0; height: 100vh; display: flex; align-items: center; overflow: visible; }
+.mover { will-change: transform; }
+
+.track { display: grid; row-gap: 20px; }
+.trackWide {
+  display: flex; align-items: stretch; gap: 20px;
+  width: max-content;
+  padding-right: var(--gutter);
+}
+
+.plate {
+  display: flex; flex-direction: column;
+  width: 100%;
+  padding: 16px 18px 20px;
+  border-top: 1px solid var(--ink);
+  background: rgba(233, 232, 226, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--ink);
+  transition: background var(--t) var(--ease), transform var(--t) var(--ease);
+}
+.plate:hover { text-decoration: none; background: var(--paper-2); }
+.trackWide .plate { width: clamp(300px, 26vw, 360px); flex: none; }
+
+.plateTop { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 14px; font-size: 13px; color: var(--ink-3); }
+.index { font-weight: 300; font-size: 22px; font-variation-settings: "wdth" 75; color: var(--ink); }
+
+.art {
+  aspect-ratio: 8 / 5; overflow: hidden; margin-bottom: 16px;
+  display: grid; place-items: center;
+  color: var(--ink);
+  background: rgba(21, 23, 27, 0.03);
+}
+.art img { width: 100%; height: 100%; object-fit: cover; filter: saturate(0.85); }
+.glyph { width: 100%; height: 100%; }
+
+.plateTitle { margin-bottom: 8px; }
+.summary { flex: 1; margin-bottom: 18px; color: var(--ink-2); }
+.meta { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; color: var(--ink-3); border-top: 1px solid var(--line); padding-top: 10px; }
+
+.endCap {
+  display: flex; flex-direction: column; justify-content: center; gap: 18px;
+  width: clamp(280px, 24vw, 340px); flex: none;
+  padding: 18px 0 18px 10px;
+}
+.track:not(.trackWide) .endCap { width: auto; padding: 24px 0 0; }
+
+@media (max-width: 900px) {
+  .plate { width: auto; }
+}
