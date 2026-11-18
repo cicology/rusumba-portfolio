@@ -2,7 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://rusumba-portfolio.vercel.app/</loc>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-11-18</lastmod>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://rusumba-portfolio.vercel.app/work.html</loc>
+    <lastmod>2026-11-18</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rusumba-portfolio.vercel.app/projects/123tutors-platform.html</loc>
+    <lastmod>2026-11-18</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rusumba-portfolio.vercel.app/projects/akur8-uat-runner.html</loc>
+    <lastmod>2026-11-18</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rusumba-portfolio.vercel.app/projects/alpha-operations.html</loc>
+    <lastmod>2026-11-18</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rusumba-portfolio.vercel.app/projects/alpha-sso-gateway.html</loc>
+    <lastmod>2026-11-18</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rusumba-portfolio.vercel.app/projects/claim-forms-modernisation.html</loc>
+    <lastmod>2026-11-18</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rusumba-portfolio.vercel.app/projects/cleverly-ai-grading.html</loc>
+    <lastmod>2026-11-18</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rusumba-portfolio.vercel.app/projects/friends-of-cinema.html</loc>
+    <lastmod>2026-11-18</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rusumba-portfolio.vercel.app/projects/property-portfolio-rebuild.html</loc>
+    <lastmod>2026-11-18</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rusumba-portfolio.vercel.app/projects/tutor-vetting-automation.html</loc>
+    <lastmod>2026-11-18</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://rusumba-portfolio.vercel.app/projects/utap-campus-commerce.html</loc>
+    <lastmod>2026-11-18</lastmod>
+    <priority>0.6</priority>
   </url>
 </urlset>

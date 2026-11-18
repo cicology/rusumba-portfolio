@@ -229,7 +229,7 @@ const HOME_LINKS = [
 
 function home() {
   const title = "Rusumba Bukanga | AI Product Engineer & CTO, Johannesburg";
-  const desc = "Rusumba Bukanga is an AI product engineer and CTO in Johannesburg building production LLM products and insurance systems for Cleverly AI, 123tutors and Alpha Group. Open to senior, lead and fractional CTO roles, remote or on site.";
+  const desc = "Rusumba Bukanga is an AI product engineer and CTO in Johannesburg building production LLM products and insurance systems. Open to senior and CTO roles.";
   const ld = `<script type="application/ld+json">${JSON.stringify({
     "@context": "https://schema.org", "@type": "Person", name: "Rusumba Bukanga", jobTitle: "AI Product Engineer and CTO",
     description: desc, url: SITE + "/", image: hasPortrait ? SITE + "/assets/portrait.jpg" : SITE + "/og-image.jpg", email: "mailto:herij46@gmail.com", telephone: "+27799056758",
@@ -413,4 +413,8 @@ ${cover}
 fs.writeFileSync(path.join(ROOT, "index.html"), home());
 fs.writeFileSync(path.join(ROOT, "work.html"), work());
 projects.forEach((p) => fs.writeFileSync(path.join(ROOT, "projects", p.slug + ".html"), project(p)));
+const today = new Date().toISOString().slice(0, 10);
+const urls = [["/", "1.0"], ["/work.html", "0.8"]].concat(projects.map((p) => ["/projects/" + p.slug + ".html", "0.6"]));
+fs.writeFileSync(path.join(ROOT, "sitemap.xml"), '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + urls.map(([u, pr]) => `  <url>\n    <loc>${SITE}${u}</loc>\n    <lastmod>${today}</lastmod>\n    <priority>${pr}</priority>\n  </url>`).join("\n") + "\n</urlset>\n");
+fs.writeFileSync(path.join(ROOT, "robots.txt"), `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`);
 console.log("built index.html, work.html and", projects.length, "case studies" + (hasPortrait ? " (with portrait)" : " (no portrait yet: add assets/portrait.jpg)"));
